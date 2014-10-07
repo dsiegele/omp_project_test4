@@ -1,11 +1,348 @@
 format-version: 1.2
-data-version: releases/2014-08-29
-date: 29:08:2014 15:50
+data-version: releases/2014-10-01
+date: 07:10:2014 17:03
 saved-by: siegele
 auto-generated-by: OBO-Edit 2.3-beta6
+subsetdef: abnormal_slim "Abnormal/normal slim"
+subsetdef: absent_slim "Absent/present slim"
+subsetdef: attribute_slim "Attribute slim"
+subsetdef: cell_quality "cell_quality"
+subsetdef: Cross_product_review "Involved_in"
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: goantislim_grouping "Grouping classes that can be excluded"
+subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
+subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
+subsetdef: goslim_aspergillus "Aspergillus GO slim"
+subsetdef: goslim_candida "Candida GO slim"
+subsetdef: goslim_generic "Generic GO slim"
+subsetdef: goslim_goa "GOA and proteome slim"
+subsetdef: goslim_metagenomics "Metagenomics GO slim"
+subsetdef: goslim_pir "PIR GO slim"
+subsetdef: goslim_plant "Plant GO slim"
+subsetdef: goslim_pombe "Fission yeast GO slim"
+subsetdef: goslim_virus "Viral GO slim"
+subsetdef: goslim_yeast "Yeast GO slim"
+subsetdef: gosubset_prok "Prokaryotic GO subset"
+subsetdef: hpo_slim "Human phenotype slim"
+subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a template and require additional vetting by editors"
+subsetdef: value_slim "Value slim"
+subsetdef: virus_checked "Viral overhaul terms"
+synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: microbial_phenotype
-remark: Now on SourceForge, version 1.0.5
+namespace-id-rule: * OMP:$sequence(7,0007001,0008000)$
+remark: none
 ontology: omp
+
+[Term]
+id: GO:0000003
+name: reproduction
+namespace: biological_process
+alt_id: GO:0019952
+alt_id: GO:0050876
+def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." [GOC:go_curators, GOC:isa_complete, GOC:jl, ISBN:0198506732]
+subset: goslim_generic
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "reproductive physiological process" EXACT []
+xref: Wikipedia:Reproduction
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0005575
+name: cellular_component
+namespace: cellular_component
+alt_id: GO:0008372
+def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GOC:go_curators, NIF_Subcellular:sao-1337158144]
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. Note that when this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_yeast
+subset: gosubset_prok
+synonym: "cellular component" EXACT []
+synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
+xref: NIF_Subcellular:sao1337158144
+
+[Term]
+id: GO:0005623
+name: cell
+namespace: cellular_component
+def: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:go_curators]
+subset: goslim_generic
+subset: goslim_plant
+subset: gosubset_prok
+xref: NIF_Subcellular:sao1813327414
+xref: Wikipedia:Cell_(biology)
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0006928
+name: cellular component movement
+namespace: biological_process
+def: "The directed, self-propelled movement of a cellular component without the involvement of an external agent such as a transporter or a pore." [GOC:dgh, GOC:dph, GOC:jl, GOC:mlg]
+comment: Note that in GO cellular components include whole cells (cell is_a cellular component).
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "cell movement" RELATED []
+synonym: "cellular component motion" EXACT [GOC:dph, GOC:jl]
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0008150
+name: biological_process
+namespace: biological_process
+alt_id: GO:0000004
+alt_id: GO:0007582
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GOC:go_curators, GOC:isa_complete]
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. Note that when this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_pombe
+subset: goslim_yeast
+subset: gosubset_prok
+synonym: "biological process" EXACT []
+synonym: "physiological process" EXACT []
+xref: Wikipedia:Biological_process
+
+[Term]
+id: GO:0009987
+name: cellular process
+namespace: biological_process
+alt_id: GO:0008151
+alt_id: GO:0050875
+def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." [GOC:go_curators, GOC:isa_complete]
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "cell growth and/or maintenance" NARROW []
+synonym: "cell physiology" EXACT []
+synonym: "cellular physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0019954
+name: asexual reproduction
+namespace: biological_process
+def: "The biological process in which new individuals are produced by either a single cell or a group of cells, in the absence of any sexual process." [ISBN:0387520546]
+subset: gosubset_prok
+xref: Wikipedia:Asexual_reproduction
+is_a: GO:0000003 ! reproduction
+
+[Term]
+id: GO:0030154
+name: cell differentiation
+namespace: biological_process
+def: "The process in which relatively unspecialized cells, e.g. embryonic or regenerative cells, acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history. Differentiation includes the processes involved in commitment of a cell to a specific fate and its subsequent development to the mature state." [ISBN:0198506732]
+subset: goslim_generic
+subset: goslim_plant
+subset: gosubset_prok
+xref: Wikipedia:Cellular_differentiation
+is_a: GO:0048869 ! cellular developmental process
+
+[Term]
+id: GO:0030435
+name: sporulation resulting in formation of a cellular spore
+namespace: biological_process
+def: "The process in which a relatively unspecialized cell acquires the specialized features of a cellular spore, a cell form that can be used for dissemination, for survival of adverse conditions because of its heat and dessication resistance, and/or for reproduction." [GOC:mah, GOC:pamgo_curators, ISBN:0072992913]
+comment: Note that the synonym 'spore differentiation', like the term name and definition, refers to differentiation into a spore rather than any subsequent developmental changes that a spore may undergo.
+subset: gosubset_prok
+synonym: "cellular spore formation by sporulation" EXACT [GOC:dph, GOC:tb]
+synonym: "spore biosynthesis" EXACT []
+synonym: "spore differentiation" EXACT []
+synonym: "spore formation" EXACT []
+xref: Wikipedia:Sporogenesis
+is_a: GO:0030154 ! cell differentiation
+is_a: GO:0043934 ! sporulation
+is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
+
+[Term]
+id: GO:0030436
+name: asexual sporulation
+namespace: biological_process
+def: "The formation of spores derived from the products of mitosis. Examples of this process are found in Bacterial species." [GOC:mah, PMID:9529886]
+subset: goslim_aspergillus
+subset: gosubset_prok
+synonym: "asexual spore formation" EXACT []
+synonym: "mitotic spore formation" EXACT []
+synonym: "mitotic sporulation" EXACT []
+is_a: GO:0019954 ! asexual reproduction
+is_a: GO:0043934 ! sporulation
+
+[Term]
+id: GO:0031975
+name: envelope
+namespace: cellular_component
+def: "A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers." [GOC:mah, GOC:pz]
+subset: gosubset_prok
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0032502
+name: developmental process
+namespace: biological_process
+def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition." [GOC:isa_complete]
+subset: goslim_aspergillus
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "development" NARROW []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0034301
+name: endospore formation
+namespace: biological_process
+def: "The process in which a cell gives rise to an endospore, a dormant, highly resistant spore with a thick wall that forms within the mother cell. Endospores are produced by some low G+C Gram-positive bacteria in response to harsh conditions." [GOC:ds, GOC:mah, ISBN:0470090278]
+is_a: GO:0043936 ! asexual sporulation resulting in formation of a cellular spore
+
+[Term]
+id: GO:0040011
+name: locomotion
+namespace: biological_process
+def: "Self-propelled movement of a cell or organism from one location to another." [GOC:dgh]
+subset: goslim_generic
+subset: goslim_pir
+subset: gosubset_prok
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0042995
+name: cell projection
+namespace: cellular_component
+def: "A prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, http://www.cogsci.princeton.edu/~wn/]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "cell process" BROAD []
+synonym: "cellular process" BROAD []
+synonym: "cellular projection" EXACT []
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0043934
+name: sporulation
+namespace: biological_process
+def: "The process whose specific outcome is the progression of a spore over time, from its initiation to the mature structure. A spore is a structure that can be used for dissemination, for survival of adverse conditions because of its heat and dessication resistance, and/or for reproduction." [GOC:pamgo_curators]
+subset: goslim_metagenomics
+subset: goslim_yeast
+xref: Wikipedia:Spore
+is_a: GO:0044767 ! single-organism developmental process
+
+[Term]
+id: GO:0043936
+name: asexual sporulation resulting in formation of a cellular spore
+namespace: biological_process
+def: "The formation of a cellular spore derived from the products of mitosis. A cellular spore is a cell form that can be used for dissemination, for survival of adverse conditions because of its heat and dessication resistance, and/or for reproduction." [GOC:pamgo_curators]
+is_a: GO:0030435 ! sporulation resulting in formation of a cellular spore
+is_a: GO:0030436 ! asexual sporulation
+
+[Term]
+id: GO:0044464
+name: cell part
+namespace: cellular_component
+def: "Any constituent part of a cell, the basic structural and functional unit of all organisms." [GOC:jl]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: goantislim_grouping
+subset: gocheck_do_not_annotate
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "cellular subcomponent" EXACT [NIF_Subcellular:sao628508602]
+synonym: "protoplast" RELATED [GOC:mah]
+is_a: GO:0005575 ! cellular_component
+relationship: part_of GO:0005623 ! cell
+
+[Term]
+id: GO:0044699
+name: single-organism process
+namespace: biological_process
+def: "A biological process that involves only one organism." [GOC:jl]
+synonym: "single organism process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0044763
+name: single-organism cellular process
+namespace: biological_process
+def: "Any process that is carried out at the cellular level, occurring within a single organism." [GOC:jl]
+is_a: GO:0009987 ! cellular process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044767
+name: single-organism developmental process
+namespace: biological_process
+def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition, involving only one organism." [GOC:jl]
+is_a: GO:0032502 ! developmental process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0048646
+name: anatomical structure formation involved in morphogenesis
+namespace: biological_process
+def: "The developmental process pertaining to the initial formation of an anatomical structure from unspecified parts. This process begins with the specific processes that contribute to the appearance of the discrete structure and ends when the structural rudiment is recognizable. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GOC:dph, GOC:jid, GOC:tb]
+comment: Note that, for example, the formation of a pseudopod in an amoeba would not be considered formation involved in morphogenesis because it would not be thought of as the formation of an anatomical structure that was part of the shaping of the amoeba during its development. The formation of an axon from a neuron would be considered the formation of an anatomical structure involved in morphogenesis because it contributes to the creation of the form of the neuron in a developmental sense.
+subset: goslim_generic
+synonym: "formation of an anatomical structure involved in morphogenesis" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0032502 ! developmental process
+relationship: part_of GO:0009653
+
+[Term]
+id: GO:0048869
+name: cellular developmental process
+namespace: biological_process
+def: "A biological process whose specific outcome is the progression of a cell over time from an initial condition to a later condition." [GOC:isa_complete]
+subset: gosubset_prok
+is_a: GO:0044763 ! single-organism cellular process
+is_a: GO:0044767 ! single-organism developmental process
+
+[Term]
+id: GO:0048870
+name: cell motility
+namespace: biological_process
+def: "Any process involved in the controlled self-propelled movement of a cell that results in translocation of the cell from one place to another." [GOC:dgh, GOC:dph, GOC:isa_complete, GOC:mlg]
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: gosubset_prok
+synonym: "cell locomotion" EXACT []
+synonym: "cell movement" RELATED []
+synonym: "movement of a cell" EXACT []
+is_a: GO:0006928 ! cellular component movement
+is_a: GO:0040011 ! locomotion
+relationship: part_of GO:0051674
+
+[Term]
+id: GO:0051179
+name: localization
+namespace: biological_process
+def: "Any process in which a cell, a substance, or a cellular entity, such as a protein complex or organelle, is transported to or maintained in a specific location." [GOC:ai]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "establishment and maintenance of cellular component location" NARROW []
+synonym: "establishment and maintenance of localization" EXACT []
+synonym: "establishment and maintenance of position" EXACT []
+synonym: "establishment and maintenance of substance location" NARROW []
+synonym: "establishment and maintenance of substrate location" NARROW []
+synonym: "localisation" EXACT [GOC:mah]
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0071976
+name: cell gliding
+namespace: biological_process
+def: "Cell motility that results in the smooth movement of a cell along a solid surface." [PMID:18461074]
+subset: gosubset_prok
+synonym: "cell gliding motility" EXACT [GOC:mah]
+is_a: GO:0048870 ! cell motility
 
 [Term]
 id: OMP:0000000
@@ -17,23 +354,33 @@ creation_date: 2011-03-10T04:01:50Z
 id: OMP:0000001
 name: cell motility phenotype
 def: "A locomotion phenotype where the trait in question is the self-propelled movement of a cell or cells from one location to another." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0048870 "cell motility"
 xref: PATO:0001488
 is_a: OMP:0000312 ! locomotion phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0005623 ! cell
+intersection_of: inheres_in GO:0048870 ! cell motility
+relationship: inheres_in GO:0005623 ! cell
+relationship: inheres_in GO:0048870 ! cell motility
 creation_date: 2011-03-10T06:55:06Z
 
 [Term]
 id: OMP:0000002
 name: decreased cell motility
 def: "An altered cell motility phenotype where cell motility is decreased relative to a designated control." [OMP:MCC]
-comment: Abolished motility is a cell motility phenotype where a cell completely loses its ability to perform controlled self-propelled movement that results in translocation of the cell from one place to another.
 xref: PATO:0002297
-is_a: OMP:0007001 ! altered cell motility phenotype
+is_a: OMP:0007001 ! altered cell motility
+intersection_of: OMP:0007001 ! altered cell motility
+intersection_of: RO:0000086 PATO:0002302 ! has_quality decreased process quality
+relationship: RO:0000086 PATO:0002302 ! has_quality decreased process quality
 creation_date: 2011-03-10T07:02:42Z
 
 [Term]
 id: OMP:0000003
 name: cell arrangement phenotype
 def: "A microbial phenotype where the trait in question is the arrangement of cells in relation to one another." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
 creation_date: 2011-04-14T02:30:07Z
@@ -42,6 +389,7 @@ creation_date: 2011-04-14T02:30:07Z
 id: OMP:0000004
 name: taxis phenotype
 def: "A locomotion phenotype where the directed movement of a motile cell or organism is in response to an external stimulus." [ISBN:0192800329, OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000312 ! locomotion phenotype
 created_by: mchibucos
 creation_date: 2011-04-14T03:29:20Z
@@ -52,6 +400,9 @@ name: presence of cell motility
 def: "A cell motility phenotype where a cell or cells possess the ability to perform controlled self-propelled movement that results in translocation from one place to another." [OMP:MCC]
 synonym: "motile" RELATED []
 is_a: OMP:0000001 ! cell motility phenotype
+intersection_of: OMP:0000001 ! cell motility phenotype
+intersection_of: RO:0000086 PATO:0000467 ! has_quality present
+relationship: RO:0000086 PATO:0000467 ! has_quality present
 created_by: mchibucos
 creation_date: 2011-04-14T03:35:35Z
 
@@ -108,6 +459,9 @@ id: OMP:0000013
 name: decreased endospore formation
 def: "An altered endospore formation phenotype where endospore formation is decreased relative to a designated control." [OMP:JCH]
 is_a: OMP:0006161 ! altered endospore formation
+intersection_of: OMP:0006161 ! altered endospore formation
+intersection_of: RO:0000086 PATO:0002302 ! has_quality decreased process quality
+relationship: RO:0000086 PATO:0002302 ! has_quality decreased process quality
 created_by: mchibucos
 creation_date: 2011-06-07T10:14:15Z
 
@@ -116,6 +470,9 @@ id: OMP:0000014
 name: increased endospore formation
 def: "An altered endospore formation phenotype where endospore formation is increased relative to a designated control." [OMP:JCH]
 is_a: OMP:0006161 ! altered endospore formation
+intersection_of: OMP:0006161 ! altered endospore formation
+intersection_of: RO:0000086 PATO:0002304 ! has_quality increased process quality
+relationship: RO:0000086 PATO:0002304 ! has_quality increased process quality
 created_by: mchibucos
 creation_date: 2011-06-07T10:14:39Z
 
@@ -140,6 +497,9 @@ id: OMP:0000017
 name: endospore forming
 def: "An endospore formation phenotype where the cell possesses the ability to form an endospore." [OMP:MCC]
 is_a: OMP:0000094 ! endospore formation phenotype
+intersection_of: OMP:0000094 ! endospore formation phenotype
+intersection_of: RO:0000086 PATO:0000467 ! has_quality present
+relationship: RO:0000086 PATO:0000467 ! has_quality present
 created_by: mchibucos
 creation_date: 2011-04-26T03:09:10Z
 
@@ -148,6 +508,9 @@ id: OMP:0000018
 name: non-endospore forming
 def: "An endospore formation phenotype where the cell does not possess the ability to form an endospore." [OMP:MCC]
 is_a: OMP:0000094 ! endospore formation phenotype
+intersection_of: OMP:0000094 ! endospore formation phenotype
+intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
+relationship: RO:0000086 PATO:0000462 ! has_quality absent
 created_by: mchibucos
 creation_date: 2011-04-26T03:09:25Z
 
@@ -293,9 +656,9 @@ creation_date: 2011-06-07T11:25:05Z
 
 [Term]
 id: OMP:0000039
-name: oxygen requirement for growth phenotype
-def: "A growth phenotype dealing with oxygen requirements and ranges for growth." [OMP:WAM]
-is_a: OMP:0000174 ! growth phenotype
+name: oxygen growth range phenotype
+def: "A growth range phenotype dealing with oxygen requirements and the range of oxygen concentrations that allow for growth." [OMP:WAM]
+is_a: OMP:0007192 ! growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:36:04Z
 
@@ -303,7 +666,7 @@ creation_date: 2011-06-06T03:36:04Z
 id: OMP:0000040
 name: decreased cell size
 def: "An altered cell size phenotype where the size of a cell or cells is decreased relative to a designated control." [OMP:MCC]
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: mchibucos
 creation_date: 2011-04-26T03:47:26Z
 
@@ -311,7 +674,7 @@ creation_date: 2011-04-26T03:47:26Z
 id: OMP:0000041
 name: increased cell size
 def: "An altered cell size phenotype where the volume of a cell or cells is increased relative to a designated control." [OMP:MCC]
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: mchibucos
 creation_date: 2011-04-26T03:49:09Z
 
@@ -336,7 +699,10 @@ id: OMP:0000045
 name: increased cell motility
 def: "An altered cell motility phenotype where cell motility is increased relative to a designated control." [OMP:MCC]
 xref: PATO:0002298
-is_a: OMP:0007001 ! altered cell motility phenotype
+is_a: OMP:0007001 ! altered cell motility
+intersection_of: OMP:0007001 ! altered cell motility
+intersection_of: RO:0000086 PATO:0002304 ! has_quality increased process quality
+relationship: RO:0000086 PATO:0002304 ! has_quality increased process quality
 created_by: mchibucos
 creation_date: 2011-04-26T04:08:26Z
 
@@ -533,15 +899,25 @@ creation_date: 2011-02-07T03:47:50Z
 id: OMP:0000070
 name: cell development phenotype
 def: "A microbial phenotype, where the trait in question is the progression of a cell from an initial condition to a later condition." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0048869 "cellular developmental process"
 is_a: OMP:0000000 ! microbial phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0048869 ! cellular developmental process
+relationship: inheres_in GO:0048869 ! cellular developmental process
 created_by: adrienne
 creation_date: 2011-02-02T03:11:48Z
 
 [Term]
 id: OMP:0000071
 name: cell morphology phenotype
-def: "A microbial phenotype, where the trait in question is the form and structure of the cell." [OMP:MCC]
+def: "A microbial phenotype related to the form and structure of an organism, cell, or cells." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
+is_a: PATO:0000051 ! morphology
+intersection_of: PATO:0000051 ! morphology
+intersection_of: inheres_in GO:0005623 ! cell
+relationship: inheres_in GO:0005623 ! cell
 created_by: adrienne
 creation_date: 2011-02-02T03:15:16Z
 
@@ -558,6 +934,10 @@ id: OMP:0000073
 name: cell shape phenotype
 def: "A cell morphology phenotype where the trait in question is the shape of a cell." [OMP:MCC]
 is_a: OMP:0000071 ! cell morphology phenotype
+is_a: PATO:0000052 ! shape
+intersection_of: PATO:0000052 ! shape
+intersection_of: inheres_in GO:0005623 ! cell
+relationship: inheres_in GO:0005623 ! cell
 created_by: adrienne
 creation_date: 2011-02-02T03:18:02Z
 
@@ -566,6 +946,10 @@ id: OMP:0000074
 name: cell size phenotype
 def: "A cell morphology phenotype where the trait in question is the size of a cell." [OMP:MCC]
 is_a: OMP:0000071 ! cell morphology phenotype
+is_a: PATO:0000117 ! size
+intersection_of: PATO:0000117 ! size
+intersection_of: inheres_in GO:0005623 ! cell
+relationship: inheres_in GO:0005623 ! cell
 created_by: adrienne
 creation_date: 2011-02-02T03:18:19Z
 
@@ -641,7 +1025,11 @@ id: OMP:0000083
 name: cell projection phenotype
 def: "A cell morphology phenotype where the structure in question is a prolongation or process extending from a cell." [OMP:MCC]
 synonym: "cell appendage phenotype" EXACT []
+xref: GO:0042995 "cell projection"
 is_a: OMP:0000071 ! cell morphology phenotype
+intersection_of: PATO:0001241 ! physical object quality
+intersection_of: inheres_in GO:0042995 ! cell projection
+relationship: inheres_in GO:0042995 ! cell projection
 created_by: adrienne
 creation_date: 2011-02-02T03:47:44Z
 
@@ -656,9 +1044,12 @@ creation_date: 2011-02-02T03:47:57Z
 
 [Term]
 id: OMP:0000085
-name: cell envelope phenotype
-def: "A cell morphology phenotype where the structure in question is the envelope that surrounds a bacterial cell and includes the cytoplasmic membrane and everything external to the cytoplasmic membrane, encompassing the periplasmic space, cell wall, and outer membrane if present." [OMP:MCC]
+name: envelope phenotype
+def: "A cell morphology phenotype relating to the envelope that surrounds a microbial cell and includes the cytoplasmic membrane and everything external to the cytoplasmic membrane, encompassing the periplasmic space, cell wall, and outer membrane.  Additional layers, such as capsules or S-layers, are also part of the envelope." [OMP:MCC]
 is_a: OMP:0000071 ! cell morphology phenotype
+intersection_of: PATO:0001241 ! physical object quality
+intersection_of: inheres_in GO:0031975 ! envelope
+relationship: inheres_in GO:0031975 ! envelope
 created_by: adrienne
 creation_date: 2011-02-02T03:49:03Z
 
@@ -678,7 +1069,7 @@ creation_date: 2011-02-02T03:19:47Z
 id: OMP:0000087
 name: facultative anaerobe phenotype
 def: "An oxygen requirement for growth phenotype where growth does not require oxygen but growth is better in its presence." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0000039 ! oxygen requirement for growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:42:26Z
 
@@ -712,7 +1103,13 @@ creation_date: 2011-02-02T03:24:11Z
 id: OMP:0000091
 name: sporulation phenotype
 def: "A cell development phenotype where development concerns formation of a spore, a structure that can be used for dissemination, survival in adverse conditions, or reproduction." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0043934 "sporulation"
 is_a: OMP:0000070 ! cell development phenotype
+is_a: PATO:0000001 ! quality
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: increased_in_magnitude_relative_to GO:0043934 ! sporulation
+relationship: increased_in_magnitude_relative_to GO:0043934 ! sporulation
 created_by: adrienne
 creation_date: 2011-02-02T03:24:24Z
 
@@ -736,7 +1133,12 @@ creation_date: 2011-02-02T03:25:02Z
 id: OMP:0000094
 name: endospore formation phenotype
 def: "A sporulation phenotype where development concerns formation of an endospore, a dormant, highly resistant spore with a thick wall that forms within the mother cell." [OMP:MCC]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+xref: GO:0034301 "endospore formation"
 is_a: OMP:0000091 ! sporulation phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0034301 ! endospore formation
+relationship: inheres_in GO:0034301 ! endospore formation
 created_by: adrienne
 creation_date: 2011-02-02T03:25:29Z
 
@@ -752,7 +1154,7 @@ creation_date: 2011-02-02T03:25:47Z
 id: OMP:0000096
 name: myxospore formation phenotype
 def: "A sporulation phenotype where development concerns formation of a myxospore, a differentiated, resting cell usually within a fruiting body by Myxobacteria." [OMP:MCC]
-comment: The myxospore is more resistant to high temperature, dessication, and UV than vegetative myxobacteria.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000091 ! sporulation phenotype
 created_by: adrienne
 creation_date: 2011-02-02T03:26:41Z
@@ -828,7 +1230,7 @@ creation_date: 2011-02-02T02:42:12Z
 id: OMP:0000105
 name: aerotolerant anaerobe phenotype
 def: "An oxygen requirement for growth phenotype, where growth occurs equally well in the presence or absence of oxygen." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0000039 ! oxygen requirement for growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:43:38Z
 
@@ -887,6 +1289,9 @@ id: OMP:0000112
 name: cell motility by gliding
 def: "A presence of cell motility phenotype where a cell or cells exhibits smooth movement along a solid surface." [OMP:MCC]
 is_a: OMP:0000005 ! presence of cell motility
+intersection_of: OMP:0000005 ! presence of cell motility
+intersection_of: inheres_in GO:0071976 ! cell gliding
+relationship: inheres_in GO:0071976 ! cell gliding
 created_by: adrienne
 creation_date: 2011-02-07T03:18:03Z
 
@@ -1064,6 +1469,9 @@ name: absence of cell motility
 def: "A cell motility phenotype where a cell or cells lacks the ability to perform controlled self-propelled movement that results in translocation of the cell from one place to another." [OMP:MCC]
 synonym: "non-motile" RELATED []
 is_a: OMP:0000001 ! cell motility phenotype
+intersection_of: OMP:0000001 ! cell motility phenotype
+intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
+relationship: RO:0000086 PATO:0000462 ! has_quality absent
 created_by: adrienne
 creation_date: 2011-02-18T03:33:32Z
 
@@ -1195,6 +1603,7 @@ creation_date: 2011-02-02T02:47:43Z
 id: OMP:0000150
 name: nucleoid phenotype
 def: "A genetic material phenotype where the trait in question is the nucleoid, the region of a bacterial or archaeal cell to which the DNA is confined." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "genophore" RELATED []
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: adrienne
@@ -1372,7 +1781,7 @@ creation_date: 2011-02-02T02:52:30Z
 id: OMP:0000171
 name: microaerophile phenotype
 def: "An oxygen requirement for growth phenotype where growth requires oxygen levels between 2 to 10 percent for growth and is impaired by atmospheric oxygen levels (20 percent)." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0000039 ! oxygen requirement for growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:44:11Z
 
@@ -1388,6 +1797,7 @@ creation_date: 2011-06-06T04:16:08Z
 id: OMP:0000173
 name: stress response phenotype
 def: "A microbial phenotype related to a cell or organism's response to environmental stress." [OMP:WAM]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:13:32Z
@@ -1395,7 +1805,9 @@ creation_date: 2011-02-02T03:13:32Z
 [Term]
 id: OMP:0000174
 name: growth phenotype
-def: "A microbial phenotype dealing with the environmental factors and requirements for microbial growth." [OMP:WAM]
+def: "A microbial phenotype related to the increase in size or mass of an organism, a part of an organism, or a cell." [GO:0040007, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0040007 "growth"
 is_a: OMP:0000000 ! microbial phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:13:59Z
@@ -1446,6 +1858,7 @@ creation_date: 2011-02-02T03:22:43Z
 id: OMP:0000180
 name: metabolic phenotype
 def: "A microbial phenotype that deals with the chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances." [GO:0008152]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "Metabolism" EXACT []
 is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
@@ -1469,12 +1882,12 @@ creation_date: 2011-02-07T03:52:30Z
 
 [Term]
 id: OMP:0000183
-name: anaerobic respiration with sulfate as the terminal electron acceptor
-def: "An anaerobic respiration phenotype where sulfate (SO4) is used as the terminal electron acceptor." [ISBN:978-0-07-340240-6, OMP:DAS]
+name: anaerobic respiration with sulfate as the terminal acceptor
+def: "A presence of anaerobic respiration phenotype where sulfate (SO4) is used as the terminal electron acceptor." [ISBN:978-0-07-340240-6, OMP:DAS]
 synonym: "dissimilatory sulfate reduction" EXACT [ISBN:978-0-07-340240-6]
 synonym: "sulfide production" NARROW []
 xref: GO:0019420 "dissimilatory sulfate reduction"
-is_a: OMP:0007072 ! anaerobic respiration phenotype
+is_a: OMP:0007181 ! presence of anaerobic respiration
 created_by: Adrienne
 creation_date: 2011-02-07T03:52:44Z
 
@@ -1482,7 +1895,7 @@ creation_date: 2011-02-07T03:52:44Z
 id: OMP:0000184
 name: obligate anaerobe phenotype
 def: "An oxygen requirement for growth phenotype where growth does not occur in the presence of oxygen." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0000039 ! oxygen requirement for growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:29:34Z
 
@@ -1490,7 +1903,7 @@ creation_date: 2011-02-02T03:29:34Z
 id: OMP:0000185
 name: obligate aerobe phenotype
 def: "An oxygen requirement for growth phenotype where growth is dependent on atmospheric oxygen." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0000039 ! oxygen requirement for growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:29:51Z
 
@@ -1542,6 +1955,7 @@ creation_date: 2011-02-02T03:35:15Z
 id: OMP:0000192
 name: chemical production phenotype
 def: "A metabolic phenotype that deals with the chemical reactions and pathways resulting in the formation of chemicals." [OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000180 ! metabolic phenotype
 created_by: Adrienne
 creation_date: 2011-02-03T11:24:08Z
@@ -1616,7 +2030,7 @@ creation_date: 2011-03-02T01:41:52Z
 id: OMP:0000202
 name: outer membrane vesicles phenotype
 def: "A cell envelope phenotype where a cell or cells have the ability to produce outer membrane vesicles." [OMP:JCH, PMID:20825345]
-is_a: OMP:0000085 ! cell envelope phenotype
+is_a: OMP:0000085 ! envelope phenotype
 created_by: Adrienne
 creation_date: 2011-03-02T01:43:12Z
 
@@ -1626,7 +2040,7 @@ name: capsule phenotype
 def: "A cell envelope phenotype where the trait in question is the capsule, a layer of polysaccharide or poly-amino acids surrounding a microbial cell.  When present, the capsule is the outermost layer of the cell envelope." [ISBN:9780073402406, OMP:DAS]
 synonym: "glycocalyx" RELATED []
 synonym: "slime layer" RELATED []
-is_a: OMP:0000085 ! cell envelope phenotype
+is_a: OMP:0000085 ! envelope phenotype
 created_by: mchibucos
 creation_date: 2011-06-07T09:44:51Z
 
@@ -1661,6 +2075,7 @@ creation_date: 2011-06-07T03:17:46Z
 id: OMP:0000207
 name: serotype phenotype
 def: "A microbial phenotype that is distinguished by the presence a specific surface antigen." [OMP:MCC]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 synonym: "antigenic typing phenotype" RELATED []
 synonym: "serological test phenotype" RELATED []
 synonym: "serovar" EXACT []
@@ -1722,6 +2137,7 @@ creation_date: 2011-06-07T09:53:17Z
 id: OMP:0000214
 name: cell staining phenotype
 def: "A microbial phenotype where a cell or cells are treated with a dye or dyes for purposes of identification and classification." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: Adrienne
 creation_date: 2011-02-03T01:33:37Z
@@ -1799,6 +2215,7 @@ creation_date: 2011-02-03T04:45:37Z
 id: OMP:0000224
 name: energy metabolism phenotype
 def: "A metabolic phenotype that deals with the specific process an organism uses to produce energy carriers." [OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "bioenergetics" EXACT []
 is_a: OMP:0000180 ! metabolic phenotype
 created_by: mchibucos
@@ -1993,6 +2410,7 @@ creation_date: 2011-07-21T12:51:15Z
 id: OMP:0000253
 name: gene expression phenotype
 def: "A microbial phenotype that affects expression of a gene or genes.  Gene expression includes transcription, RNA processing, and, for protein-coding genes, translation and protein maturation." [ISBN:9781615835409, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000142 "gene expression phenotype"
 is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
@@ -2037,7 +2455,7 @@ creation_date: 2011-07-21T01:38:10Z
 id: OMP:0000267
 name: increased gene expression
 def: "An altered gene expression phenotype where expression of a gene or genes is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0007080 ! altered gene expression phenotype
+is_a: OMP:0007080 ! altered gene expression
 created_by: mchibucos
 creation_date: 2011-07-21T02:01:35Z
 
@@ -2045,7 +2463,7 @@ creation_date: 2011-07-21T02:01:35Z
 id: OMP:0000268
 name: decreased gene expression
 def: "An altered gene expression phenotype where expression of a gene or genes is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0007080 ! altered gene expression phenotype
+is_a: OMP:0007080 ! altered gene expression
 created_by: mchibucos
 creation_date: 2011-07-21T02:02:26Z
 
@@ -2053,6 +2471,7 @@ creation_date: 2011-07-21T02:02:26Z
 id: OMP:0000269
 name: protein activity phenotype
 def: "A microbial phenotype dealing with enzymatic or other type of protein activity." [OMP:WAM]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
 creation_date: 2011-07-21T02:05:51Z
@@ -2061,6 +2480,7 @@ creation_date: 2011-07-21T02:05:51Z
 id: OMP:0000274
 name: antimicrobial compound resistance phenotype
 def: "A microbial phenotype related to resistance or sensitivity to compounds that kill (microbiocidal) or inhibit growth (microbiostatic) of a microbe." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "antibiotic resistance phenotype" NARROW []
 synonym: "antibiotic sensitivity phenotype" RELATED []
 synonym: "antifungal resistance phenotype" NARROW []
@@ -2076,7 +2496,7 @@ id: OMP:0000280
 name: increased cell length
 def: "An altered cell size phenotype where the long axis of a cell or cells is increased relative to a designated control." [OMP:DAS]
 comment: The mukB mutant appear to have elongated cell length. This is different from cell filamentation. PMID:1989883.
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: mchibucos
 creation_date: 2011-07-21T02:37:15Z
 
@@ -2110,6 +2530,7 @@ creation_date: 2011-07-21T04:07:44Z
 id: OMP:0000290
 name: genetic material phenotype
 def: "A microbial phenotype dealing with the various aspects of the molecular carrier of an organism's primary genetic information." [ISBN:9780198529170, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "double stranded DNA" RELATED [ISBN:9780198529170]
 synonym: "RNA" RELATED [ISBN:9780198529170]
 synonym: "single stranded DNA" RELATED [ISBN:9780198529170]
@@ -2130,6 +2551,7 @@ creation_date: 2011-07-21T04:25:09Z
 id: OMP:0000294
 name: DNA supercoiling phenotype
 def: "A genetic material phenotype related to supercoiling of a double-stranded DNA molecule." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: mchibucos
 creation_date: 2011-07-21T04:46:29Z
@@ -2182,6 +2604,7 @@ creation_date: 2011-07-21T05:44:45Z
 id: OMP:0000307
 name: DNA replication phenotype
 def: "A macromolecular biosynthesis and genetic material phenotype related to the processes involved in the duplication of a molecule of DNA." [OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 is_a: OMP:0000306 ! macromolecular biosynthesis phenotype
 is_a: OMP:0005115 ! cell cycle phenotype
@@ -2200,6 +2623,7 @@ creation_date: 2011-07-21T05:46:05Z
 id: OMP:0000309
 name: biosynthetic phenotype
 def: "A metabolic phenotype dealing with the chemical reactions and pathways resulting in the formation of substances; typically the energy-requiring part of metabolism in which simpler substances are transformed into more complex ones." [GO:0009058]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "Biosynthesis" EXACT []
 is_a: OMP:0000180 ! metabolic phenotype
 created_by: mchibucos
@@ -2225,7 +2649,12 @@ creation_date: 2011-07-21T05:50:25Z
 id: OMP:0000312
 name: locomotion phenotype
 def: "A microbial phenotype, where the trait in question is the self-propelled movement of a cell from one location to another." [GO:0040011, OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0040011 "locomotion"
 is_a: OMP:0000000 ! microbial phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0040011 ! locomotion
+relationship: inheres_in GO:0040011 ! locomotion
 created_by: mchibucos
 creation_date: 2012-04-05T11:43:53Z
 
@@ -2247,6 +2676,7 @@ synonym: "Spectinomycin" NARROW []
 synonym: "Spiramycin" NARROW []
 synonym: "Telithromycin" NARROW []
 synonym: "Troleandomycin" NARROW []
+xref: CHEBI:25105
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: mchibucos
 creation_date: 2012-11-02T01:51:04Z
@@ -2263,6 +2693,7 @@ synonym: "piritrexim" NARROW []
 synonym: "pyrimethamine" NARROW [CHEBI:8673]
 synonym: "trimethoprim" NARROW [CHEBI:45924]
 synonym: "trimetrexate" NARROW []
+xref: CHEBI:38338
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: mchibucos
 creation_date: 2012-11-02T02:02:58Z
@@ -2288,7 +2719,7 @@ creation_date: 2012-11-02T02:04:58Z
 [Term]
 id: OMP:0000336
 name: beta-lactam resistance phenotype
-def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to compounds that contain a beta-lactam ring in their molecular structure." [OMP:MCC]
+def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to compounds that contain a beta-lactam ring in their molecular structure." [CHEBI:27933, OMP:MCC]
 synonym: "ampicillin" NARROW [CHEBI:28971]
 synonym: "beta-lactam sensitivity phenotype" RELATED []
 synonym: "carbapenams" NARROW [CHEBI:64510]
@@ -2298,6 +2729,7 @@ synonym: "cephaloxporins" NARROW []
 synonym: "cephamycin" NARROW [CHEBI:55429]
 synonym: "monobactams" NARROW [CHEBI:50695]
 synonym: "penicillin" NARROW [CHEBI:51356]
+xref: CHEBI:27933
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: mchibucos
 creation_date: 2012-11-02T02:06:13Z
@@ -2340,9 +2772,10 @@ creation_date: 2012-11-04T02:55:41Z
 [Term]
 id: OMP:0000450
 name: trace element utilization phenotype
-def: "A metabolic phenotype which is any chemical element required by living organisms in minute amounts." [OMP:JCH]
-synonym: "micronutrient " EXACT []
-is_a: OMP:0000180 ! metabolic phenotype
+def: "A nutrient utilization phenotype that is related to utilization of chemical elements required by living organisms in minute amounts." [OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+synonym: "micronutrient utilization" EXACT []
+is_a: OMP:0006022 ! nutrient utilization phenotype
 created_by: mchibucos
 creation_date: 2013-05-23T01:35:26Z
 
@@ -2384,6 +2817,7 @@ id: OMP:0000455
 name: alkaloid resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to compounds containing basic nitrogen in a heterocyclic structure." [CHEBI:22315, OMP:WAM]
 synonym: "alkaloid sensitivity phenotype" RELATED []
+xref: CHEBI:22315
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: mchibucos
 creation_date: 2013-05-23T01:53:57Z
@@ -2436,7 +2870,7 @@ creation_date: 2013-05-23T01:58:55Z
 id: OMP:0000461
 name: outer membrane phenotype
 def: "A cell envelope phenotype where the trait in question is the presence or absence of  a lipid bilayer membrane located outside the peptidoglycan cell wall." [ISBN:9780073402406, OMP:DAS]
-is_a: OMP:0000085 ! cell envelope phenotype
+is_a: OMP:0000085 ! envelope phenotype
 created_by: siegele
 creation_date: 2013-08-22T01:43:06Z
 
@@ -2528,7 +2962,7 @@ creation_date: 2014-07-23T12:18:08Z
 id: OMP:0005002
 name: temperature growth range phenotype
 def: "A growth phenotype where the trait in question is the temperature requirements and range needed for microbial growth." [OMP:WAM]
-is_a: OMP:0000174 ! growth phenotype
+is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-03T01:06:05Z
 
@@ -2575,8 +3009,8 @@ creation_date: 2013-09-04T13:40:27Z
 [Term]
 id: OMP:0005008
 name: pH growth range phenotype
-def: "A growth phenotype related to the pH range required for growth of a cell or organism." [OMP:WAM]
-is_a: OMP:0000174 ! growth phenotype
+def: "A growth range phenotype related to the pH range that allows growth of a cell or organism." [OMP:WAM]
+is_a: OMP:0007192 ! growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-04T13:57:28Z
 
@@ -2607,16 +3041,16 @@ creation_date: 2013-09-04T16:24:24Z
 [Term]
 id: OMP:0005012
 name: pressure growth range phenotype
-def: "A growth phenotype dealing with the pressure requirements for growth." [OMP:WAM]
-is_a: OMP:0000174 ! growth phenotype
+def: "A growth range phenotype dealing with the pressure requirements for growth of an organism or cell." [OMP:WAM]
+is_a: OMP:0007192 ! growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-09T11:42:28Z
 
 [Term]
 id: OMP:0005013
-name: solute and water activity phenotype
-def: "A growth phenotype dealing with the osmotic requirements for growth." [OMP:WAM]
-is_a: OMP:0000174 ! growth phenotype
+name: solute and water activity growth range phenotype
+def: "A growth range phenotype dealing with the range of solute concentrations (water activity) that allow for growth of an organism or cell." [OMP:WAM]
+is_a: OMP:0007192 ! growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-09T11:43:45Z
 
@@ -2633,7 +3067,7 @@ creation_date: 2013-09-09T11:49:53Z
 id: OMP:0005015
 name: osmotolerant growth
 def: "A solute and water activity phenotype where the growth can occur over wide ranges of water activity or osmotic concentration." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0005013 ! solute and water activity phenotype
+is_a: OMP:0005013 ! solute and water activity growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-09T13:05:24Z
 
@@ -2641,7 +3075,7 @@ creation_date: 2013-09-09T13:05:24Z
 id: OMP:0005016
 name: halophilic growth
 def: "A solute and water activity phenotype where the growth requires high levels of sodium chloride, usually above or about 0.2 M." [ISBN:9780073402406, OMP:WAM]
-is_a: OMP:0005013 ! solute and water activity phenotype
+is_a: OMP:0005013 ! solute and water activity growth range phenotype
 created_by: wmeza
 creation_date: 2013-09-09T13:06:03Z
 
@@ -2714,6 +3148,7 @@ creation_date: 2013-09-20T13:26:46Z
 id: OMP:0005027
 name: stress-induced mutagenesis phenotype
 def: "A genetic material phenotype that refers to the process(es) that give rise to mutations that occur after imposition of a non-lethal stress." [OMP:WAM, PMID:17917874, PMID:3045565]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-09-20T15:00:09Z
@@ -2828,14 +3263,16 @@ creation_date: 2013-10-16T17:15:59Z
 id: OMP:0005042
 name: homologous recombination phenotype
 def: "A genetic material phenotype dealing with the process that occurs when two segments of DNA with identical or very similar sequences pair up and exchange or replace some portion of their DNA." [ISBN:9780471768654, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-18T18:34:37Z
 
 [Term]
 id: OMP:0005043
-name: site specific recombination phenotype
+name: site-specific recombination phenotype
 def: "A genetic material phenotype where there is non-homologous recombination at a particular sequence of DNA." [ISBN:9780471768654, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-18T18:34:58Z
@@ -2852,6 +3289,7 @@ creation_date: 2014-07-24T13:27:41Z
 id: OMP:0005045
 name: mitotic recombination phenotype
 def: "A genetic material phenotype dealing with the exchange, reciprocal or nonreciprocal of genetic material between one DNA  molecule and a homologous region of DNA that occurs  during mitotic cell cycles." [ISBN:9780198529170, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-18T18:38:05Z
@@ -2860,6 +3298,7 @@ creation_date: 2013-10-18T18:38:05Z
 id: OMP:0005046
 name: gene silencing phenotype
 def: "A genetic material phenotype dealing with the transcriptional or post-transcriptional processes carried out at the cellular level that results in long-term gene inactivation." [GO:0016458, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-18T18:38:43Z
@@ -2868,6 +3307,7 @@ creation_date: 2013-10-18T18:38:43Z
 id: OMP:0005047
 name: chromosome segregation phenotype
 def: "A genetic material phenotype concerning the process in which replicated chromosomes are physically separated and apportioned as sets to daughter cells." [GO:0007059, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:\:0007059 "chromosome segregation"
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
@@ -2877,6 +3317,7 @@ creation_date: 2013-10-18T18:39:04Z
 id: OMP:0005048
 name: mutation frequency phenotype
 def: "A genetic material phenotype dealing with the frequency of mutations." [ISBN:9780198529170, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-18T18:39:27Z
@@ -2949,7 +3390,7 @@ creation_date: 2013-10-29T13:15:06Z
 id: OMP:0005057
 name: absence of site-specific recombination
 def: "A site-specific recombination phenotype where a cell or cells lack the ability to perform site-specific recombination." [OMP:WAM]
-is_a: OMP:0005043 ! site specific recombination phenotype
+is_a: OMP:0005043 ! site-specific recombination phenotype
 created_by: wmeza
 creation_date: 2013-10-29T13:15:28Z
 
@@ -2957,7 +3398,7 @@ creation_date: 2013-10-29T13:15:28Z
 id: OMP:0005058
 name: presence of site-specific recombination
 def: "A site-specific recombination phenotype where a cell or cells have the ability to perform site-specific recombination." [OMP:WAM]
-is_a: OMP:0005043 ! site specific recombination phenotype
+is_a: OMP:0005043 ! site-specific recombination phenotype
 created_by: wmeza
 creation_date: 2013-10-29T13:20:16Z
 
@@ -2965,6 +3406,7 @@ creation_date: 2013-10-29T13:20:16Z
 id: OMP:0005059
 name: transposable element transposition phenotype
 def: "A genetic material phenotype dealing with DNA sequences that change positions within the genome." [ISBN:9780198529170, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000290 ! genetic material phenotype
 created_by: wmeza
 creation_date: 2013-10-30T18:35:34Z
@@ -3357,7 +3799,7 @@ creation_date: 2014-05-07T12:40:14Z
 id: OMP:0005108
 name: increased cell diameter
 def: "An altered cell size phenotype where the diameter or a cell or cells is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: wmeza
 creation_date: 2014-07-02T18:39:12Z
 
@@ -3365,7 +3807,7 @@ creation_date: 2014-07-02T18:39:12Z
 id: OMP:0005109
 name: decreased cell diameter
 def: "An altered cell size phenotype where the diameter or a cell or cells is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: wmeza
 creation_date: 2014-07-02T18:46:00Z
 
@@ -3397,9 +3839,9 @@ creation_date: 2014-07-07T13:50:45Z
 id: OMP:0005115
 name: cell cycle phenotype
 def: "A growth phenotype that relates to the progression of biochemical and morphological events that occur in a cell during cell replication or nuclear replication events.  Canonically, the cell cycle comprises the replication and segregation of genetic material followed by the division of the cell, but in some cells or organisms DNA replication and/or nuclear division may not be immediately followed by cell division." [GO:0007049, OMP:WAM]
-synonym: "cell division cycle" RELATED []
+synonym: "cell division phenotype" RELATED []
 xref: GO:0007049 "cell cycle"
-is_a: OMP:0000174 ! growth phenotype
+is_a: OMP:0007167 ! reproduction phenotype
 created_by: wmeza
 creation_date: 2014-08-07T14:54:52Z
 
@@ -3407,6 +3849,7 @@ creation_date: 2014-08-07T14:54:52Z
 id: OMP:0005116
 name: multicellular phenotype
 def: "A microbial phenotype involving two or more cells of the same or different species." [OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: wmeza
 creation_date: 2014-07-08T17:10:17Z
@@ -3425,7 +3868,7 @@ name: altered acidic pH stress phenotype
 def: "A acidic pH stress phenotype altered relative to a designated control." [OMP:WAM]
 synonym: "acid pH stress" RELATED []
 is_a: OMP:0005040 ! acidic pH stress phenotype
-is_a: OMP:0007158 ! altered stress response phenotype
+is_a: OMP:0007158 ! altered stress response
 created_by: wmeza
 creation_date: 2014-07-11T12:55:53Z
 
@@ -3434,7 +3877,7 @@ id: OMP:0005119
 name: altered alkaline pH stress phenotype
 def: "An alkaline pH stress phenotype altered relative to a designated control." [OMP:WAM]
 is_a: OMP:0005041 ! alkaline pH stress phenotype
-is_a: OMP:0007158 ! altered stress response phenotype
+is_a: OMP:0007158 ! altered stress response
 created_by: wmeza
 creation_date: 2014-07-11T12:58:56Z
 
@@ -3443,7 +3886,7 @@ id: OMP:0005120
 name: altered dessication stress phenotype
 def: "A dessication stress phenotype altered relative to designated control." [OMP:WAM]
 is_a: OMP:0005080 ! dessication stress phenotype
-is_a: OMP:0007158 ! altered stress response phenotype
+is_a: OMP:0007158 ! altered stress response
 created_by: wmeza
 creation_date: 2014-07-11T12:59:47Z
 
@@ -3452,7 +3895,7 @@ id: OMP:0005121
 name: altered freeze/thawing stress phenotype
 def: "A freeze/thawing stress phenotype altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005039 ! freeze/thawing stress phenotype
-is_a: OMP:0007158 ! altered stress response phenotype
+is_a: OMP:0007158 ! altered stress response
 created_by: wmeza
 creation_date: 2014-07-11T13:00:23Z
 
@@ -3514,7 +3957,7 @@ creation_date: 2014-07-15T17:31:56Z
 
 [Term]
 id: OMP:0005129
-name: altered biofilm phenotype
+name: altered biofilm
 def: "A biofilm phenotype that is altered relative to a designated control." [OMP:WAM]
 is_a: OMP:0000176 ! biofilm phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -3579,17 +4022,17 @@ creation_date: 2014-08-07T14:55:46Z
 
 [Term]
 id: OMP:0005137
-name: increased cell division
-def: "An altered cell division phenotype where cell division is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0005136 ! altered cell cycle phenotype
+name: increased septation
+def: "An altered septation phenotype where formation of new cell septa is increased relative to a designated control." [OMP:WAM]
+is_a: OMP:0007165 ! altered septation phenotype
 created_by: wmeza
 creation_date: 2014-08-07T14:57:39Z
 
 [Term]
 id: OMP:0005138
-name: decreased cell division
-def: "A cell division phenotype where cell division is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0005136 ! altered cell cycle phenotype
+name: decreased septation
+def: "An altered septation phenotype where formation of new cell septa is decreased relative to a designated control." [OMP:WAM]
+is_a: OMP:0007165 ! altered septation phenotype
 created_by: wmeza
 creation_date: 2014-08-07T14:58:34Z
 
@@ -3630,7 +4073,7 @@ creation_date: 2014-03-26T21:33:14Z
 id: OMP:0006005
 name: altered site specific recombination phenotype
 def: "A site specific recombination phenotype where recombination is altered relative to a designated control." [OMP:JCH]
-is_a: OMP:0005043 ! site specific recombination phenotype
+is_a: OMP:0005043 ! site-specific recombination phenotype
 created_by: jonathanherrera
 creation_date: 2014-07-24T15:21:56Z
 
@@ -3775,7 +4218,7 @@ creation_date: 2014-07-24T17:26:03Z
 id: OMP:0006022
 name: nutrient utilization phenotype
 def: "A microbial phenotype involving the utilization of a nutrient, which is a substance used for biosynthesis or energy release." [ISBN:9780073402406]
-comment: A nutrient by used as is, catabolized, or modified before being used.
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: jonathanherrera
 creation_date: 2013-09-10T14:40:06Z
@@ -3784,6 +4227,7 @@ creation_date: 2013-09-10T14:40:06Z
 id: OMP:0006023
 name: carbon source utilization phenotype
 def: "A nutrient utilization phenotype where the nutrient is being used as a source of carbon." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0006022 ! nutrient utilization phenotype
 created_by: jonathanherrera
 creation_date: 2013-09-10T17:51:21Z
@@ -3809,6 +4253,7 @@ creation_date: 2014-07-24T17:39:51Z
 id: OMP:0006026
 name: nitrogen source utilization phenotype
 def: "A nutrient utilization phenotype where the nutrient is being utilized as a source of nitrogen." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0006022 ! nutrient utilization phenotype
 created_by: jonathanherrera
 creation_date: 2013-09-10T17:51:21Z
@@ -3837,6 +4282,7 @@ def: "An antimicrobial compound resistance phenotype related to resistance or se
 comment: Azoles can also contain one or more other non-carbon atoms, such as nitrogen, sulfur or oxygen. A mancude ring has the maximum number of noncumulative double bonds, e.g. benzene, indole.
 synonym: "azole sensitivity phenotype" RELATED []
 synonym: "Triazole" NARROW [CHEBI:38597]
+xref: CHEBI:68452
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-10T19:15:32Z
@@ -3846,6 +4292,7 @@ id: OMP:0006029
 name: quinolone resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance is to a aromatic heterocyclic compounds each of which contains a benzene ring ortho fused to carbons 2 and 3 of a pyridine ring." [CHEBI:26513, ISBN:9780072992915, OMP:JCH]
 synonym: "quinoline sensitivity phenotype" RELATED []
+xref: CHEBI:26513
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-10T19:15:32Z
@@ -3854,6 +4301,7 @@ creation_date: 2013-10-10T19:15:32Z
 id: OMP:0006030
 name: dinitrogen utilization phenotype
 def: "A nitrogen source utilization phenotype where dinitrogen (N2) is the source of nitrogen." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "diatomic nitrogen utilization phenotype" RELATED []
 synonym: "nitrogen fixation phenotype" RELATED []
 is_a: OMP:0006026 ! nitrogen source utilization phenotype
@@ -3899,7 +4347,7 @@ id: OMP:0006035
 name: altered budding phenotype
 def: "A budding phenotype where the process of budding is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000089 ! budding phenotype
-is_a: OMP:0007144 ! altered asexual reproduction phenotype
+is_a: OMP:0007144 ! altered asexual reproduction
 created_by: jonathanherrera
 creation_date: 2014-07-24T18:10:38Z
 
@@ -3907,7 +4355,7 @@ creation_date: 2014-07-24T18:10:38Z
 id: OMP:0006036
 name: decreased resistance to macrolide
 def: "A macrolide compound resistance phenotype where resistance to a macrolide compound is decreased relative to a designated control." [OMP:JCH]
-synonym: "increase sensitivity to macrolide" RELATED []
+synonym: "increased sensitivity to macrolide" RELATED []
 is_a: OMP:0006031 ! altered macrolide resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:35:04Z
@@ -3916,8 +4364,7 @@ creation_date: 2013-10-11T17:35:04Z
 id: OMP:0006037
 name: increased resistance to macrolide
 def: "A macrolide compound resistance phenotype where resistance to a macrolide compound is increased relative to a designated control." [OMP:JCH]
-synonym: "abolish sensitivity to macrolide" NARROW []
-synonym: "decrease sensitivity to macrolide" RELATED []
+synonym: "decreased sensitivity to macrolide" RELATED []
 is_a: OMP:0006031 ! altered macrolide resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:35:04Z
@@ -3943,7 +4390,7 @@ creation_date: 2013-10-11T17:35:04Z
 id: OMP:0006040
 name: decreased resistance to quinolone
 def: "A quinolone compound resistance phenotype where resistance to a quinolone compound is decreased relative to a designated control." [OMP:JCH]
-synonym: "increase sensitivity to quinoline" RELATED []
+synonym: "increased sensitivity to quinoline" RELATED []
 is_a: OMP:0005034 ! altered quinolone resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:38:00Z
@@ -3952,8 +4399,7 @@ creation_date: 2013-10-11T17:38:00Z
 id: OMP:0006041
 name: increased resistance to quinolone
 def: "A quinolone compound resistance phenotype where resistance to a quinolone compound is increased relative to a designated control." [OMP:JCH]
-synonym: "abolish sensitivity to quinolone" RELATED []
-synonym: "decrease sensitivity to quinoline" RELATED []
+synonym: "decreased sensitivity to quinoline" RELATED []
 is_a: OMP:0005034 ! altered quinolone resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:38:00Z
@@ -3979,7 +4425,7 @@ creation_date: 2013-10-11T17:38:00Z
 id: OMP:0006044
 name: decreased resistance to beta-lactam
 def: "A beta-lactam compound resistance phenotype where resistance to a beta-lactam compound is decreased relative to a designated control." [OMP:JCH]
-synonym: "increase sensitivity to beta-lactam" RELATED []
+synonym: "increased sensitivity to beta-lactam" RELATED []
 is_a: OMP:0006021 ! altered beta-lactam resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:40:34Z
@@ -4090,6 +4536,7 @@ synonym: "kanamycin" NARROW []
 synonym: "neomycin" NARROW []
 synonym: "streptomycin" NARROW []
 synonym: "tobramycin" NARROW []
+xref: CHEBI:22507
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-22T13:29:22Z
@@ -4133,7 +4580,7 @@ creation_date: 2013-10-22T19:24:20Z
 id: OMP:0006061
 name: decreased resistance to tetracycline
 def: "A tetracycline compound resistance phenotype where resistance to a tetracycline compound is decreased relative to a designated control." [OMP:JCH]
-synonym: "increase sensitivity to tetracycline" RELATED []
+synonym: "increased sensitivity to tetracycline" RELATED []
 is_a: OMP:0005029 ! altered tetracycline resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-23T19:27:35Z
@@ -4146,6 +4593,7 @@ synonym: "Bacteriostatic" BROAD []
 synonym: "chlortetracycline" RELATED []
 synonym: "oxytetracycline " NARROW [CHEBI:27701]
 synonym: "tetracycline sensitivity phenotype" RELATED []
+xref: CHEBI:27902
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-23T17:21:25Z
@@ -4154,8 +4602,7 @@ creation_date: 2013-10-23T17:21:25Z
 id: OMP:0006063
 name: increased resistance to tetracycline
 def: "A tetracycline compound resistance phenotype where resistance to a tetracycline compound is increased relative to a designated control." [OMP:JCH]
-synonym: "abolish sensitivity to tetracycline" RELATED []
-synonym: "decrease sensitivity to tetracycline" RELATED []
+synonym: "decreased sensitivity to tetracycline" RELATED []
 is_a: OMP:0005029 ! altered tetracycline resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-23T19:27:35Z
@@ -4182,6 +4629,7 @@ id: OMP:0006066
 name: chloramphenicol resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to an organochlorine compound that is dichloro-substituted acetamide containing a nitrobenzene ring, an amide bond and two alcohol functions." [CHEBI:17698, ISBN:9780072992915, OMP:JCH]
 synonym: "chloramphenicol sensitivity phenotype" RELATED []
+xref: CHEBI:17698
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-24T12:57:25Z
@@ -4190,7 +4638,7 @@ creation_date: 2013-10-24T12:57:25Z
 id: OMP:0006067
 name: decreased resistance to chloramphenicol
 def: "A chloramphenicol compound resistance phenotype where resistance to a chloramphenicol compound is decreased relative to a designated control." [OMP:JCH]
-synonym: "increase sensitivity to chloramphenicol" RELATED []
+synonym: "increased sensitivity to chloramphenicol" RELATED []
 is_a: OMP:0006025 ! altered chloramphenicol resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-24T19:41:11Z
@@ -4199,8 +4647,8 @@ creation_date: 2013-10-24T19:41:11Z
 id: OMP:0006068
 name: increased resistance to chloramphenicol
 def: "A chloramphenicol compound resistance phenotype where resistance to a chloramphenicol compound is increased relative to a designated control." [OMP:JCH]
-synonym: "abolish sensitivity to chloramphenicol" RELATED []
-synonym: "decrease sensitivity to chloramphenicol" RELATED []
+synonym: "<new synonym>" RELATED []
+synonym: "decreased sensitivity to chloramphenicol" RELATED []
 is_a: OMP:0006025 ! altered chloramphenicol resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-24T19:41:11Z
@@ -4251,8 +4699,7 @@ creation_date: 2014-04-30T22:48:59Z
 id: OMP:0006074
 name: increased resistance to pteridine
 def: "A pteridine resistance phenotype where resistance to a pteridine compound is increased relative to a designated control." [CHEBI:27601, OMP:DAS]
-synonym: "abolish sensitivity to pteridine" RELATED []
-synonym: "decrease sensitivity to pteridine" RELATED []
+synonym: "decreased sensitivity to pteridine" RELATED []
 is_a: OMP:0006032 ! altered pteridine resistance phenotype
 created_by: jonathanherrera
 creation_date: 2014-05-12T13:04:39Z
@@ -4812,8 +5259,8 @@ creation_date: 2014-07-25T15:11:04Z
 
 [Term]
 id: OMP:0006146
-name: abolished resistance to quinolones
-def: "A decreased resistance to quinolones phenotype where resistance to quinolones is abolished." [OMP:JCH]
+name: abolished resistance to quinolone
+def: "A decreased resistance to quinolone phenotype where resistance to a quinolone is abolished." [OMP:JCH]
 is_a: OMP:0006040 ! decreased resistance to quinolone
 created_by: jonathanherrera
 creation_date: 2014-07-25T15:12:28Z
@@ -4936,6 +5383,10 @@ id: OMP:0006161
 name: altered endospore formation
 def: "A endospore formation phenotype where endospore formation is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000094 ! endospore formation phenotype
+is_a: OMP:0007085 ! altered phenotype
+intersection_of: OMP:0000094 ! endospore formation phenotype
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
 created_by: jonathanherrera
 creation_date: 2014-07-29T15:37:45Z
 
@@ -4983,7 +5434,7 @@ creation_date: 2014-08-08T15:51:18Z
 id: OMP:0006167
 name: abolished cell motility by swarming
 def: "A decreased cell motility by swarming phenotype where the ability of cells to swarm is abolished." [OMP:JCH]
-is_a: OMP:0000133 ! absence of cell motility
+is_a: OMP:0007000 ! abolished cell motility
 is_a: OMP:0007092 ! decreased cell motility by swarming
 created_by: jonathanherrera
 creation_date: 2014-08-13T17:25:47Z
@@ -4993,7 +5444,7 @@ id: OMP:0006168
 name: altered binary fission phenotype
 def: "A binary fission phenotype where the process of binary fission is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0007067 ! binary fission phenotype
-is_a: OMP:0007144 ! altered asexual reproduction phenotype
+is_a: OMP:0007144 ! altered asexual reproduction
 created_by: jonathanherrera
 creation_date: 2014-08-08T15:59:42Z
 
@@ -5034,7 +5485,7 @@ id: OMP:0006174
 name: altered multiple fission phenotype
 def: "A multiple fission phenotype where the process of multiple fission is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0007068 ! multiple fission phenotype
-is_a: OMP:0007144 ! altered asexual reproduction phenotype
+is_a: OMP:0007144 ! altered asexual reproduction
 created_by: jonathanherrera
 creation_date: 2014-08-08T16:42:12Z
 
@@ -5068,15 +5519,21 @@ name: abolished cell motility
 def: "A decreased cell motility phenotype where the ability of a cell or cells to be motile is abolished." [OMP:JCH]
 is_a: OMP:0000002 ! decreased cell motility
 is_a: OMP:0000133 ! absence of cell motility
+intersection_of: OMP:0000002 ! decreased cell motility
+intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
+relationship: RO:0000086 PATO:0000462 ! has_quality absent
 created_by: siegele
 creation_date: 2014-06-29T14:10:40Z
 
 [Term]
 id: OMP:0007001
-name: altered cell motility phenotype
+name: altered cell motility
 def: "A cell motility phenotype where cell motility is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000001 ! cell motility phenotype
 is_a: OMP:0007085 ! altered phenotype
+intersection_of: OMP:0000001 ! cell motility phenotype
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
 created_by: siegele
 creation_date: 2014-04-24T17:38:06Z
 
@@ -5100,8 +5557,7 @@ creation_date: 2013-09-05T16:09:28Z
 id: OMP:0007004
 name: decreased resistance to pteridine
 def: "A pteridine resistance phenotype where resistance to a pteridine compound is decreased relative to a designated control." [CHEBI:27601, OMP:DAS]
-synonym: "abolish resistance to pteridine" NARROW [CHEBI:73913]
-synonym: "increase sensitivity to pteridine" RELATED []
+synonym: "increased sensitivity to pteridine" RELATED []
 is_a: OMP:0006032 ! altered pteridine resistance phenotype
 created_by: DeborahSiegele
 creation_date: 2014-01-31T18:03:55Z
@@ -5118,6 +5574,7 @@ creation_date: 2014-08-07T18:35:51Z
 id: OMP:0007006
 name: cell population phenotype
 def: "A microbial phenotype observation at the level of a population of cells belonging to the same species." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: CMPO:0000002 "cell phenotype"
 is_a: OMP:0000000 ! microbial phenotype
 created_by: siegele
@@ -5233,7 +5690,7 @@ creation_date: 2013-09-16T17:30:07Z
 id: OMP:0007020
 name: increased biofilm formation
 def: "An altered biofilm phenotype where the amount of biofilm is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0005129 ! altered biofilm phenotype
+is_a: OMP:0005129 ! altered biofilm
 created_by: siegele
 creation_date: 2014-08-01T00:12:56Z
 
@@ -5282,7 +5739,7 @@ creation_date: 2013-09-17T16:33:34Z
 id: OMP:0007026
 name: decreased biofilm formation
 def: "An altered biofilm phenotype where the amount of biofilm is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0005129 ! altered biofilm phenotype
+is_a: OMP:0005129 ! altered biofilm
 created_by: siegele
 creation_date: 2014-08-01T00:12:56Z
 
@@ -5306,7 +5763,7 @@ creation_date: 2013-09-17T16:45:18Z
 id: OMP:0007029
 name: decreased utilization of dinitrogen
 def: "A dinitrogen (N2) utilization phenotype where the ability to use N2 as a nitrogen source is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0006030 ! dinitrogen utilization phenotype
+is_a: OMP:0007190 ! altered dinitrogen utilization
 created_by: DeborahSiegele
 creation_date: 2013-09-28T20:59:52Z
 
@@ -5314,13 +5771,13 @@ creation_date: 2013-09-28T20:59:52Z
 id: OMP:0007030
 name: increased utilization of dinitrogen
 def: "A dinitrogen (N2) utilization phenotype where the nitrogen source is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0006030 ! dinitrogen utilization phenotype
+is_a: OMP:0007190 ! altered dinitrogen utilization
 created_by: DeborahSiegele
 creation_date: 2013-09-28T21:02:26Z
 
 [Term]
 id: OMP:0007031
-name: utilization of dinitrogen phenotype
+name: presence of dinitrogen utilization
 def: "A dinitrogen utilization phenotype where an organism can use N2 as the source of nitrogen." [OMP:DAS]
 is_a: OMP:0006030 ! dinitrogen utilization phenotype
 created_by: DeborahSiegele
@@ -5426,6 +5883,7 @@ creation_date: 2013-09-29T09:41:48Z
 id: OMP:0007044
 name: growth factor requirement phenotype
 def: "A nutrient utilization phenotype where the nutrient is an essential organic compound." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0006022 ! nutrient utilization phenotype
 created_by: siegele
 creation_date: 2013-10-01T15:07:53Z
@@ -5562,6 +6020,7 @@ creation_date: 2013-10-01T15:34:09Z
 id: OMP:0007061
 name: iron source utilization phenotype
 def: "A nutrient utilization phenotype where the nutrient is being used as a source of iron." [OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0006022 ! nutrient utilization phenotype
 created_by: siegele
 creation_date: 2013-10-01T15:46:38Z
@@ -5586,6 +6045,7 @@ creation_date: 2014-01-31T18:45:09Z
 id: OMP:0007064
 name: phototrophic phenotype
 def: "An energy metabolism phenotype where light is used as the energy source." [ISBN:978-0-07-340240-6, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "phototroph " RELATED []
 is_a: OMP:0000224 ! energy metabolism phenotype
 created_by: DeborahSiegele
@@ -5598,6 +6058,7 @@ def: "An antimicrobial compound resistance phenotype where resistance is to a or
 synonym: "antifolate resistance" BROAD [CHEBI:73913]
 synonym: "methotrexate resistance" NARROW [CHEBI:44185]
 synonym: "pteridine sensitivity phenotype" RELATED []
+xref: CHEBI:26373
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: siegele
 creation_date: 2014-02-03T15:39:56Z
@@ -5606,8 +6067,9 @@ creation_date: 2014-02-03T15:39:56Z
 id: OMP:0007066
 name: asexual reproduction phenotype
 def: "A microbial phenotype related to asexual reproduction, the biological process in which new individuals are produced by either a single cell or by a group of cells in the absence of any sexual process." [ISBN:0673521435, OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
 xref: GO:0019954 "asexual reproduction"
-is_a: OMP:0000000 ! microbial phenotype
+is_a: OMP:0007167 ! reproduction phenotype
 created_by: siegele
 creation_date: 2014-02-03T15:55:25Z
 
@@ -5641,7 +6103,7 @@ creation_date: 2014-02-21T15:07:59Z
 id: OMP:0007070
 name: decreased carbon source utilization
 def: "An altered carbon source utilization phenotype where the ability to use a particular carbon source is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007078 ! altered carbon source utilization phenotype
+is_a: OMP:0007078 ! altered carbon source utilization
 created_by: siegele
 creation_date: 2014-02-21T15:18:08Z
 
@@ -5649,7 +6111,7 @@ creation_date: 2014-02-21T15:18:08Z
 id: OMP:0007071
 name: increased carbon source utilization
 def: "An altered carbon source utilization phenotype where the ability to use a particular carbon source is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007078 ! altered carbon source utilization phenotype
+is_a: OMP:0007078 ! altered carbon source utilization
 created_by: siegele
 creation_date: 2014-02-21T15:18:41Z
 
@@ -5665,6 +6127,7 @@ creation_date: 2014-02-21T15:28:04Z
 id: OMP:0007073
 name: fermentation phenotype
 def: "An energy metabolism phenotype where electrons derived from oxidation of a nutrient are transferred to an endogenous terminal electron acceptor without the involvement of an electron transport chain." [ISBN:978-0-07-340240-6, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000224 ! energy metabolism phenotype
 created_by: siegele
 creation_date: 2014-02-21T15:31:32Z
@@ -5690,7 +6153,7 @@ id: OMP:0007076
 name: altered aerotaxis phenotype
 def: "An aerotaxis phenotype where directed movement in response to environmental oxygen is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000047 ! aerotaxis phenotype
-is_a: OMP:0007127 ! altered taxis phenotype
+is_a: OMP:0007127 ! altered taxis
 created_by: siegele
 creation_date: 2014-04-24T17:41:34Z
 
@@ -5699,13 +6162,13 @@ id: OMP:0007077
 name: altered chemotaxis phenotype
 def: "A chemotaxis phenotype where directed movement in response to a specific chemical gradient is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000048 ! chemotaxis phenotype
-is_a: OMP:0007127 ! altered taxis phenotype
+is_a: OMP:0007127 ! altered taxis
 created_by: siegele
 creation_date: 2014-04-24T17:43:04Z
 
 [Term]
 id: OMP:0007078
-name: altered carbon source utilization phenotype
+name: altered carbon source utilization
 def: "An altered nutrient utilization phenotype altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0006023 ! carbon source utilization phenotype
 is_a: OMP:0007104 ! altered nutrient utilization phenotype
@@ -5722,7 +6185,7 @@ creation_date: 2014-04-30T15:52:18Z
 
 [Term]
 id: OMP:0007080
-name: altered gene expression phenotype
+name: altered gene expression
 def: "A gene expression phenotype where expression of a gene or genes is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000253 ! gene expression phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -5747,10 +6210,10 @@ creation_date: 2014-04-30T16:07:16Z
 
 [Term]
 id: OMP:0007083
-name: altered cell size phenotype
+name: altered cell size
 def: "A cell size phenotype where the size of a cell is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000074 ! cell size phenotype
-is_a: OMP:0007103 ! altered cell morphology phenotype
+is_a: OMP:0007103 ! altered cell morphology
 created_by: siegele
 creation_date: 2014-07-06T14:41:49Z
 
@@ -5758,7 +6221,7 @@ creation_date: 2014-07-06T14:41:49Z
 id: OMP:0007084
 name: decreased cell length
 def: "An altered cell size phenotype where the long axis of a cell or cells is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007083 ! altered cell size phenotype
+is_a: OMP:0007083 ! altered cell size
 created_by: siegele
 creation_date: 2014-07-06T14:43:59Z
 
@@ -5766,7 +6229,11 @@ creation_date: 2014-07-06T14:43:59Z
 id: OMP:0007085
 name: altered phenotype
 def: "A microbial phenotype that is altered in some way relative to a designated control." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
 created_by: siegele
 creation_date: 2014-07-10T12:28:36Z
 
@@ -5807,7 +6274,7 @@ id: OMP:0007090
 name: more rod-like
 def: "An altered cell shape phenotype where a cell's shape is more rod-like than that of a designated control." [OMP:DAS]
 is_a: OMP:0007099 ! cylindrical cell phenotype
-is_a: OMP:0007101 ! altered cell shape phenotype
+is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-10T21:50:33Z
 
@@ -5895,10 +6362,10 @@ creation_date: 2014-07-10T20:13:46Z
 
 [Term]
 id: OMP:0007101
-name: altered cell shape phenotype
+name: altered cell shape
 def: "A cell shape phenotype where the shape of a cell is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000073 ! cell shape phenotype
-is_a: OMP:0007103 ! altered cell morphology phenotype
+is_a: OMP:0007103 ! altered cell morphology
 created_by: siegele
 creation_date: 2014-07-10T20:24:53Z
 
@@ -5907,16 +6374,19 @@ id: OMP:0007102
 name: rounder
 def: "An altered cell shape phenotype where a cell's shape is rounder than that of a designated control." [OMP:DAS]
 is_a: OMP:0007100 ! spheroid cell phenotype
-is_a: OMP:0007101 ! altered cell shape phenotype
+is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-10T21:51:13Z
 
 [Term]
 id: OMP:0007103
-name: altered cell morphology phenotype
+name: altered cell morphology
 def: "A cell morphology phenotype that is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000071 ! cell morphology phenotype
-is_a: OMP:0007085 ! altered phenotype
+is_a: OMP:0007193 ! altered_physical_object_quality
+intersection_of: OMP:0000071 ! cell morphology phenotype
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
 created_by: siegele
 creation_date: 2014-07-10T22:43:40Z
 
@@ -5924,6 +6394,7 @@ creation_date: 2014-07-10T22:43:40Z
 id: OMP:0007104
 name: altered nutrient utilization phenotype
 def: "A nutrient utilization phenotype that is altered relative to a designated control." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0006022 ! nutrient utilization phenotype
 is_a: OMP:0007085 ! altered phenotype
 created_by: siegele
@@ -5959,7 +6430,7 @@ creation_date: 2014-08-11T16:37:39Z
 id: OMP:0007108
 name: altered transcription phenotype
 def: "A transcription phenotype where transcription of a gene or genes is altered relative to a designated control." [OMP:DAS]
-is_a: OMP:0007080 ! altered gene expression phenotype
+is_a: OMP:0007080 ! altered gene expression
 is_a: OMP:0007106 ! transcription phenotype
 created_by: dsiegele
 creation_date: 2014-08-11T16:37:59Z
@@ -5968,6 +6439,7 @@ creation_date: 2014-08-11T16:37:59Z
 id: OMP:0007109
 name: chemotrophic phenotype
 def: "An energy metabolism phenotype where energy is obtained from the oxidation of chemicals." [ISBN:978-0-07-340240-6, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000224 ! energy metabolism phenotype
 created_by: siegele
 creation_date: 2014-07-17T13:45:13Z
@@ -5992,7 +6464,8 @@ creation_date: 2014-07-17T13:46:04Z
 [Term]
 id: OMP:0007112
 name: respiration phenotype
-def: "An energy metabolism phenotype where electrons from an oxidized chemical are transferred via an electron transport chain to an exogenous or externally derived electron acceptor." [ISBN:978-0-07-340240-6, OMP:DAS]
+def: "An energy metabolism phenotype where electrons from an oxidized chemical are transferred via an electron transport chain to an exogenous electron acceptor." [ISBN:978-0-07-340240-6, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0045333 "cellular respiration"
 is_a: OMP:0000224 ! energy metabolism phenotype
 created_by: siegele
@@ -6019,16 +6492,16 @@ id: OMP:0007115
 name: altered growth rate phenotype
 def: "A growth phenotype where the growth rate of a cell or cells is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007156 ! growth rate phenotype
-is_a: OMP:0007157 ! altered growth phenotype
+is_a: OMP:0007157 ! altered growth
 created_by: siegele
 creation_date: 2014-07-17T16:29:34Z
 
 [Term]
 id: OMP:0007116
-name: altered cell stalk phenotype
+name: altered cell stalk
 def: "An altered cell shape phenotype where the stalk of a stalk-shaped cell is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000128 ! stalked cell phenotype
-is_a: OMP:0007101 ! altered cell shape phenotype
+is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-18T13:53:13Z
 
@@ -6078,7 +6551,7 @@ creation_date: 2014-08-11T17:02:37Z
 id: OMP:0007122
 name: altered translation phenotype
 def: "A translation phenotype where translation of one or more mRNAs is altered relative to a designated control." [OMP:DAS]
-is_a: OMP:0007080 ! altered gene expression phenotype
+is_a: OMP:0007080 ! altered gene expression
 is_a: OMP:0007107 ! translation phenotype
 created_by: dsiegele
 creation_date: 2014-08-11T17:07:54Z
@@ -6118,7 +6591,7 @@ creation_date: 2014-08-11T17:58:30Z
 
 [Term]
 id: OMP:0007127
-name: altered taxis phenotype
+name: altered taxis
 def: "A taxis phenotype where directed movement of a motile cell or organism in response to an external stimulus is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000004 ! taxis phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6127,7 +6600,7 @@ creation_date: 2014-08-12T13:30:01Z
 
 [Term]
 id: OMP:0007128
-name: altered cell arrangement phenotype
+name: altered cell arrangement
 def: "A cell arrangement phenotype where the arrangement of cells is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000003 ! cell arrangement phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6146,6 +6619,7 @@ creation_date: 2014-08-14T18:22:16Z
 id: OMP:0007130
 name: differential test phenotype
 def: "A microbial phenotype related to the presence or absence of a biochemical activity in a test used to differentiate and identify microorganisms." [ISBN:9780895828309, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: siegele
 creation_date: 2014-08-16T16:40:58Z
@@ -6263,7 +6737,7 @@ creation_date: 2014-08-18T17:19:11Z
 
 [Term]
 id: OMP:0007144
-name: altered asexual reproduction phenotype
+name: altered asexual reproduction
 def: "An asexual reproduction phenotype where the process of asexual reproduction is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007066 ! asexual reproduction phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6275,7 +6749,7 @@ id: OMP:0007145
 name: altered asexual sporulation phenotype
 def: "An asexual sporulation phenotype where the process of forming mitotic spores is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007142 ! asexual sporulation phenotype
-is_a: OMP:0007144 ! altered asexual reproduction phenotype
+is_a: OMP:0007144 ! altered asexual reproduction
 created_by: siegele
 creation_date: 2014-08-18T17:23:30Z
 
@@ -6318,7 +6792,7 @@ creation_date: 2014-08-19T14:52:08Z
 id: OMP:0007150
 name: abolished cell motility by gliding
 def: "A decreased cell motility by gliding phenotype where the ability of a cell or cells to move by gliding motility is abolished." [OMP:DAS]
-is_a: OMP:0000133 ! absence of cell motility
+is_a: OMP:0007000 ! abolished cell motility
 is_a: OMP:0007091 ! decreased cell motility by gliding
 created_by: siegele
 creation_date: 2014-08-20T23:57:11Z
@@ -6344,7 +6818,7 @@ id: OMP:0007153
 name: altered persister cell phenotype
 def: "A persister cell phenotype where the character or frequency of persister cells in a microbial population is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007152 ! persister cell phenotype
-is_a: OMP:0007157 ! altered growth phenotype
+is_a: OMP:0007157 ! altered growth
 created_by: siegele
 creation_date: 2014-08-28T11:57:56Z
 
@@ -6374,7 +6848,7 @@ creation_date: 2014-08-28T12:14:20Z
 
 [Term]
 id: OMP:0007157
-name: altered growth phenotype
+name: altered growth
 def: "A growth phenotype where some aspect of growth of a microbial cell, entity, organism, or population is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000174 ! growth phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6383,7 +6857,7 @@ creation_date: 2014-08-28T12:15:47Z
 
 [Term]
 id: OMP:0007158
-name: altered stress response phenotype
+name: altered stress response
 def: "A stress response phenotype where the response of a cell or organism to a stress is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000173 ! stress response phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6394,13 +6868,13 @@ creation_date: 2014-08-28T16:51:03Z
 id: OMP:0007159
 name: altered radiation resistance phenotype
 is_a: OMP:0005081 ! radiation stress phenotype
-is_a: OMP:0007158 ! altered stress response phenotype
+is_a: OMP:0007158 ! altered stress response
 created_by: siegele
 creation_date: 2014-08-28T17:03:47Z
 
 [Term]
 id: OMP:0007160
-name: altered colony morphology phenotype
+name: altered colony morphology
 def: "A colony morphology phenotype where the morphology of a colony or colonies is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000100 ! colony morphology phenotype
 is_a: OMP:0007085 ! altered phenotype
@@ -6409,11 +6883,468 @@ creation_date: 2014-08-29T12:27:50Z
 
 [Term]
 id: OMP:0007161
-name: altered nitrogen source utilization phenotype
-def: "A nitrogen source utilization phenotype where utilization of a nitrogen source by a cell or organism is altered relative to a designated control." [OMP:DAS]
-is_a: OMP:0006026 ! nitrogen source utilization phenotype
+name: regulation phenotype
+def: "A microbial phenotype that affects the regulation of a molecular function, biological process, or biological quality." [OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+xref: FYPO:0000145 "regulation phenotype"
+is_a: OMP:0000000 ! microbial phenotype
 created_by: siegele
-creation_date: 2014-08-29T15:48:24Z
+creation_date: 2014-09-14T14:45:03Z
+
+[Term]
+id: OMP:0007162
+name: gene expression regulation phenotype
+def: "A regulation phenotype that affects the regulation of gene expression. Regulation can occur at the level transcription, translation, or turnover." [OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+xref: FYPO:0000288 "gene expression regulation phenotype"
+is_a: OMP:0007161 ! regulation phenotype
+created_by: siegele
+creation_date: 2014-09-14T14:47:50Z
+
+[Term]
+id: OMP:0007163
+name: transcription regulation phenotype
+def: "A gene expression phenotype that affects the regulation of DNA-dependent or RNA-dependent transcription." [OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+xref: FYPO:0000143 "transcription regulation phenotype"
+is_a: OMP:0007162 ! gene expression regulation phenotype
+created_by: siegele
+creation_date: 2014-09-14T14:52:31Z
+
+[Term]
+id: OMP:0007164
+name: translation regulation phenotype
+def: "A gene expression regulation phenotype that affects the regulation of translation." [OMP:DAS]
+comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+synonym: "protein synthesis regulation" EXACT []
+xref: FYPO:0000289 "translation regulation phenotype"
+is_a: OMP:0007162 ! gene expression regulation phenotype
+created_by: siegele
+creation_date: 2014-09-14T14:54:10Z
+
+[Term]
+id: OMP:0007165
+name: altered septation phenotype
+def: "A septation phenotype where the process of forming a septum between daughter cells is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007149 ! septation phenotype
+created_by: siegele
+creation_date: 2014-09-14T15:35:53Z
+
+[Term]
+id: OMP:0007166
+name: altered cytokinesis phenotype
+def: "A cytokinesis phenotype where the process of cytokinesis is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007148 ! cytokinesis phenotype
+created_by: siegele
+creation_date: 2014-09-14T15:36:38Z
+
+[Term]
+id: OMP:0007167
+name: reproduction phenotype
+def: "A microbial phenotype related to reproduction, the biological process in which new individuals are produced by either a single cell or by a group of cells." [OMP:DAS]
+is_a: OMP:0000000 ! microbial phenotype
+created_by: siegele
+creation_date: 2014-09-25T17:14:07Z
+
+[Term]
+id: OMP:0007168
+name: abolished septation
+def: "A decreased septation phenotype where formation of new cell septa is abolished." [OMP:DAS]
+is_a: OMP:0005138 ! decreased septation
+created_by: siegele
+creation_date: 2014-09-25T17:18:11Z
+
+[Term]
+id: OMP:0007169
+name: antimicrobial peptide resistance phenotype
+def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to antimicrobial peptides produced by a variety of vertebrate, invertebrate, and plant species." [doi:10.1038/nrmicro1098, OMP:DAS]
+is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T15:57:03Z
+
+[Term]
+id: OMP:0007170
+name: altered antimicrobial peptide resistance phenotype
+def: "An antimicrobial peptide resistance phenotype where resistance or sensitivity to one or more antimicrobial peptides is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007169 ! antimicrobial peptide resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T16:02:16Z
+
+[Term]
+id: OMP:0007171
+name: resistant to antimicrobial peptide
+def: "An antimicrobial peptide resistance phenotype where an organism or cell is resistant to one or more antimicrobial peptides." [OMP:DAS]
+is_a: OMP:0007169 ! antimicrobial peptide resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T16:02:16Z
+
+[Term]
+id: OMP:0007172
+name: not resistant to antimicrobial peptide
+def: "An antimicrobial peptide resistance phenotype where an organism or cell is sensitive to one or more antimicrobial peptides." [OMP:DAS]
+is_a: OMP:0007169 ! antimicrobial peptide resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T16:02:16Z
+
+[Term]
+id: OMP:0007173
+name: decreased resistance to antimicrobial peptide
+def: "An altered antimicrobial peptide resistance phenotype where resistance is decreased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007170 ! altered antimicrobial peptide resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T16:02:54Z
+
+[Term]
+id: OMP:0007174
+name: increased resistance to antimicrobial peptide
+def: "An altered antimicrobial peptide resistance phenotype where resistance is increased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007170 ! altered antimicrobial peptide resistance phenotype
+created_by: siegele
+creation_date: 2014-09-26T16:02:54Z
+
+[Term]
+id: OMP:0007175
+name: presence of aerobic respiration
+def: "An aerobic respiration phenotype where an organism, cell, or cells have the ability to perform aerobic respiration." [OMP:DAS]
+is_a: OMP:0000216 ! aerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:00:51Z
+
+[Term]
+id: OMP:0007176
+name: absence of aerobic respiration
+def: "An aerobic respiration phenotype where an organism, cell, or cells lack the ability to perform aerobic respiration." [OMP:DAS]
+is_a: OMP:0000216 ! aerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:02:56Z
+
+[Term]
+id: OMP:0007177
+name: altered aerobic respiration
+def: "An aerobic respiration phenotype that is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0000216 ! aerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:04:45Z
+
+[Term]
+id: OMP:0007178
+name: increased aerobic respiration
+def: "An altered aerobic respiration phenotype where the ability to perform aerobic respiration is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007177 ! altered aerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:05:44Z
+
+[Term]
+id: OMP:0007179
+name: decreased aerobic respiration
+def: "An altered aerobic respiration phenotype where the ability to perform aerobic respiration is decreased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007177 ! altered aerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:06:33Z
+
+[Term]
+id: OMP:0007180
+name: abolished aerobic respiration
+def: "A decreased aerobic respiration phenotype where the ability to perform aerobic respiration is abolished." [OMP:DAS]
+is_a: OMP:0007179 ! decreased aerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:07:17Z
+
+[Term]
+id: OMP:0007181
+name: presence of anaerobic respiration
+def: "An anaerobic respiration phenotype where an organism, cell, or cells have the ability to perform anaerobic respiration." [OMP:DAS]
+is_a: OMP:0007072 ! anaerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007182
+name: absence of anaerobic respiration
+def: "An anaerobic respiration phenotype where an organism, cell, or cells lack the ability to perform anaerobic respiration." [OMP:DAS]
+is_a: OMP:0007072 ! anaerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007183
+name: altered anaerobic respiration
+def: "An anaerobic respiration phenotype where the ability to perform anaerobic respiration is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007072 ! anaerobic respiration phenotype
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007184
+name: increased anaerobic respiration
+def: "An altered anaerobic respiration phenotype where the ability to perform anaerobic respiration is increased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007183 ! altered anaerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007185
+name: decreased anaerobic respiration
+def: "An altered anaerobic respiration phenotype where the ability to perform anaerobic respiration is decreased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007183 ! altered anaerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007186
+name: abolished anaerobic respiration
+def: "A decreased anaerobic respiration phenotype where the ability to perform anaerobic respiration is abolished." [OMP:DAS]
+is_a: OMP:0007185 ! decreased anaerobic respiration
+created_by: siegele
+creation_date: 2014-09-29T14:08:46Z
+
+[Term]
+id: OMP:0007187
+name: quality (Interim)
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities." [PATO:0000001, PATO:0000072]
+xref: PATO:0000001 "quality"
+is_a: OMP:0000000 ! microbial phenotype
+created_by: siegele
+creation_date: 2014-10-03T17:22:57Z
+
+[Term]
+id: OMP:0007188
+name: altered_process_quality
+def: "A quality which inheres in an process that is altered in same way relative to a designated control." [OMP:DAS, PATO:0001236]
+is_a: OMP:0007085 ! altered phenotype
+is_a: OMP:0007187 ! quality (Interim)
+is_a: PATO:0001236 ! process quality
+intersection_of: PATO:0001236 ! process quality
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+created_by: siegele
+creation_date: 2014-10-03T17:27:01Z
+
+[Term]
+id: OMP:0007189
+name: altered_relative_to
+def: "A quality which inheres in a bearer that is altered relative to the quality that inheres in a designated control entity." [OMP:DAS]
+is_a: OMP:0007187 ! quality (Interim)
+created_by: siegele
+creation_date: 2014-10-03T17:45:57Z
+
+[Term]
+id: OMP:0007190
+name: altered dinitrogen utilization
+def: "A dinitrogen utilization phenotype where the ability to utilize dinitrogen is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0006030 ! dinitrogen utilization phenotype
+created_by: siegele
+creation_date: 2014-10-04T01:42:58Z
+
+[Term]
+id: OMP:0007191
+name: absence of dinitrogen utilization
+def: "A dinitrogen utilization phenotype where an organism lacks the ability to use dinitrogen as the source of nitrogen." [OMP:DAS]
+is_a: OMP:0006030 ! dinitrogen utilization phenotype
+created_by: siegele
+creation_date: 2014-10-04T01:44:57Z
+
+[Term]
+id: OMP:0007192
+name: growth range phenotype
+def: "A growth phenotype related to non-nutrient environmental factors and the requirements for microbial growth." [ISBN:9780073402406, OMP:DAS]
+is_a: OMP:0000174 ! growth phenotype
+created_by: siegele
+creation_date: 2014-10-04T18:41:07Z
+
+[Term]
+id: OMP:0007193
+name: altered_physical_object_quality
+def: "A physical object quality that is altered relative to a designated control." [OMP:DAS]
+xref: PATO:0001241 "physical object quality"
+is_a: OMP:0007085 ! altered phenotype
+is_a: OMP:0007187 ! quality (Interim)
+is_a: PATO:0001241 ! physical object quality
+intersection_of: PATO:0001241 ! physical object quality
+intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+created_by: siegele
+creation_date: 2014-10-04T19:34:54Z
+
+[Term]
+id: PATO:0000001
+name: quality
+namespace: quality
+alt_id: PATO:0000072
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities." [PATOC:GVG]
+synonym: "trait" EXACT []
+
+[Term]
+id: PATO:0000051
+name: morphology
+namespace: quality
+def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." [PATOC:GVG]
+subset: attribute_slim
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+namespace: quality
+alt_id: PATO:0001647
+def: "A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features (points, edges, surfaces and also holes etc)." [PATOC:GVG]
+comment: Shapes are invariant on size transformations. Shapes can be subdivided into 2D and 3D shapes, We can also make a distinction between shapes of complete self-connected objects, and shapes of parts of objects.
+subset: attribute_slim
+synonym: "relational shape quality" EXACT []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000068
+name: qualitative
+namespace: quality
+comment: TODO: define this or obsolete it and move children somewhere else.
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0000069
+name: deviation(from_normal)
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." [PATOC:GVG]
+subset: attribute_slim
+is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000070
+name: count
+namespace: quality
+alt_id: PATO:0000053
+alt_id: PATO:0000071
+alt_id: PATO:0001169
+alt_id: PATO:0001226
+def: "The number of entities of this type that are part of the whole organism." [PATOC:GVG]
+comment: This term was originally named "presence". It has been renamed to reduce ambiguity. Consider annotating with the reciprocal relation,PATO:0001555, has_number_of. For example, rather than E=fin ray Q=count in organism C=10, say E=organism Q=has number of E2= fin ray C=10.
+subset: attribute_slim
+synonym: "amount" RELATED []
+synonym: "count in organism" RELATED []
+synonym: "number" RELATED []
+synonym: "presence" RELATED []
+synonym: "presence or absence in organism" EXACT []
+synonym: "quantitative" EXACT []
+is_a: PATO:0000068 ! qualitative
+relationship: reciprocal_of PATO:0001555
+
+[Term]
+id: PATO:0000117
+name: size
+namespace: quality
+def: "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude." [WordNet:WordNet]
+subset: attribute_slim
+subset: scalar_slim
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000462
+name: absent
+namespace: quality
+alt_id: PATO:0001996
+def: "A quality denoting the lack of an entity." [thefreedictionary.:thefreedictionary.]
+comment: Example: [ E=wing Q=absent ] -applies to an organism that lacks wings. Note that this is the reciprocal quality to the relational quality "lacks all parts of type". This means that [E=wing Q=absent] is replaceable with [E=organism Q=lacks_all_parts_of_type E2=Wing]. The latter is preferable as it allows greater precision in stating what is lacking from where. E.g. We can say [E=spermatocyte Q=lacks_all_parts_of_type E2=aster] to describe spermatocytes that have no asters.
+subset: absent_slim
+subset: mpath_slim
+subset: value_slim
+synonym: "absence" EXACT []
+synonym: "absent from organism" EXACT []
+is_a: PATO:0000070 ! count
+relationship: reciprocal_of PATO:0001558
+relationship: reciprocal_of PATO:0002000
+
+[Term]
+id: PATO:0000467
+name: present
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's existence." [PATOC:GVG]
+subset: absent_slim
+subset: value_slim
+synonym: "present in organism" RELATED []
+is_a: PATO:0000070 ! count
+
+[Term]
+id: PATO:0001236
+name: process quality
+namespace: quality
+alt_id: PATO:0001239
+alt_id: PATO:0001240
+def: "A quality which inheres in an process." [PATOC:GVG]
+comment: See comments of relational quality of a physical entity.
+synonym: "quality of a process" EXACT []
+synonym: "quality of occurrent" EXACT []
+synonym: "quality of process" EXACT []
+synonym: "relational quality of occurrent" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+namespace: quality
+alt_id: PATO:0001237
+alt_id: PATO:0001238
+def: "A quality which inheres in a continuant." [PATOC:GVG]
+comment: Relational qualities are qualities that hold between multiple entities. Normal (monadic) qualities such as the shape of a eyeball exist purely as a quality of that eyeball. A relational quality such as sensitivity to light is a quality of that eyeball (and connecting nervous system) as it relates to incoming light waves/particles.
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity " EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+xref: snap:Quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0002300
+name: increased quality
+namespace: quality
+def: "A quality that has a value that is increased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0000069 ! deviation(from_normal)
+intersection_of: PATO:0000001 ! quality
+intersection_of: increased_in_magnitude_relative_to PATO:0000461
+relationship: increased_in_magnitude_relative_to PATO:0000461
+created_by: George Gkoutos
+creation_date: 2011-06-16T06:39:43Z
+
+[Term]
+id: PATO:0002301
+name: decreased quality
+namespace: quality
+def: "A quality that has a value that is decreased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0000069 ! deviation(from_normal)
+intersection_of: PATO:0000001 ! quality
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461
+relationship: decreased_in_magnitude_relative_to PATO:0000461
+created_by: George Gkoutos
+creation_date: 2011-06-16T06:40:15Z
+
+[Term]
+id: PATO:0002302
+name: decreased process quality
+namespace: quality
+def: "A quality of a process that has a value that is decreased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0001236 ! process quality
+is_a: PATO:0002301 ! decreased quality
+intersection_of: PATO:0001236 ! process quality
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461
+relationship: decreased_in_magnitude_relative_to PATO:0000461
+created_by: George Gkoutos
+creation_date: 2011-06-16T06:50:59Z
+
+[Term]
+id: PATO:0002304
+name: increased process quality
+namespace: quality
+def: "A quality of a process that has a value that is increased compared to normal or average." [PATOC:GVG]
+is_a: PATO:0001236 ! process quality
+is_a: PATO:0002300 ! increased quality
+intersection_of: PATO:0001236 ! process quality
+intersection_of: increased_in_magnitude_relative_to PATO:0000461
+relationship: increased_in_magnitude_relative_to PATO:0000461
+created_by: George Gkoutos
+creation_date: 2011-06-16T06:53:08Z
 
 [Typedef]
 id: RO:0000056
@@ -6428,6 +7359,22 @@ created_by: siegele
 creation_date: 2014-08-17T12:15:53Z
 
 [Typedef]
+id: correlates_with
+name: correlates_with
+namespace: quality
+
+[Typedef]
+id: decreased_in_magnitude_relative_to
+name: decreased_in_magnitude_relative_to
+namespace: quality
+def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
+comment: This relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_transitive: true
+is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+
+[Typedef]
 id: decreased_relative_to
 name: decreased_relative_to
 def: "P decreased_relative_to P' if and only if: given any process p that instantiates P under condition (genotype or environment) c, there is some process p' that instantiates P' under condition c', and P' is greater than P." [ECO:MCC]
@@ -6437,6 +7384,91 @@ created_by: Marcus
 creation_date: 2014-02-13T01:39:46Z
 
 [Typedef]
+id: different_in_magnitude_relative_to
+name: different_in_magnitude_relative_to
+namespace: quality
+def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+
+[Typedef]
+id: directly_associated_with
+name: directly_associated_with
+namespace: quality
+def: "q1 directly_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 increases if the magnitude of q2 is increased, or the magnitude of q1 decreases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
+comment: Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites.\nAssociation is weaker than correlation or proportionality. These relations may be later added to PATO.
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+created_by: cjm
+creation_date: 2009-08-26T02:50:08Z
+
+[Typedef]
+id: has_cross_section
+name: has_cross_section
+namespace: quality
+def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [PATOC:CJM]
+comment: Example: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.
+
+[Typedef]
+id: has_dividend_entity
+name: has_dividend_entity
+namespace: quality
+domain: PATO:0001470
+
+[Typedef]
+id: has_dividend_quality
+name: has_dividend_quality
+namespace: quality
+domain: PATO:0001470
+range: PATO:0000001 ! quality
+is_a: has_ratio_quality ! has_ratio_quality
+
+[Typedef]
+id: has_divisor_entity
+name: has_divisor_entity
+namespace: quality
+domain: PATO:0001470
+
+[Typedef]
+id: has_divisor_quality
+name: has_divisor_quality
+namespace: quality
+domain: PATO:0001470
+range: PATO:0000001 ! quality
+is_a: has_ratio_quality ! has_ratio_quality
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: quality
+def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
+comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
+xref: BFO:0000051
+
+[Typedef]
+id: has_ratio_quality
+name: has_ratio_quality
+namespace: quality
+domain: PATO:0001470
+range: PATO:0000001 ! quality
+
+[Typedef]
+id: has_relative_magnitude
+name: has_relative_magnitude
+namespace: quality
+
+[Typedef]
+id: increased_in_magnitude_relative_to
+name: increased_in_magnitude_relative_to
+namespace: quality
+def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
+comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_transitive: true
+is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+
+[Typedef]
 id: increased_relative_to
 name: increased_relative_to
 def: "P increased_relative_to P' if and only if: given any process p that instantiates P under condition (genotype or environment) c, there is some process p' that instantiates P' under condition c', and P' is less than P." [ECO:MCC]
@@ -6444,4 +7476,107 @@ is_transitive: true
 is_obsolete: true
 created_by: Marcus
 creation_date: 2014-02-13T01:41:08Z
+
+[Typedef]
+id: inheres_in
+name: inheres_in
+namespace: quality
+
+[Typedef]
+id: inversely_associated_with
+name: inversely_associated_with
+namespace: quality
+def: "q1 inversely_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 decreases if the magnitude of q2 is increased, or the magnitude of q1 increases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
+comment: Association is weaker than correlation or proportionality. These relations may be later added to PATO.
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+created_by: cjm
+creation_date: 2009-08-26T02:50:24Z
+
+[Typedef]
+id: is_magnitude_of
+name: is_magnitude_of
+namespace: pato.ontology
+
+[Typedef]
+id: is_measurement_of
+name: is_measurement_of
+namespace: pato.ontology
+
+[Typedef]
+id: is_unit_of
+name: is_unit_of
+namespace: pato.ontology
+
+[Typedef]
+id: negatively_regulates
+name: negatively regulates
+namespace: external
+xref: RO:0002212
+is_a: regulates ! regulates
+
+[Typedef]
+id: never_in_taxon
+name: never_in_taxon
+namespace: external
+xref: RO:0002161
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
+expand_assertion_to: "Class: ?X DisjointWith: RO_0002162 some ?Y" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: external
+xref: BFO:00000050
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: positively_regulates
+name: positively regulates
+namespace: external
+xref: RO:0002213
+is_a: regulates ! regulates
+
+[Typedef]
+id: realized_by
+name: realized_by
+namespace: quality
+
+[Typedef]
+id: reciprocal_of
+name: reciprocal_of
+namespace: quality
+def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." [PATOC:CJM]
+comment: There are frequently two ways to state the same thing: we can say 'spermatocyte lacks asters' or 'asters absent from spermatocyte'. In this case the quality is 'lacking all parts of type' - it is a (relational) quality of the spermatocyte, and it is with respect to instances of 'aster'. One of the popular requirements of PATO is that it continue to support 'absent', so we need to relate statements which use this quality to the 'lacking all parts of type' quality.
+
+[Typedef]
+id: regulates
+name: regulates
+namespace: external
+xref: RO:0002211
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: similar_in_magnitude_relative_to
+name: similar_in_magnitude_relative_to
+namespace: quality
+def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+
+[Typedef]
+id: singly_occurring_form_of
+name: singly_occurring_form_of
+namespace: quality
+comment: PATO divides qualities between normal (monadic, singly-occurring) qualities and relational qualities. Relational qualities stand in the 'towards' relation with respect to some additional entity. For example, The sensitivity of an eye towards red light. In some cases we want to represent a quality such as 'protruding' in both monadic and relational branches. We use this relation to link them.
+synonym: "monadic_form_of" EXACT []
+
+[Typedef]
+id: towards
+name: towards
+namespace: quality
+comment: Relation binding a relational quality or disposition to the relevant type of entity.
 
