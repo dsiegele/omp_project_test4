@@ -1,8 +1,8 @@
 format-version: 1.2
 data-version: releases/2014-10-01
-date: 07:10:2014 17:03
+date: 15:10:2014 21:47
 saved-by: siegele
-auto-generated-by: OBO-Edit 2.3-beta6
+auto-generated-by: OBO-Edit 2.3.1
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -34,7 +34,7 @@ subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: microbial_phenotype
 namespace-id-rule: * OMP:$sequence(7,0007001,0008000)$
-remark: none
+remark: select is_a closure
 ontology: omp
 
 [Term]
@@ -51,6 +51,18 @@ subset: gosubset_prok
 synonym: "reproductive physiological process" EXACT []
 xref: Wikipedia:Reproduction
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0001539
+name: cilium or flagellum-dependent cell motility
+namespace: biological_process
+def: "Cell motility due to movement of eukaryotic cilia or bacterial-type flagella or archaeal-type flagella." [GOC:cilia, GOC:hjd, GOC:krc]
+comment: Note that we deem eukaryotic cilia and microtubule-based flagella to be equivalent, while the bacterial- and archaeal-type flagella have a different structure. The former are microtubule-based structures that lash back and forth and are present only in eukaryotes, while the latter achieve motility by rotation. Bacterial- and archaeal-type flagella are superficially similar but have a different molecular composition and fine structure. These three structures never co-exist in the same organism. Therefore, GO:0001539 'cilium or flagellum-dependent cell motility' is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term. Direct annotations to GO:0001539 'cilium or flagellum-dependent cell motility' may be amended during annotation QC.
+subset: gocheck_do_not_manually_annotate
+subset: gosubset_prok
+synonym: "ciliary or bacterial-type flagellar motility" RELATED []
+synonym: "ciliary/flagellar motility" EXACT []
+is_a: GO:0048870 ! cell motility
 
 [Term]
 id: GO:0005575
@@ -84,6 +96,235 @@ xref: Wikipedia:Cell_(biology)
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0006139
+name: nucleobase-containing compound metabolic process
+namespace: biological_process
+alt_id: GO:0055134
+def: "Any cellular metabolic process involving nucleobases, nucleosides, nucleotides and nucleic acids." [GOC:ai]
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "cellular nucleobase, nucleoside, nucleotide and nucleic acid metabolic process" EXACT []
+synonym: "cellular nucleobase, nucleoside, nucleotide and nucleic acid metabolism" EXACT []
+synonym: "nucleobase, nucleoside and nucleotide metabolic process" RELATED []
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid metabolic process" RELATED [GOC:dph, GOC:tb]
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0044238 ! primary metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0006259
+name: DNA metabolic process
+namespace: biological_process
+alt_id: GO:0055132
+def: "Any cellular metabolic process involving deoxyribonucleic acid. This is one of the two main types of nucleic acid, consisting of a long, unbranched macromolecule formed from one, or more commonly, two, strands of linked deoxyribonucleotides." [ISBN:0198506732]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "cellular DNA metabolism" EXACT []
+synonym: "DNA metabolism" EXACT []
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+is_a: GO:0090304 ! nucleic acid metabolic process
+
+[Term]
+id: GO:0006260
+name: DNA replication
+namespace: biological_process
+alt_id: GO:0055133
+def: "The cellular metabolic process in which a cell duplicates one or more molecules of DNA. DNA replication begins when specific sequences, known as origins of replication, are recognized and bound by initiation proteins, and ends when the original DNA molecule has been completely duplicated and the copies topologically separated. The unit of replication usually corresponds to the genome of the cell, an organelle, or a virus. The template for replication can either be an existing DNA molecule or RNA." [GOC:mah]
+comment: See also the biological process terms 'DNA-dependent DNA replication ; GO:0006261' and 'RNA-dependent DNA replication ; GO:0006278'.
+subset: goslim_pir
+subset: goslim_pombe
+subset: goslim_yeast
+subset: gosubset_prok
+xref: Reactome:REACT_100559 "Activation of ATR in response to replication stress, Mus musculus"
+xref: Reactome:REACT_101280 "Activation of claspin, Xenopus tropicalis"
+xref: Reactome:REACT_101497 "Activation of claspin, Bos taurus"
+xref: Reactome:REACT_102679 "Activation of ATR in response to replication stress, Gallus gallus"
+xref: Reactome:REACT_103614 "Stalling of DNA replication fork and RPA binding, Taeniopygia guttata"
+xref: Reactome:REACT_104547 "Recruitment and activation of Chk1, Gallus gallus"
+xref: Reactome:REACT_105292 "Activation of ATR in response to replication stress, Xenopus tropicalis"
+xref: Reactome:REACT_105467 "Loading of claspin onto DNA during replication origin firing, Danio rerio"
+xref: Reactome:REACT_105835 "Stalling of DNA replication fork and RPA binding, Gallus gallus"
+xref: Reactome:REACT_106018 "Recruitment of Rad17-RFC complex to DNA, Gallus gallus"
+xref: Reactome:REACT_106104 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Bos taurus"
+xref: Reactome:REACT_106382 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Drosophila melanogaster"
+xref: Reactome:REACT_106434 "Activation of claspin, Canis familiaris"
+xref: Reactome:REACT_106732 "Recruitment and activation of Chk1, Canis familiaris"
+xref: Reactome:REACT_107075 "Activation of ATR in response to replication stress, Danio rerio"
+xref: Reactome:REACT_107423 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Caenorhabditis elegans"
+xref: Reactome:REACT_108461 "Recruitment and activation of Chk1, Bos taurus"
+xref: Reactome:REACT_108634 "Loading of claspin onto DNA during replication origin firing, Mus musculus"
+xref: Reactome:REACT_108739 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Xenopus tropicalis"
+xref: Reactome:REACT_108768 "Activation of ATR in response to replication stress, Bos taurus"
+xref: Reactome:REACT_108929 "Activation of ATR in response to replication stress, Drosophila melanogaster"
+xref: Reactome:REACT_109137 "Stalling of DNA replication fork and RPA binding, Rattus norvegicus"
+xref: Reactome:REACT_112472 "Activation of ATR in response to replication stress, Saccharomyces cerevisiae"
+xref: Reactome:REACT_113703 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Gallus gallus"
+xref: Reactome:REACT_29423 "Activation of ATR in response to replication stress, Schizosaccharomyces pombe"
+xref: Reactome:REACT_29444 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Taeniopygia guttata"
+xref: Reactome:REACT_29691 "Activation of ATR in response to replication stress, Rattus norvegicus"
+xref: Reactome:REACT_29764 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Taeniopygia guttata"
+xref: Reactome:REACT_30149 "Activation of claspin, Rattus norvegicus"
+xref: Reactome:REACT_31024 "Recruitment of Rad17-RFC complex to DNA, Xenopus tropicalis"
+xref: Reactome:REACT_31919 "Loading of claspin onto DNA during replication origin firing, Rattus norvegicus"
+xref: Reactome:REACT_32546 "Recruitment of Rad17-RFC complex to DNA, Mus musculus"
+xref: Reactome:REACT_32932 "Recruitment and activation of Chk1, Taeniopygia guttata"
+xref: Reactome:REACT_33572 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Dictyostelium discoideum"
+xref: Reactome:REACT_33874 "Recruitment and activation of Chk1, Xenopus tropicalis"
+xref: Reactome:REACT_50018 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Rattus norvegicus"
+xref: Reactome:REACT_53588 "Loading of claspin onto DNA during replication origin firing, Canis familiaris"
+xref: Reactome:REACT_6729 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Homo sapiens"
+xref: Reactome:REACT_6738 "Loading of claspin onto DNA during replication origin firing, Homo sapiens"
+xref: Reactome:REACT_6750 "Activation of claspin, Homo sapiens"
+xref: Reactome:REACT_6769 "Activation of ATR in response to replication stress, Homo sapiens"
+xref: Reactome:REACT_6798 "Recruitment of Rad17-RFC complex to DNA, Homo sapiens"
+xref: Reactome:REACT_6869 "Recruitment and activation of Chk1, Homo sapiens"
+xref: Reactome:REACT_6936 "Stalling of DNA replication fork and RPA binding, Homo sapiens"
+xref: Reactome:REACT_6939 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Homo sapiens"
+xref: Reactome:REACT_77532 "Stalling of DNA replication fork and RPA binding, Canis familiaris"
+xref: Reactome:REACT_79188 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Canis familiaris"
+xref: Reactome:REACT_79450 "Activation of ATR in response to replication stress, Dictyostelium discoideum"
+xref: Reactome:REACT_80432 "Loading of claspin onto DNA during replication origin firing, Taeniopygia guttata"
+xref: Reactome:REACT_80571 "Activation of claspin, Mus musculus"
+xref: Reactome:REACT_80896 "Recruitment and activation of Chk1, Sus scrofa"
+xref: Reactome:REACT_80988 "Loading of claspin onto DNA during replication origin firing, Bos taurus"
+xref: Reactome:REACT_81803 "Recruitment of Rad17-RFC complex to DNA, Canis familiaris"
+xref: Reactome:REACT_83095 "Recruitment of Rad17-RFC complex to DNA, Danio rerio"
+xref: Reactome:REACT_84829 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Danio rerio"
+xref: Reactome:REACT_85561 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Rattus norvegicus"
+xref: Reactome:REACT_86410 "Stalling of DNA replication fork and RPA binding, Mus musculus"
+xref: Reactome:REACT_86739 "Recruitment and activation of Chk1, Rattus norvegicus"
+xref: Reactome:REACT_87233 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Canis familiaris"
+xref: Reactome:REACT_87449 "Recruitment of Rad17-RFC complex to DNA, Rattus norvegicus"
+xref: Reactome:REACT_87590 "Recruitment of Rad17-RFC complex to DNA, Bos taurus"
+xref: Reactome:REACT_88085 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Gallus gallus"
+xref: Reactome:REACT_88384 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Schizosaccharomyces pombe"
+xref: Reactome:REACT_88529 "Activation of claspin, Gallus gallus"
+xref: Reactome:REACT_89355 "Activation of claspin, Danio rerio"
+xref: Reactome:REACT_89439 "Activation of ATR in response to replication stress, Sus scrofa"
+xref: Reactome:REACT_89725 "Loading of claspin onto DNA during replication origin firing, Drosophila melanogaster"
+xref: Reactome:REACT_90512 "Stalling of DNA replication fork and RPA binding, Bos taurus"
+xref: Reactome:REACT_90809 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Danio rerio"
+xref: Reactome:REACT_90838 "Recruitment of Rad17-RFC complex to DNA, Taeniopygia guttata"
+xref: Reactome:REACT_91184 "Recruitment and activation of Chk1, Danio rerio"
+xref: Reactome:REACT_91302 "Activation of ATR in response to replication stress, Canis familiaris"
+xref: Reactome:REACT_92527 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Mus musculus"
+xref: Reactome:REACT_92644 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Xenopus tropicalis"
+xref: Reactome:REACT_92706 "Stalling of DNA replication fork and RPA binding, Danio rerio"
+xref: Reactome:REACT_94983 "Stalling of DNA replication fork and RPA binding, Xenopus tropicalis"
+xref: Reactome:REACT_95253 "Activation of ATR in response to replication stress, Taeniopygia guttata"
+xref: Reactome:REACT_95329 "Activation of claspin, Taeniopygia guttata"
+xref: Reactome:REACT_96115 "Binding of ATR-ATRIP to the RPA-ssDNA complex, Mus musculus"
+xref: Reactome:REACT_96804 "Recruitment and activation of Chk1, Mus musculus"
+xref: Reactome:REACT_96998 "Recruitment of the Rad9-Hus1-Rad1 complex to DNA, Bos taurus"
+xref: Reactome:REACT_97204 "Loading of claspin onto DNA during replication origin firing, Gallus gallus"
+xref: Reactome:REACT_97726 "Activation of ATR in response to replication stress, Caenorhabditis elegans"
+xref: Reactome:REACT_99948 "Loading of claspin onto DNA during replication origin firing, Xenopus tropicalis"
+xref: Wikipedia:DNA_replication
+is_a: GO:0006259 ! DNA metabolic process
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+
+[Term]
+id: GO:0006351
+name: transcription, DNA-templated
+namespace: biological_process
+alt_id: GO:0006350
+alt_id: GO:0061018
+alt_id: GO:0061022
+def: "The cellular synthesis of RNA on a template of DNA." [GOC:jl, GOC:txnOH]
+subset: goslim_aspergillus
+subset: goslim_metagenomics
+subset: goslim_pombe
+subset: gosubset_prok
+synonym: "cellular transcription" BROAD []
+synonym: "cellular transcription, DNA-dependent" EXACT []
+synonym: "DNA-dependent transcription" EXACT []
+synonym: "transcription" BROAD []
+synonym: "transcription regulator activity" RELATED []
+synonym: "transcription, DNA-dependent" EXACT [GOC:txnOH]
+xref: Wikipedia:Transcription_(genetics)
+is_a: GO:0032774 ! RNA biosynthetic process
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+relationship: part_of GO:0010467 ! gene expression
+
+[Term]
+id: GO:0006412
+name: translation
+namespace: biological_process
+alt_id: GO:0006416
+alt_id: GO:0006453
+alt_id: GO:0043037
+def: "The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA. Translation ends with the release of a polypeptide chain from the ribosome." [GOC:go_curators]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "protein anabolism" EXACT []
+synonym: "protein biosynthesis" EXACT []
+synonym: "protein biosynthetic process" EXACT [GOC:curators]
+synonym: "protein formation" EXACT []
+synonym: "protein synthesis" EXACT []
+synonym: "protein translation" EXACT []
+xref: Reactome:REACT_100338 "Translation, Sus scrofa"
+xref: Reactome:REACT_100851 "Translation, Saccharomyces cerevisiae"
+xref: Reactome:REACT_101045 "Translation, Dictyostelium discoideum"
+xref: Reactome:REACT_101324 "Translation, Canis familiaris"
+xref: Reactome:REACT_1014 "Translation, Homo sapiens"
+xref: Reactome:REACT_103420 "Translation, Plasmodium falciparum"
+xref: Reactome:REACT_105544 "Translation, Arabidopsis thaliana"
+xref: Reactome:REACT_29980 "Translation, Bos taurus"
+xref: Reactome:REACT_33559 "Translation, Rattus norvegicus"
+xref: Reactome:REACT_77710 "Translation, Drosophila melanogaster"
+xref: Reactome:REACT_79784 "Translation, Danio rerio"
+xref: Reactome:REACT_81734 "Translation, Schizosaccharomyces pombe"
+xref: Reactome:REACT_81833 "Translation, Caenorhabditis elegans"
+xref: Reactome:REACT_82171 "Translation, Xenopus tropicalis"
+xref: Reactome:REACT_83429 "Translation, Taeniopygia guttata"
+xref: Reactome:REACT_83530 "Translation, Gallus gallus"
+xref: Reactome:REACT_86996 "Translation, Oryza sativa"
+xref: Reactome:REACT_95535 "Translation, Mus musculus"
+xref: Reactome:REACT_96394 "Translation, Escherichia coli"
+xref: Wikipedia:Translation_(genetics)
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+is_a: GO:0044267 ! cellular protein metabolic process
+relationship: part_of GO:0010467 ! gene expression
+
+[Term]
+id: GO:0006725
+name: cellular aromatic compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving aromatic compounds, any organic compound characterized by one or more planar rings, each of which contains conjugated double bonds and delocalized pi electrons, as carried out by individual cells." [GOC:ai, ISBN:0198506732]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "aromatic compound metabolism" EXACT []
+synonym: "aromatic hydrocarbon metabolic process" NARROW []
+synonym: "aromatic hydrocarbon metabolism" NARROW []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0006807
+name: nitrogen compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving organic or inorganic compounds that contain nitrogen, including (but not limited to) nitrogen fixation, nitrification, denitrification, assimilatory/dissimilatory nitrate reduction and the interconversion of nitrogenous organic matter and ammonium." [CHEBI:51143, GOC:go_curators, GOC:jl, ISBN:0198506732]
+comment: Note that amino acid and derivative metabolism should not be annotated here. Instead use the 'amino acid and derivative metabolism' node.
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "nitrogen compound metabolism" EXACT []
+is_a: GO:0008152 ! metabolic process
+
+[Term]
 id: GO:0006928
 name: cellular component movement
 namespace: biological_process
@@ -93,6 +334,33 @@ subset: goslim_pir
 subset: gosubset_prok
 synonym: "cell movement" RELATED []
 synonym: "cellular component motion" EXACT [GOC:dph, GOC:jl]
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0006935
+name: chemotaxis
+namespace: biological_process
+def: "The directed movement of a motile cell or organism, or the directed growth of a cell guided by a specific chemical concentration gradient. Movement may be towards a higher concentration (positive chemotaxis) or towards a lower concentration (negative chemotaxis)." [ISBN:0198506732]
+subset: goslim_metagenomics
+subset: gosubset_prok
+synonym: "taxis in response to chemical stimulus" EXACT []
+xref: Wikipedia:Chemotaxis
+is_a: GO:0042221 ! response to chemical
+is_a: GO:0042330 ! taxis
+
+[Term]
+id: GO:0007059
+name: chromosome segregation
+namespace: biological_process
+def: "The process in which genetic material, in the form of chromosomes, is organized into specific structures and then physically separated and apportioned to two or more sets. In eukaryotes, chromosome segregation begins with the condensation of chromosomes, includes chromosome separation, and ends when chromosomes have completed movement to the spindle poles." [GOC:jl, GOC:mah, GOC:mtg_cell_cycle, GOC:vw]
+subset: goslim_generic
+subset: goslim_pir
+subset: goslim_pombe
+subset: goslim_yeast
+subset: gosubset_prok
+synonym: "chromosome division" EXACT []
+synonym: "chromosome transmission" RELATED []
+xref: Wikipedia:Chromosome_segregation
 is_a: GO:0044763 ! single-organism cellular process
 
 [Term]
@@ -117,6 +385,99 @@ synonym: "physiological process" EXACT []
 xref: Wikipedia:Biological_process
 
 [Term]
+id: GO:0008152
+name: metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." [GOC:go_curators, ISBN:0198547684]
+comment: Note that metabolic processes do not include single functions or processes such as protein-protein interactions, protein-nucleic acids, nor receptor-ligand interactions.
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "metabolic process resulting in cell growth" NARROW []
+synonym: "metabolism" EXACT []
+synonym: "metabolism resulting in cell growth" NARROW []
+xref: Wikipedia:Metabolism
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0009058
+name: biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of substances; typically the energy-requiring part of metabolism in which simpler substances are transformed into more complex ones." [GOC:curators, ISBN:0198547684]
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "anabolism" EXACT []
+synonym: "biosynthesis" EXACT []
+synonym: "formation" EXACT []
+synonym: "synthesis" EXACT []
+xref: Wikipedia:Anabolism
+is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0009059
+name: macromolecule biosynthetic process
+namespace: biological_process
+alt_id: GO:0043284
+def: "The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [CHEBI:33694, GOC:mah]
+subset: gosubset_prok
+synonym: "biopolymer biosynthetic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "macromolecule anabolism" EXACT []
+synonym: "macromolecule biosynthesis" EXACT []
+synonym: "macromolecule formation" EXACT []
+synonym: "macromolecule synthesis" EXACT []
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:0009453
+name: energy taxis
+namespace: biological_process
+def: "The directed movement of a motile cell or organism in response to physical parameters involved in energy generation, such as light, oxygen, and oxidizable substrates." [GOC:jl, PMID:11029423]
+subset: gosubset_prok
+synonym: "energytaxis" EXACT []
+synonym: "taxis in response to energy source" EXACT []
+is_a: GO:0042330 ! taxis
+
+[Term]
+id: GO:0009454
+name: aerotaxis
+namespace: biological_process
+def: "The directed movement of a motile cell or organism in response to environmental oxygen." [GOC:jl, ISBN:0192801023]
+subset: gosubset_prok
+synonym: "taxis in response to atmospheric oxygen" EXACT []
+is_a: GO:0006935 ! chemotaxis
+is_a: GO:0009453 ! energy taxis
+
+[Term]
+id: GO:0009605
+name: response to external stimulus
+namespace: biological_process
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an external stimulus." [GOC:hb]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_manually_annotate
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "response to environmental stimulus" EXACT []
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0009892
+name: negative regulation of metabolic process
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism." [GOC:go_curators]
+subset: gosubset_prok
+synonym: "down regulation of metabolic process" EXACT []
+synonym: "down-regulation of metabolic process" EXACT []
+synonym: "downregulation of metabolic process" EXACT []
+synonym: "inhibition of metabolic process" NARROW []
+synonym: "negative regulation of metabolism" EXACT []
+is_a: GO:0019222 ! regulation of metabolic process
+is_a: GO:0048519 ! negative regulation of biological process
+relationship: negatively_regulates GO:0008152 ! metabolic process
+
+[Term]
 id: GO:0009987
 name: cellular process
 namespace: biological_process
@@ -132,6 +493,165 @@ synonym: "cellular physiological process" EXACT []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0010467
+name: gene expression
+namespace: biological_process
+def: "The process in which a gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA (for protein-coding genes) and the translation of that mRNA into protein. Some protein processing events may be included when they are required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+subset: gosubset_prok
+xref: Reactome:REACT_100537 "Gene Expression, Xenopus tropicalis"
+xref: Reactome:REACT_101147 "Gene Expression, Danio rerio"
+xref: Reactome:REACT_101952 "Gene Expression, Sus scrofa"
+xref: Reactome:REACT_105649 "Gene Expression, Drosophila melanogaster"
+xref: Reactome:REACT_108313 "Gene Expression, Caenorhabditis elegans"
+xref: Reactome:REACT_29068 "Gene Expression, Escherichia coli"
+xref: Reactome:REACT_34240 "Gene Expression, Staphylococcus aureus N315"
+xref: Reactome:REACT_71 "Gene Expression, Homo sapiens"
+xref: Reactome:REACT_78136 "Gene Expression, Mus musculus"
+xref: Reactome:REACT_78959 "Gene Expression, Taeniopygia guttata"
+xref: Reactome:REACT_79662 "Gene Expression, Plasmodium falciparum"
+xref: Reactome:REACT_85241 "Gene Expression, Oryza sativa"
+xref: Reactome:REACT_85359 "Gene Expression, Gallus gallus"
+xref: Reactome:REACT_86357 "Gene Expression, Canis familiaris"
+xref: Reactome:REACT_89816 "Gene Expression, Mycobacterium tuberculosis"
+xref: Reactome:REACT_91657 "Gene Expression, Arabidopsis thaliana"
+xref: Reactome:REACT_91965 "Gene Expression, Rattus norvegicus"
+xref: Reactome:REACT_93586 "Gene Expression, Dictyostelium discoideum"
+xref: Reactome:REACT_93968 "Gene Expression, Bos taurus"
+xref: Reactome:REACT_94814 "Gene Expression, Schizosaccharomyces pombe"
+xref: Reactome:REACT_98256 "Gene Expression, Saccharomyces cerevisiae"
+xref: Wikipedia:Gene_expression
+is_a: GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0010468
+name: regulation of gene expression
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA (for protein-coding genes) and the translation of that mRNA into protein. Some protein processing events may be included when they are required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+subset: gosubset_prok
+synonym: "regulation of gene product expression" RELATED [GOC:curators]
+synonym: "regulation of protein expression" NARROW [GOC:curators]
+xref: Wikipedia:Regulation_of_gene_expression
+is_a: GO:0060255 ! regulation of macromolecule metabolic process
+relationship: regulates GO:0010467 ! gene expression
+
+[Term]
+id: GO:0010605
+name: negative regulation of macromolecule metabolic process
+namespace: biological_process
+def: "Any process that decreases the frequency, rate or extent of the chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [GOC:dph, GOC:tb]
+is_a: GO:0009892 ! negative regulation of metabolic process
+is_a: GO:0060255 ! regulation of macromolecule metabolic process
+relationship: negatively_regulates GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0010629
+name: negative regulation of gene expression
+namespace: biological_process
+def: "Any process that decreases the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA (for protein-coding genes) and the translation of that mRNA into protein. Some protein processing events may be included when they are required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+is_a: GO:0010468 ! regulation of gene expression
+is_a: GO:0010605 ! negative regulation of macromolecule metabolic process
+relationship: negatively_regulates GO:0010467 ! gene expression
+
+[Term]
+id: GO:0016070
+name: RNA metabolic process
+namespace: biological_process
+def: "The cellular chemical reactions and pathways involving RNA, ribonucleic acid, one of the two main type of nucleic acid, consisting of a long, unbranched macromolecule formed from ribonucleotides joined in 3',5'-phosphodiester linkage." [ISBN:0198506732]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "RNA metabolism" EXACT []
+xref: Reactome:REACT_107259 "Metabolism of RNA, Sus scrofa"
+xref: Reactome:REACT_107652 "Metabolism of RNA, Schizosaccharomyces pombe"
+xref: Reactome:REACT_110289 "Metabolism of RNA, Danio rerio"
+xref: Reactome:REACT_21257 "Metabolism of RNA, Homo sapiens"
+xref: Reactome:REACT_30579 "Metabolism of RNA, Xenopus tropicalis"
+xref: Reactome:REACT_31367 "Metabolism of RNA, Dictyostelium discoideum"
+xref: Reactome:REACT_33720 "Metabolism of RNA, Plasmodium falciparum"
+xref: Reactome:REACT_80071 "Metabolism of RNA, Caenorhabditis elegans"
+xref: Reactome:REACT_83630 "Metabolism of RNA, Taeniopygia guttata"
+xref: Reactome:REACT_84169 "Metabolism of RNA, Canis familiaris"
+xref: Reactome:REACT_85788 "Metabolism of RNA, Oryza sativa"
+xref: Reactome:REACT_88316 "Metabolism of RNA, Mus musculus"
+xref: Reactome:REACT_89992 "Metabolism of RNA, Saccharomyces cerevisiae"
+xref: Reactome:REACT_91556 "Metabolism of RNA, Bos taurus"
+xref: Reactome:REACT_92152 "Metabolism of RNA, Drosophila melanogaster"
+xref: Reactome:REACT_94876 "Metabolism of RNA, Arabidopsis thaliana"
+xref: Reactome:REACT_99403 "Metabolism of RNA, Rattus norvegicus"
+xref: Reactome:REACT_99885 "Metabolism of RNA, Gallus gallus"
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+is_a: GO:0090304 ! nucleic acid metabolic process
+
+[Term]
+id: GO:0016458
+name: gene silencing
+namespace: biological_process
+def: "Any transcriptional or post-transcriptional process carried out at the cellular level that results in long-term gene inactivation." [GOC:dph, GOC:jid, GOC:tb]
+comment: Note that this process is the opposite of long-term maintenance of gene activation.
+subset: goslim_pir
+synonym: "long-term maintenance of gene inactivation" RELATED []
+xref: Wikipedia:Gene_silencing
+is_a: GO:0010629 ! negative regulation of gene expression
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0018130
+name: heterocycle biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of heterocyclic compounds, those with a cyclic molecular structure and at least two different atoms in the ring (or rings)." [ISBN:0198547684]
+subset: gosubset_prok
+synonym: "heterocycle anabolism" EXACT []
+synonym: "heterocycle biosynthesis" EXACT []
+synonym: "heterocycle formation" EXACT []
+synonym: "heterocycle synthesis" EXACT []
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0046483 ! heterocycle metabolic process
+
+[Term]
+id: GO:0019222
+name: regulation of metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism." [GOC:go_curators]
+subset: gosubset_prok
+synonym: "regulation of metabolism" EXACT []
+is_a: GO:0050789 ! regulation of biological process
+relationship: regulates GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0019438
+name: aromatic compound biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of aromatic compounds, any substance containing an aromatic carbon ring." [GOC:ai]
+subset: gosubset_prok
+synonym: "aromatic compound anabolism" EXACT []
+synonym: "aromatic compound biosynthesis" EXACT []
+synonym: "aromatic compound formation" EXACT []
+synonym: "aromatic compound synthesis" EXACT []
+synonym: "aromatic hydrocarbon biosynthesis" NARROW []
+synonym: "aromatic hydrocarbon biosynthetic process" NARROW []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
+
+[Term]
+id: GO:0019538
+name: protein metabolic process
+namespace: biological_process
+alt_id: GO:0006411
+def: "The chemical reactions and pathways involving a specific protein, rather than of proteins in general. Includes protein modification." [GOC:ma]
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "protein metabolic process and modification" EXACT []
+synonym: "protein metabolism" EXACT []
+synonym: "protein metabolism and modification" EXACT []
+xref: Wikipedia:Protein_metabolism
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0044238 ! primary metabolic process
+
+[Term]
 id: GO:0019954
 name: asexual reproduction
 namespace: biological_process
@@ -139,6 +659,16 @@ def: "The biological process in which new individuals are produced by either a s
 subset: gosubset_prok
 xref: Wikipedia:Asexual_reproduction
 is_a: GO:0000003 ! reproduction
+
+[Term]
+id: GO:0022402
+name: cell cycle process
+namespace: biological_process
+def: "The cellular process that ensures successive accurate and complete genome replication and chromosome segregation." [GOC:isa_complete, GOC:mtg_cell_cycle]
+subset: gocheck_do_not_manually_annotate
+subset: gosubset_prok
+is_a: GO:0044763 ! single-organism cellular process
+relationship: part_of GO:0007049
 
 [Term]
 id: GO:0030154
@@ -189,6 +719,21 @@ subset: gosubset_prok
 is_a: GO:0044464 ! cell part
 
 [Term]
+id: GO:0032196
+name: transposition
+namespace: biological_process
+def: "Any process involved in mediating the movement of discrete segments of DNA between nonhomologous sites." [GOC:jp, ISBN:1555812090]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_yeast
+subset: gosubset_prok
+xref: Wikipedia:Transposon
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
 id: GO:0032502
 name: developmental process
 namespace: biological_process
@@ -200,11 +745,102 @@ synonym: "development" NARROW []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0032774
+name: RNA biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of RNA, ribonucleic acid, one of the two main type of nucleic acid, consisting of a long, unbranched macromolecule formed from ribonucleotides joined in 3',5'-phosphodiester linkage. Includes polymerization of ribonucleotide monomers." [GOC:mah]
+synonym: "RNA anabolism" EXACT []
+synonym: "RNA biosynthesis" EXACT []
+synonym: "RNA formation" EXACT []
+synonym: "RNA synthesis" EXACT []
+is_a: GO:0009059 ! macromolecule biosynthetic process
+is_a: GO:0016070 ! RNA metabolic process
+is_a: GO:0034654 ! nucleobase-containing compound biosynthetic process
+
+[Term]
 id: GO:0034301
 name: endospore formation
 namespace: biological_process
 def: "The process in which a cell gives rise to an endospore, a dormant, highly resistant spore with a thick wall that forms within the mother cell. Endospores are produced by some low G+C Gram-positive bacteria in response to harsh conditions." [GOC:ds, GOC:mah, ISBN:0470090278]
 is_a: GO:0043936 ! asexual sporulation resulting in formation of a cellular spore
+
+[Term]
+id: GO:0034641
+name: cellular nitrogen compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving various organic and inorganic nitrogenous compounds, as carried out by individual cells." [GOC:mah]
+subset: goslim_generic
+subset: gosubset_prok
+synonym: "cellular nitrogen compound metabolism" EXACT []
+xref: Reactome:REACT_102000 "Metabolism of amino acids and derivatives, Mycobacterium tuberculosis"
+xref: Reactome:REACT_103710 "Metabolism of amino acids and derivatives, Escherichia coli"
+xref: Reactome:REACT_107293 "Metabolism of amino acids and derivatives, Arabidopsis thaliana"
+xref: Reactome:REACT_108179 "Metabolism of amino acids and derivatives, Xenopus tropicalis"
+xref: Reactome:REACT_109042 "Metabolism of amino acids and derivatives, Sus scrofa"
+xref: Reactome:REACT_13 "Metabolism of amino acids and derivatives, Homo sapiens"
+xref: Reactome:REACT_28699 "Metabolism of amino acids and derivatives, Saccharomyces cerevisiae"
+xref: Reactome:REACT_29108 "Metabolism of amino acids and derivatives, Caenorhabditis elegans"
+xref: Reactome:REACT_32429 "Metabolism of amino acids and derivatives, Rattus norvegicus"
+xref: Reactome:REACT_33347 "Metabolism of amino acids and derivatives, Mus musculus"
+xref: Reactome:REACT_34326 "Metabolism of amino acids and derivatives, Staphylococcus aureus N315"
+xref: Reactome:REACT_55564 "Metabolism of amino acids and derivatives, Gallus gallus"
+xref: Reactome:REACT_77741 "Metabolism of amino acids and derivatives, Taeniopygia guttata"
+xref: Reactome:REACT_82379 "Metabolism of amino acids and derivatives, Bos taurus"
+xref: Reactome:REACT_86268 "Metabolism of amino acids and derivatives, Drosophila melanogaster"
+xref: Reactome:REACT_90299 "Metabolism of amino acids and derivatives, Oryza sativa"
+xref: Reactome:REACT_91959 "Metabolism of amino acids and derivatives, Plasmodium falciparum"
+xref: Reactome:REACT_93580 "Metabolism of amino acids and derivatives, Danio rerio"
+xref: Reactome:REACT_95666 "Metabolism of amino acids and derivatives, Canis familiaris"
+xref: Reactome:REACT_98086 "Metabolism of amino acids and derivatives, Dictyostelium discoideum"
+xref: Reactome:REACT_99241 "Metabolism of amino acids and derivatives, Schizosaccharomyces pombe"
+is_a: GO:0006807 ! nitrogen compound metabolic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0034645
+name: cellular macromolecule biosynthetic process
+namespace: biological_process
+alt_id: GO:0034961
+def: "The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass, carried out by individual cells." [CHEBI:33694, GOC:mah]
+synonym: "cellular biopolymer biosynthetic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "cellular macromolecule anabolism" EXACT [GOC:mah]
+synonym: "cellular macromolecule biosynthesis" EXACT [GOC:mah]
+synonym: "cellular macromolecule formation" EXACT [GOC:mah]
+synonym: "cellular macromolecule synthesis" EXACT [GOC:mah]
+is_a: GO:0009059 ! macromolecule biosynthetic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+
+[Term]
+id: GO:0034654
+name: nucleobase-containing compound biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of nucleobases, nucleosides, nucleotides and nucleic acids." [GOC:mah]
+subset: gosubset_prok
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid anabolism" EXACT []
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid biosynthesis" EXACT []
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid formation" EXACT []
+synonym: "nucleobase, nucleoside, nucleotide and nucleic acid synthesis" NARROW []
+is_a: GO:0006139 ! nucleobase-containing compound metabolic process
+is_a: GO:0018130 ! heterocycle biosynthetic process
+is_a: GO:0019438 ! aromatic compound biosynthetic process
+is_a: GO:0044271 ! cellular nitrogen compound biosynthetic process
+is_a: GO:1901362 ! organic cyclic compound biosynthetic process
+
+[Term]
+id: GO:0040007
+name: growth
+namespace: biological_process
+alt_id: GO:0048590
+def: "The increase in size or mass of an entire organism, a part of an organism or a cell." [GOC:bf, GOC:ma]
+comment: See also the biological process term 'cell growth ; GO:0016049'.
+subset: goslim_generic
+subset: goslim_pir
+subset: goslim_plant
+subset: gosubset_prok
+synonym: "growth pattern" RELATED []
+synonym: "non-developmental growth" RELATED [GOC:mah]
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0040011
@@ -217,6 +853,32 @@ subset: gosubset_prok
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0042221
+name: response to chemical
+namespace: biological_process
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a chemical stimulus." [GOC:jl]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_manually_annotate
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_yeast
+subset: gosubset_prok
+synonym: "response to chemical stimulus" EXACT [GOC:dos]
+synonym: "response to chemical substance" EXACT []
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0042330
+name: taxis
+namespace: biological_process
+def: "The directed movement of a motile cell or organism in response to an external stimulus." [GOC:jl, ISBN:0192801023]
+subset: gosubset_prok
+synonym: "directed movement in response to stimulus" EXACT []
+xref: Wikipedia:Taxis
+is_a: GO:0009605 ! response to external stimulus
+is_a: GO:0040011 ! locomotion
+
+[Term]
 id: GO:0042995
 name: cell projection
 namespace: cellular_component
@@ -227,6 +889,32 @@ synonym: "cell process" BROAD []
 synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
 is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0043107
+name: type IV pilus-dependent motility
+namespace: biological_process
+def: "Any process involved in the controlled movement of a bacterial cell which is dependent on the presence of type IV pili. Includes social gliding motility and twitching motility." [GOC:go_curators, PMID:12704238]
+subset: gosubset_prok
+synonym: "social gliding motility" NARROW []
+synonym: "TFP-dependent motility" EXACT []
+synonym: "TFP-dependent movement" EXACT []
+synonym: "twitching motility" NARROW []
+synonym: "type 4 pilus-dependent motility" EXACT []
+synonym: "type four pilus-dependent motility" EXACT []
+is_a: GO:0048870 ! cell motility
+
+[Term]
+id: GO:0043170
+name: macromolecule metabolic process
+namespace: biological_process
+alt_id: GO:0043283
+def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [CHEBI:33694, GOC:mah]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "biopolymer metabolic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "macromolecule metabolism" EXACT []
+is_a: GO:0071704 ! organic substance metabolic process
 
 [Term]
 id: GO:0043934
@@ -245,6 +933,95 @@ namespace: biological_process
 def: "The formation of a cellular spore derived from the products of mitosis. A cellular spore is a cell form that can be used for dissemination, for survival of adverse conditions because of its heat and dessication resistance, and/or for reproduction." [GOC:pamgo_curators]
 is_a: GO:0030435 ! sporulation resulting in formation of a cellular spore
 is_a: GO:0030436 ! asexual sporulation
+
+[Term]
+id: GO:0044237
+name: cellular metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways by which individual cells transform chemical substances." [GOC:go_curators]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "cellular metabolism" EXACT []
+synonym: "intermediary metabolism" RELATED [GOC:mah]
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0044238
+name: primary metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism." [GOC:go_curators, http://www.metacyc.org]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "primary metabolism" EXACT []
+is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0044249
+name: cellular biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." [GOC:jl]
+subset: gosubset_prok
+synonym: "cellular anabolism" EXACT []
+synonym: "cellular biosynthesis" EXACT []
+synonym: "cellular formation" EXACT []
+synonym: "cellular synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0044260
+name: cellular macromolecule metabolic process
+namespace: biological_process
+alt_id: GO:0034960
+def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass, as carried out by individual cells." [CHEBI:33694, GOC:mah]
+subset: gosubset_prok
+synonym: "cellular biopolymer metabolic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "cellular macromolecule metabolism" EXACT []
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0044267
+name: cellular protein metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving a specific protein, rather than of proteins in general, occurring at the level of an individual cell. Includes cellular protein modification." [GOC:jl]
+subset: gosubset_prok
+synonym: "cellular protein metabolism" EXACT []
+xref: Reactome:REACT_101554 "Metabolism of proteins, Gallus gallus"
+xref: Reactome:REACT_102155 "Metabolism of proteins, Arabidopsis thaliana"
+xref: Reactome:REACT_105825 "Metabolism of proteins, Dictyostelium discoideum"
+xref: Reactome:REACT_106151 "Metabolism of proteins, Xenopus tropicalis"
+xref: Reactome:REACT_108005 "Metabolism of proteins, Bos taurus"
+xref: Reactome:REACT_109022 "Metabolism of proteins, Schizosaccharomyces pombe"
+xref: Reactome:REACT_17015 "Metabolism of proteins, Homo sapiens"
+xref: Reactome:REACT_32904 "Metabolism of proteins, Canis familiaris"
+xref: Reactome:REACT_34473 "Metabolism of proteins, Taeniopygia guttata"
+xref: Reactome:REACT_80561 "Metabolism of proteins, Escherichia coli"
+xref: Reactome:REACT_81994 "Metabolism of proteins, Sus scrofa"
+xref: Reactome:REACT_82523 "Metabolism of proteins, Danio rerio"
+xref: Reactome:REACT_85873 "Metabolism of proteins, Saccharomyces cerevisiae"
+xref: Reactome:REACT_86658 "Metabolism of proteins, Drosophila melanogaster"
+xref: Reactome:REACT_89852 "Metabolism of proteins, Rattus norvegicus"
+xref: Reactome:REACT_91052 "Metabolism of proteins, Caenorhabditis elegans"
+xref: Reactome:REACT_93132 "Metabolism of proteins, Mus musculus"
+xref: Reactome:REACT_96466 "Metabolism of proteins, Plasmodium falciparum"
+xref: Reactome:REACT_99179 "Metabolism of proteins, Oryza sativa"
+is_a: GO:0019538 ! protein metabolic process
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+
+[Term]
+id: GO:0044271
+name: cellular nitrogen compound biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of organic and inorganic nitrogenous compounds." [GOC:jl, ISBN:0198506732]
+subset: gosubset_prok
+synonym: "nitrogen compound anabolism" BROAD []
+synonym: "nitrogen compound biosynthesis" BROAD []
+synonym: "nitrogen compound formation" BROAD []
+synonym: "nitrogen compound synthesis" BROAD []
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
 
 [Term]
 id: GO:0044464
@@ -270,6 +1047,22 @@ synonym: "single organism process" EXACT []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0044710
+name: single-organism metabolic process
+namespace: biological_process
+def: "A metabolic process - chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances - which involves a single organism." [GOC:jl]
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044711
+name: single-organism biosynthetic process
+namespace: biological_process
+def: "A biosynthetic process - chemical reactions and pathways resulting in the formation of substances - involving a single organism." [GOC:jl]
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044710 ! single-organism metabolic process
+
+[Term]
 id: GO:0044763
 name: single-organism cellular process
 namespace: biological_process
@@ -284,6 +1077,40 @@ namespace: biological_process
 def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition, involving only one organism." [GOC:jl]
 is_a: GO:0032502 ! developmental process
 is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044786
+name: cell cycle DNA replication
+namespace: biological_process
+def: "The DNA-dependent DNA replication that takes place as part of the cell cycle." [GOC:mtg_cell_cycle]
+is_a: GO:0006260 ! DNA replication
+is_a: GO:0022402 ! cell cycle process
+is_a: GO:0044711 ! single-organism biosynthetic process
+
+[Term]
+id: GO:0046483
+name: heterocycle metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving heterocyclic compounds, those with a cyclic molecular structure and at least two different atoms in the ring (or rings)." [CHEBI:5686, ISBN:0198506732]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "heterocycle metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0048519
+name: negative regulation of biological process
+namespace: biological_process
+alt_id: GO:0043118
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." [GOC:jid]
+subset: gosubset_prok
+synonym: "down regulation of biological process" EXACT []
+synonym: "down-regulation of biological process" EXACT []
+synonym: "downregulation of biological process" EXACT []
+synonym: "inhibition of biological process" NARROW []
+synonym: "negative regulation of physiological process" EXACT []
+is_a: GO:0050789 ! regulation of biological process
+relationship: negatively_regulates GO:0008150 ! biological_process
 
 [Term]
 id: GO:0048646
@@ -321,19 +1148,78 @@ is_a: GO:0040011 ! locomotion
 relationship: part_of GO:0051674
 
 [Term]
-id: GO:0051179
-name: localization
+id: GO:0050789
+name: regulation of biological process
 namespace: biological_process
-def: "Any process in which a cell, a substance, or a cellular entity, such as a protein complex or organelle, is transported to or maintained in a specific location." [GOC:ai]
+alt_id: GO:0050791
+def: "Any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." [GOC:ai, GOC:go_curators]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: gosubset_prok
+synonym: "regulation of physiological process" EXACT []
+is_a: GO:0065007 ! biological regulation
+relationship: regulates GO:0008150 ! biological_process
+
+[Term]
+id: GO:0050896
+name: response to stimulus
+namespace: biological_process
+alt_id: GO:0051869
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus and ends with a change in state or activity or the cell or organism." [GOC:ai, GOC:bf]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_manually_annotate
 subset: goslim_pir
 subset: gosubset_prok
-synonym: "establishment and maintenance of cellular component location" NARROW []
-synonym: "establishment and maintenance of localization" EXACT []
-synonym: "establishment and maintenance of position" EXACT []
-synonym: "establishment and maintenance of substance location" NARROW []
-synonym: "establishment and maintenance of substrate location" NARROW []
-synonym: "localisation" EXACT [GOC:mah]
+synonym: "physiological response to stimulus" EXACT []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0060255
+name: regulation of macromolecule metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [GOC:dph, GOC:tb]
+subset: gosubset_prok
+is_a: GO:0019222 ! regulation of metabolic process
+relationship: regulates GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0065007
+name: biological regulation
+namespace: biological_process
+def: "Any process that modulates a measurable attribute of any biological process, quality or function." [GOC:dph, GOC:isa_complete, GOC:mah, GOC:pr, GOC:vw]
+subset: goslim_pir
+subset: gosubset_prok
+synonym: "regulation" BROAD []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0071704
+name: organic substance metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [CHEBI:50860, GOC:mah]
+synonym: "organic molecular entity metabolic process" EXACT []
+synonym: "organic molecular entity metabolism" EXACT []
+synonym: "organic substance metabolism" EXACT []
+is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0071973
+name: bacterial-type flagellum-dependent cell motility
+namespace: biological_process
+def: "Cell motility due to the motion of one or more bacterial-type flagella. A bacterial-type flagellum is a motor complex composed of an extracellular helical protein filament coupled to a rotary motor embedded in the cell envelope." [GOC:cilia, GOC:krc, GOC:mah]
+subset: gosubset_prok
+synonym: "bacterial-type flagellar cell motility" RELATED []
+synonym: "flagellin-based flagellar cell motility" EXACT [GOC:mah]
+is_a: GO:0097588 ! archaeal or bacterial-type flagellum-dependent cell motility
+
+[Term]
+id: GO:0071975
+name: cell swimming
+namespace: biological_process
+def: "Cell motility that results in the smooth movement of a cell through a liquid medium." [PMID:18461074]
+subset: gosubset_prok
+synonym: "cell swimming motility" EXACT [GOC:mah]
+is_a: GO:0048870 ! cell motility
 
 [Term]
 id: GO:0071976
@@ -343,6 +1229,69 @@ def: "Cell motility that results in the smooth movement of a cell along a solid 
 subset: gosubset_prok
 synonym: "cell gliding motility" EXACT [GOC:mah]
 is_a: GO:0048870 ! cell motility
+
+[Term]
+id: GO:0071978
+name: bacterial-type flagellum-dependent swarming motility
+namespace: biological_process
+def: "Bacterial-type flagellum-dependent cell motility in which the action of numerous flagella results in the smooth movement of a group of cells along a solid surface. Swarming motility is observed in groups of bacteria." [GOC:cilia, PMID:14527279, PMID:18461074]
+subset: gosubset_prok
+synonym: "bacterial-type flagellar swarming motility" RELATED []
+synonym: "bacterial-type flagellum-mediated cell swarming" EXACT [GOC:mah]
+is_a: GO:0071973 ! bacterial-type flagellum-dependent cell motility
+
+[Term]
+id: GO:0090304
+name: nucleic acid metabolic process
+namespace: biological_process
+def: "Any cellular metabolic process involving nucleic acids." [GOC:dph, GOC:tb]
+is_a: GO:0006139 ! nucleobase-containing compound metabolic process
+is_a: GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0097588
+name: archaeal or bacterial-type flagellum-dependent cell motility
+namespace: biological_process
+def: "Cell motility due to movement of bacterial- or archaeal-type flagella." [GOC:cilia, GOC:krc]
+comment: Bacterial- and archaeal-type flagella are superficially similar but have a different molecular composition and fine structure. This term was added for mapping to the UniProt keyword "flagellar rotation". For manual annotation, please use one of the child terms of GO:0097588 that refer specifically to either archaeal- or bacterial-type flagella.
+is_a: GO:0001539 ! cilium or flagellum-dependent cell motility
+
+[Term]
+id: GO:1901360
+name: organic cyclic compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving organic cyclic compound." [GOC:TermGenie]
+synonym: "organic cyclic compound metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901362
+name: organic cyclic compound biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of organic cyclic compound." [GOC:TermGenie]
+synonym: "organic cyclic compound anabolism" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound biosynthesis" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound formation" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound synthesis" EXACT [GOC:TermGenie]
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:1901576
+name: organic substance biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of an organic substance, any molecular entity containing carbon." [GOC:pr, GOC:TermGenie]
+synonym: "organic molecular entity anabolism" EXACT [GOC:TermGenie]
+synonym: "organic molecular entity biosynthesis" EXACT [GOC:TermGenie]
+synonym: "organic molecular entity biosynthetic process" EXACT []
+synonym: "organic molecular entity formation" EXACT [GOC:TermGenie]
+synonym: "organic molecular entity synthesis" EXACT [GOC:TermGenie]
+synonym: "organic substance anabolism" EXACT []
+synonym: "organic substance biosynthesis" EXACT []
+synonym: "organic substance formation" EXACT []
+synonym: "organic substance synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0071704 ! organic substance metabolic process
 
 [Term]
 id: OMP:0000000
@@ -372,8 +1321,8 @@ def: "An altered cell motility phenotype where cell motility is decreased relati
 xref: PATO:0002297
 is_a: OMP:0007001 ! altered cell motility
 intersection_of: OMP:0007001 ! altered cell motility
-intersection_of: RO:0000086 PATO:0002302 ! has_quality decreased process quality
-relationship: RO:0000086 PATO:0002302 ! has_quality decreased process quality
+intersection_of: has_quality PATO:0002302 ! decreased process quality
+relationship: has_quality PATO:0002302 ! decreased process quality
 creation_date: 2011-03-10T07:02:42Z
 
 [Term]
@@ -391,6 +1340,9 @@ name: taxis phenotype
 def: "A locomotion phenotype where the directed movement of a motile cell or organism is in response to an external stimulus." [ISBN:0192800329, OMP:MCC]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000312 ! locomotion phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0042330 ! taxis
+relationship: inheres_in GO:0042330 ! taxis
 created_by: mchibucos
 creation_date: 2011-04-14T03:29:20Z
 
@@ -401,8 +1353,8 @@ def: "A cell motility phenotype where a cell or cells possess the ability to per
 synonym: "motile" RELATED []
 is_a: OMP:0000001 ! cell motility phenotype
 intersection_of: OMP:0000001 ! cell motility phenotype
-intersection_of: RO:0000086 PATO:0000467 ! has_quality present
-relationship: RO:0000086 PATO:0000467 ! has_quality present
+intersection_of: has_quality PATO:0000467 ! present
+relationship: has_quality PATO:0000467 ! present
 created_by: mchibucos
 creation_date: 2011-04-14T03:35:35Z
 
@@ -460,8 +1412,8 @@ name: decreased endospore formation
 def: "An altered endospore formation phenotype where endospore formation is decreased relative to a designated control." [OMP:JCH]
 is_a: OMP:0006161 ! altered endospore formation
 intersection_of: OMP:0006161 ! altered endospore formation
-intersection_of: RO:0000086 PATO:0002302 ! has_quality decreased process quality
-relationship: RO:0000086 PATO:0002302 ! has_quality decreased process quality
+intersection_of: has_quality PATO:0002302 ! decreased process quality
+relationship: has_quality PATO:0002302 ! decreased process quality
 created_by: mchibucos
 creation_date: 2011-06-07T10:14:15Z
 
@@ -471,8 +1423,8 @@ name: increased endospore formation
 def: "An altered endospore formation phenotype where endospore formation is increased relative to a designated control." [OMP:JCH]
 is_a: OMP:0006161 ! altered endospore formation
 intersection_of: OMP:0006161 ! altered endospore formation
-intersection_of: RO:0000086 PATO:0002304 ! has_quality increased process quality
-relationship: RO:0000086 PATO:0002304 ! has_quality increased process quality
+intersection_of: has_quality PATO:0002304 ! increased process quality
+relationship: has_quality PATO:0002304 ! increased process quality
 created_by: mchibucos
 creation_date: 2011-06-07T10:14:39Z
 
@@ -480,7 +1432,7 @@ creation_date: 2011-06-07T10:14:39Z
 id: OMP:0000015
 name: decreased heterocyst formation
 def: "A heterocyst formation phenotype where heterocyst formation is decreased relative to a designated control." [OMP:MCC]
-is_a: OMP:0006007 ! altered heterocyst formation phenotype
+is_a: OMP:0006007 ! altered heterocyst formation
 created_by: mchibucos
 creation_date: 2011-04-26T03:05:35Z
 
@@ -498,8 +1450,8 @@ name: endospore forming
 def: "An endospore formation phenotype where the cell possesses the ability to form an endospore." [OMP:MCC]
 is_a: OMP:0000094 ! endospore formation phenotype
 intersection_of: OMP:0000094 ! endospore formation phenotype
-intersection_of: RO:0000086 PATO:0000467 ! has_quality present
-relationship: RO:0000086 PATO:0000467 ! has_quality present
+intersection_of: RO:0000086 PATO:0000467 ! RO:0000086 (UNDECLARED) present
+relationship: RO:0000086 PATO:0000467 ! RO:0000086 (UNDECLARED) present
 created_by: mchibucos
 creation_date: 2011-04-26T03:09:10Z
 
@@ -509,8 +1461,8 @@ name: non-endospore forming
 def: "An endospore formation phenotype where the cell does not possess the ability to form an endospore." [OMP:MCC]
 is_a: OMP:0000094 ! endospore formation phenotype
 intersection_of: OMP:0000094 ! endospore formation phenotype
-intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
-relationship: RO:0000086 PATO:0000462 ! has_quality absent
+intersection_of: has_quality PATO:0000462 ! absent
+relationship: has_quality PATO:0000462 ! absent
 created_by: mchibucos
 creation_date: 2011-04-26T03:09:25Z
 
@@ -534,7 +1486,7 @@ creation_date: 2011-04-26T03:10:51Z
 id: OMP:0000022
 name: decreased myxospore formation
 def: "A myxospore formation phenotype where the ability to form myxospores is decreased relative to a designated control." [OMP:MCC]
-is_a: OMP:0006009 ! altered myxospore formation phenotype
+is_a: OMP:0006009 ! altered myxospore formation
 created_by: mchibucos
 creation_date: 2011-04-26T03:10:51Z
 
@@ -701,8 +1653,8 @@ def: "An altered cell motility phenotype where cell motility is increased relati
 xref: PATO:0002298
 is_a: OMP:0007001 ! altered cell motility
 intersection_of: OMP:0007001 ! altered cell motility
-intersection_of: RO:0000086 PATO:0002304 ! has_quality increased process quality
-relationship: RO:0000086 PATO:0002304 ! has_quality increased process quality
+intersection_of: has_quality PATO:0002304 ! increased process quality
+relationship: has_quality PATO:0002304 ! increased process quality
 created_by: mchibucos
 creation_date: 2011-04-26T04:08:26Z
 
@@ -718,8 +1670,11 @@ creation_date: 2011-04-26T04:17:42Z
 id: OMP:0000047
 name: aerotaxis phenotype
 def: "A taxis phenotype where directed movement of a motile cell or organism is in response to environmental oxygen (O2)." [ISBN:0192800329, OMP:MCC]
-xref: GO:0009454
+xref: GO:0009454 "aerotaxis"
 is_a: OMP:0000004 ! taxis phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0009454 ! aerotaxis
+relationship: inheres_in GO:0009454 ! aerotaxis
 created_by: mchibucos
 creation_date: 2011-04-26T04:18:11Z
 
@@ -738,6 +1693,9 @@ id: OMP:0000049
 name: presence of aerotaxis
 def: "An aerotaxis phenotype where a motile cell or organism displays directed movement in response to environmental oxygen (O2)." [OMP:MCC]
 is_a: OMP:0000047 ! aerotaxis phenotype
+intersection_of: OMP:0000047 ! aerotaxis phenotype
+intersection_of: has_quality PATO:0000467 ! present
+relationship: has_quality PATO:0000467 ! present
 created_by: mchibucos
 creation_date: 2011-04-26T04:27:42Z
 
@@ -874,6 +1832,9 @@ id: OMP:0000067
 name: cell motility by swarming
 def: "A presence of cell motility phenotype where a population of cells exhibit coordinated translocation across solid or semi-solid surfaces." [OMP:MCC]
 is_a: OMP:0000005 ! presence of cell motility
+intersection_of: OMP:0000005 ! presence of cell motility
+intersection_of: inheres_in GO:0071978 ! bacterial-type flagellum-dependent swarming motility
+relationship: inheres_in GO:0071978 ! bacterial-type flagellum-dependent swarming motility
 created_by: adrienne
 creation_date: 2011-02-02T03:28:43Z
 
@@ -933,6 +1894,7 @@ creation_date: 2011-02-02T03:31:35Z
 id: OMP:0000073
 name: cell shape phenotype
 def: "A cell morphology phenotype where the trait in question is the shape of a cell." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000071 ! cell morphology phenotype
 is_a: PATO:0000052 ! shape
 intersection_of: PATO:0000052 ! shape
@@ -945,6 +1907,7 @@ creation_date: 2011-02-02T03:18:02Z
 id: OMP:0000074
 name: cell size phenotype
 def: "A cell morphology phenotype where the trait in question is the size of a cell." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000071 ! cell morphology phenotype
 is_a: PATO:0000117 ! size
 intersection_of: PATO:0000117 ! size
@@ -958,7 +1921,7 @@ id: OMP:0000075
 name: coccus
 def: "A spheroid cell phenotype where a cell is spherical or nearly spherical." [ISBN:9780073402406, OMP:MCC]
 synonym: "spherical-shaped" EXACT []
-is_a: OMP:0007100 ! spheroid cell phenotype
+is_a: OMP:0007100 ! spheroid cell shape
 created_by: adrienne
 creation_date: 2011-02-02T03:18:29Z
 
@@ -967,7 +1930,7 @@ id: OMP:0000076
 name: bacillus
 def: "A cylindrical cell phenotype where an organism has rod-shaped cells." [ISBN:9780073402406, OMP:MCC]
 synonym: "rod-shaped" EXACT []
-is_a: OMP:0007099 ! cylindrical cell phenotype
+is_a: OMP:0007099 ! cylindrical cell shape
 created_by: adrienne
 creation_date: 2011-02-02T03:18:47Z
 
@@ -975,7 +1938,7 @@ creation_date: 2011-02-02T03:18:47Z
 id: OMP:0000077
 name: vibrio
 def: "A spiral cell shape phenotype where a rod-shaped cell is curved to form a comma-like shape or incomplete spiral." [ISBN:9780073402406, OMP:AEZ]
-is_a: OMP:0000086 ! spiral cell shape phenotype
+is_a: OMP:0000086 ! spiral cell shape
 created_by: adrienne
 creation_date: 2011-02-02T03:19:31Z
 
@@ -1024,6 +1987,7 @@ creation_date: 2011-02-02T03:46:44Z
 id: OMP:0000083
 name: cell projection phenotype
 def: "A cell morphology phenotype where the structure in question is a prolongation or process extending from a cell." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "cell appendage phenotype" EXACT []
 xref: GO:0042995 "cell projection"
 is_a: OMP:0000071 ! cell morphology phenotype
@@ -1046,6 +2010,7 @@ creation_date: 2011-02-02T03:47:57Z
 id: OMP:0000085
 name: envelope phenotype
 def: "A cell morphology phenotype relating to the envelope that surrounds a microbial cell and includes the cytoplasmic membrane and everything external to the cytoplasmic membrane, encompassing the periplasmic space, cell wall, and outer membrane.  Additional layers, such as capsules or S-layers, are also part of the envelope." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000071 ! cell morphology phenotype
 intersection_of: PATO:0001241 ! physical object quality
 intersection_of: inheres_in GO:0031975 ! envelope
@@ -1055,7 +2020,7 @@ creation_date: 2011-02-02T03:49:03Z
 
 [Term]
 id: OMP:0000086
-name: spiral cell shape phenotype
+name: spiral cell shape
 def: "A cell shape phenotype where a cell is helical or cork-screw shaped." [OMP:MCC]
 synonym: "curved rod" RELATED []
 synonym: "spirillum" NARROW []
@@ -1067,8 +2032,8 @@ creation_date: 2011-02-02T03:19:47Z
 
 [Term]
 id: OMP:0000087
-name: facultative anaerobe phenotype
-def: "An oxygen requirement for growth phenotype where growth does not require oxygen but growth is better in its presence." [ISBN:9780073402406, OMP:WAM]
+name: facultative anaerobe
+def: "An oxygen growth range phenotype where growth does not require oxygen but is better in its presence." [ISBN:9780073402406, OMP:WAM]
 is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:42:26Z
@@ -1117,6 +2082,7 @@ creation_date: 2011-02-02T03:24:24Z
 id: OMP:0000092
 name: heterocyst formation phenotype
 def: "A cell development phenotype where development concerns differentiation into a specialized cell whose purpose is to fix nitrogen." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000070 ! cell development phenotype
 created_by: adrienne
 creation_date: 2011-02-02T03:24:43Z
@@ -1133,7 +2099,7 @@ creation_date: 2011-02-02T03:25:02Z
 id: OMP:0000094
 name: endospore formation phenotype
 def: "A sporulation phenotype where development concerns formation of an endospore, a dormant, highly resistant spore with a thick wall that forms within the mother cell." [OMP:MCC]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0034301 "endospore formation"
 is_a: OMP:0000091 ! sporulation phenotype
 intersection_of: OMP:0000000 ! microbial phenotype
@@ -1146,6 +2112,7 @@ creation_date: 2011-02-02T03:25:29Z
 id: OMP:0000095
 name: spore germination phenotype
 def: "A cell development phenotype where development concerns the physiological and developmental changes that occur in a spore following release from dormancy up to the earliest signs of growth (e.g. emergence from a spore wall)." [OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000070 ! cell development phenotype
 created_by: adrienne
 creation_date: 2011-02-02T03:25:47Z
@@ -1228,8 +2195,8 @@ creation_date: 2011-02-02T02:42:12Z
 
 [Term]
 id: OMP:0000105
-name: aerotolerant anaerobe phenotype
-def: "An oxygen requirement for growth phenotype, where growth occurs equally well in the presence or absence of oxygen." [ISBN:9780073402406, OMP:WAM]
+name: aerotolerant anaerobe
+def: "An oxygen growth range phenotype, where growth occurs equally well in the presence or absence of oxygen." [ISBN:9780073402406, OMP:WAM]
 is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:43:38Z
@@ -1281,6 +2248,9 @@ id: OMP:0000111
 name: cell motility by swimming
 def: "A presence of cell motility phenotype where a cell or cells exhibits smooth movement through a liquid medium." [OMP:MCC]
 is_a: OMP:0000005 ! presence of cell motility
+intersection_of: OMP:0000005 ! presence of cell motility
+intersection_of: inheres_in GO:0071975 ! cell swimming
+relationship: inheres_in GO:0071975 ! cell swimming
 created_by: adrienne
 creation_date: 2011-02-07T03:17:40Z
 
@@ -1299,7 +2269,11 @@ creation_date: 2011-02-07T03:18:03Z
 id: OMP:0000113
 name: cell motility by twitching
 def: "A presence of cell motility phenotype where a cell or cells exhibit movement over moist surfaces by the extension, tethering and then retraction of polar pili, usually type IV pili." [OMP:MCC, PMID:12142488]
+xref: GO:0043107 "type IV pilus-dependent motility"
 is_a: OMP:0000005 ! presence of cell motility
+intersection_of: OMP:0000005 ! presence of cell motility
+intersection_of: inheres_in GO:0043107 ! type IV pilus-dependent motility
+relationship: inheres_in GO:0043107 ! type IV pilus-dependent motility
 created_by: adrienne
 creation_date: 2011-02-07T03:18:13Z
 
@@ -1381,7 +2355,7 @@ creation_date: 2011-02-18T02:47:10Z
 
 [Term]
 id: OMP:0000123
-name: coccobacillus cell phenotype
+name: coccobacillus cell shape
 def: "A cell shape phenotype where a cell is intermediate in shape between a coccus (sphere) and a bacillus (rod)." [ISBN:9780073402406, OMP:MCC]
 is_a: OMP:0000073 ! cell shape phenotype
 created_by: adrienne
@@ -1391,7 +2365,7 @@ creation_date: 2011-02-18T02:48:21Z
 id: OMP:0000124
 name: spirillum
 def: "A spiral cell shape phenotype where a cell forms a rigid spiral." [ISBN:9780073402406, OMP:AEZ]
-is_a: OMP:0000086 ! spiral cell shape phenotype
+is_a: OMP:0000086 ! spiral cell shape
 created_by: adrienne
 creation_date: 2011-02-18T02:51:54Z
 
@@ -1399,7 +2373,7 @@ creation_date: 2011-02-18T02:51:54Z
 id: OMP:0000125
 name: spirochete
 def: "A spiral cell shape phenotype where a cell forms a flexible spiral." [ISBN:9780073402406, OMP:AEZ]
-is_a: OMP:0000086 ! spiral cell shape phenotype
+is_a: OMP:0000086 ! spiral cell shape
 created_by: adrienne
 creation_date: 2011-02-18T02:52:33Z
 
@@ -1421,7 +2395,7 @@ creation_date: 2011-02-18T02:59:18Z
 
 [Term]
 id: OMP:0000128
-name: stalked cell phenotype
+name: stalked cell shape
 def: "A cell shape phenotype where a cell possesses an appendage called a stalk or prostheca (plural, prosthecae), which is a tubular extension of the cell envelope and contains cytosol." [OMP:MCC, PMID:14245437]
 synonym: "prosthecate bacterium" EXACT [URL:http\://en.wikipedia.org/wiki/Prosthecate_bacteria]
 is_a: OMP:0000073 ! cell shape phenotype
@@ -1430,7 +2404,7 @@ creation_date: 2011-02-18T02:59:38Z
 
 [Term]
 id: OMP:0000129
-name: cuboidal cell phenotype
+name: cuboidal cell shape
 def: "A cell shape phenotype where a cell has a cube-like shape; there are six sides and the width is approximately equal to the height of the cell." [OMP:MCC]
 synonym: "square" RELATED []
 is_a: OMP:0000073 ! cell shape phenotype
@@ -1439,7 +2413,7 @@ creation_date: 2011-02-18T02:59:57Z
 
 [Term]
 id: OMP:0000130
-name: star-shaped cell phenotype
+name: star-shaped cell shape
 def: "A cell shape phenotype where a cell has projections that form points." [OMP:MCC]
 is_a: OMP:0000073 ! cell shape phenotype
 created_by: adrienne
@@ -1447,7 +2421,7 @@ creation_date: 2011-02-18T03:00:30Z
 
 [Term]
 id: OMP:0000131
-name: lobed cell phenotype
+name: lobed cell shape
 def: "A cell shape phenotype where a cell has curved or rounded projections or divisions (lobes)." [OMP:MCC]
 xref: PATO:0001979 "lobed"
 is_a: OMP:0000073 ! cell shape phenotype
@@ -1456,7 +2430,7 @@ creation_date: 2011-02-18T03:00:58Z
 
 [Term]
 id: OMP:0000132
-name: pleomorphic cell shape phenotype
+name: pleomorphic cell shape
 def: "A cell shape phenotype where a cell is variable in shape and lacks a single, characteristic form." [ISBN:9780073402406, OMP:MCC]
 xref: PATO:0001356
 is_a: OMP:0000073 ! cell shape phenotype
@@ -1470,8 +2444,8 @@ def: "A cell motility phenotype where a cell or cells lacks the ability to perfo
 synonym: "non-motile" RELATED []
 is_a: OMP:0000001 ! cell motility phenotype
 intersection_of: OMP:0000001 ! cell motility phenotype
-intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
-relationship: RO:0000086 PATO:0000462 ! has_quality absent
+intersection_of: has_quality PATO:0000462 ! absent
+relationship: has_quality PATO:0000462 ! absent
 created_by: adrienne
 creation_date: 2011-02-18T03:33:32Z
 
@@ -1686,6 +2660,9 @@ id: OMP:0000159
 name: absence of aerotaxis
 def: "An aerotaxis phenotype where a motile cell or organism doesn't display directed movement in response to environmental oxygen (O2)." [OMP:MCC]
 is_a: OMP:0000047 ! aerotaxis phenotype
+intersection_of: OMP:0000047 ! aerotaxis phenotype
+intersection_of: has_quality PATO:0000462 ! absent
+relationship: has_quality PATO:0000462 ! absent
 created_by: adrienne
 creation_date: 2011-03-02T02:06:09Z
 
@@ -1779,8 +2756,8 @@ creation_date: 2011-02-02T02:52:30Z
 
 [Term]
 id: OMP:0000171
-name: microaerophile phenotype
-def: "An oxygen requirement for growth phenotype where growth requires oxygen levels between 2 to 10 percent for growth and is impaired by atmospheric oxygen levels (20 percent)." [ISBN:9780073402406, OMP:WAM]
+name: microaerophile
+def: "An oxygen growth range phenotype where growth requires oxygen levels between 2 to 10 percent for growth and is impaired by atmospheric oxygen levels (20 percent)." [ISBN:9780073402406, OMP:WAM]
 is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T03:44:11Z
@@ -1809,6 +2786,9 @@ def: "A microbial phenotype related to the increase in size or mass of an organi
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0040007 "growth"
 is_a: OMP:0000000 ! microbial phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0040007 ! growth
+relationship: inheres_in GO:0040007 ! growth
 created_by: Adrienne
 creation_date: 2011-02-02T03:13:59Z
 
@@ -1893,16 +2873,16 @@ creation_date: 2011-02-07T03:52:44Z
 
 [Term]
 id: OMP:0000184
-name: obligate anaerobe phenotype
-def: "An oxygen requirement for growth phenotype where growth does not occur in the presence of oxygen." [ISBN:9780073402406, OMP:WAM]
+name: obligate anaerobe
+def: "An oxygen growth range phenotype where growth does not occur in the presence of oxygen." [ISBN:9780073402406, OMP:WAM]
 is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:29:34Z
 
 [Term]
 id: OMP:0000185
-name: obligate aerobe phenotype
-def: "An oxygen requirement for growth phenotype where growth is dependent on atmospheric oxygen." [ISBN:9780073402406, OMP:WAM]
+name: obligate aerobe
+def: "An oxygen growth range phenotype where growth is dependent on atmospheric oxygen." [ISBN:9780073402406, OMP:WAM]
 is_a: OMP:0000039 ! oxygen growth range phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:29:51Z
@@ -1947,6 +2927,7 @@ creation_date: 2011-02-02T03:34:58Z
 id: OMP:0000191
 name: gram stain phenotype
 def: "A cell staining phenotype where microorganisms are grouped based on their ability to retain crystal violet stain when decolorized with an organic solvent such as ethanol." [ISBN:978-0-07-340240-6, OMP:DAS]
+xref: SNOMEDCT:385484003 "Gram stain"
 is_a: OMP:0000214 ! cell staining phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:35:15Z
@@ -1972,7 +2953,7 @@ creation_date: 2011-06-06T04:28:49Z
 id: OMP:0000195
 name: decreased catalase activity
 def: "An altered catalase activity phenotype where catalase activity is decreased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006077 ! altered catalase activity
+is_a: OMP:0006077 ! altered catalase test result
 created_by: mchibucos
 creation_date: 2011-06-06T04:29:20Z
 
@@ -1981,7 +2962,7 @@ id: OMP:0000196
 name: increased catalase activity
 def: "An altered catalase activity phenotype where catalase activity is increased relative to a designated control." [OMP:JCH]
 synonym: "positive regulation of catalase activity" NARROW [GO:1902553]
-is_a: OMP:0006077 ! altered catalase activity
+is_a: OMP:0006077 ! altered catalase test result
 created_by: mchibucos
 creation_date: 2011-06-06T04:29:39Z
 
@@ -2170,7 +3151,7 @@ creation_date: 2011-06-07T03:19:00Z
 id: OMP:0000218
 name: catalase test phenotype
 def: "A differential test phenotype that relates to the presence or absence of catalase, an enzyme that catalyzes the decomposition of hydrogen peroxide into oxygen and water." [ISBN:9780895828309, OMP:JCH]
-comment: Catalysis of the reaction: 2 hydrogen peroxide = O2 + 2 H2O [EC:1.11.1.6].
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.\n\nCatalysis of the reaction: 2 hydrogen peroxide = O2 + 2 H2O [EC:1.11.1.6].
 xref: GO:0004096 "catalase activity"
 is_a: OMP:0007130 ! differential test phenotype
 created_by: Adrienne
@@ -2180,6 +3161,7 @@ creation_date: 2011-02-03T04:43:28Z
 id: OMP:0000219
 name: decarboxylase test phenotype
 def: "A differential test phenotype that describes the ability of an organism to catalyze the removal of a carboxyl group from an amino acid, typically lysine, ornithine, or arginine." [ISBN:9780895828309, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0007130 ! differential test phenotype
 created_by: Adrienne
 creation_date: 2011-02-03T04:43:53Z
@@ -2188,7 +3170,7 @@ creation_date: 2011-02-03T04:43:53Z
 id: OMP:0000220
 name: oxidase test phenotype
 def: "A differential test phenotype that relates to the presence or absence of cytochrome oxidase based on the ability of an organism to oxidize certain aromatic amines to form colored end products." [ISBN:9780895828309, OMP:JCH]
-comment: The oxidase test is used in identification of bacterial species.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0007130 ! differential test phenotype
 created_by: Adrienne
 creation_date: 2011-02-03T04:44:11Z
@@ -2206,6 +3188,7 @@ creation_date: 2011-02-03T04:44:39Z
 id: OMP:0000222
 name: urease test phenotype
 def: "A differential test phenotype that relates to the presence or absence of urease, an enzyme that hydrolyzes urea to ammonia and carbon dioxide." [ISBN:9780895828309, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0009039 "urease activity"
 is_a: OMP:0007130 ! differential test phenotype
 created_by: Adrienne
@@ -2412,7 +3395,11 @@ name: gene expression phenotype
 def: "A microbial phenotype that affects expression of a gene or genes.  Gene expression includes transcription, RNA processing, and, for protein-coding genes, translation and protein maturation." [ISBN:9781615835409, OMP:WAM]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000142 "gene expression phenotype"
+xref: GO:0010467 "gene expression"
 is_a: OMP:0000000 ! microbial phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0010467 ! gene expression
+relationship: inheres_in GO:0010467 ! gene expression
 created_by: mchibucos
 creation_date: 2011-07-21T01:03:06Z
 
@@ -2603,11 +3590,15 @@ creation_date: 2011-07-21T05:44:45Z
 [Term]
 id: OMP:0000307
 name: DNA replication phenotype
-def: "A macromolecular biosynthesis and genetic material phenotype related to the processes involved in the duplication of a molecule of DNA." [OMP:WAM]
+def: "A genetic material phenotype related to the process of DNA-dependent DNA replication that takes place as part of the cell cycle." [OMP:WAM]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0044786 "cell cycle DNA replication"
 is_a: OMP:0000290 ! genetic material phenotype
 is_a: OMP:0000306 ! macromolecular biosynthesis phenotype
 is_a: OMP:0005115 ! cell cycle phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0044786 ! cell cycle DNA replication
+relationship: inheres_in GO:0044786 ! cell cycle DNA replication
 created_by: mchibucos
 creation_date: 2011-07-21T05:45:47Z
 
@@ -2615,7 +3606,7 @@ creation_date: 2011-07-21T05:45:47Z
 id: OMP:0000308
 name: over-initiation of DNA replication
 def: "A DNA replication phenotype where the frequency of initiating new rounds of DNA replication is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0007147 ! altered DNA replication phenotype
+is_a: OMP:0007147 ! altered DNA replication
 created_by: mchibucos
 creation_date: 2011-07-21T05:46:05Z
 
@@ -2662,7 +3653,7 @@ creation_date: 2012-04-05T11:43:53Z
 id: OMP:0000321
 name: macrolide resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance is to a macrolide ring--a large lactone ring with multiple keto and hydroxyl groups--linked to one or more sugars which exhibit antimicrobial properties." [CHEBI:25105, ISBN:9780073375267, OMP:MCC]
-comment: Macrolide antibiotics are effective inhibitors of bacterial protein biosynthesis. They bind to the large 50S ribosomal subunit at or near the peptidyl transferase center and block the elongation of the peptide chain.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "Azithromycin" NARROW [CHEBI:2955]
 synonym: "Bacteriostatic" BROAD []
 synonym: "Carvomycin A" NARROW []
@@ -2685,6 +3676,7 @@ creation_date: 2012-11-02T01:51:04Z
 id: OMP:0000331
 name: aminopyrimidine resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to aminopyrimidine compounds." [CHEBI:38338, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "aminopyrimidine sensitivity phenotype" RELATED []
 synonym: "antifolate" BROAD [CHEBI:73913]
 synonym: "diaveridine" NARROW [CHEBI:123115]
@@ -2703,7 +3695,7 @@ id: OMP:0000334
 name: increased resistance to aminopyrimidine
 def: "An aminopyrimidine resistance phenotype where resistance is increased relative to a designated control." [OMP:DAS]
 synonym: "decreased sensitivity to antifolates" RELATED []
-is_a: OMP:0006018 ! altered aminopyrimidine resistance phenotype
+is_a: OMP:0006018 ! altered aminopyrimidine resistance
 created_by: mchibucos
 creation_date: 2012-11-02T02:04:38Z
 
@@ -2712,7 +3704,7 @@ id: OMP:0000335
 name: decreased resistance to aminopyrimidine
 def: "An aminopyrimidine resistance phenotype where resistance is decreased relative to a designated control." [OMP:DAS]
 synonym: "increased sensitivity to aminopyrimidine" RELATED []
-is_a: OMP:0006018 ! altered aminopyrimidine resistance phenotype
+is_a: OMP:0006018 ! altered aminopyrimidine resistance
 created_by: mchibucos
 creation_date: 2012-11-02T02:04:58Z
 
@@ -2720,6 +3712,7 @@ creation_date: 2012-11-02T02:04:58Z
 id: OMP:0000336
 name: beta-lactam resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to compounds that contain a beta-lactam ring in their molecular structure." [CHEBI:27933, OMP:MCC]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "ampicillin" NARROW [CHEBI:28971]
 synonym: "beta-lactam sensitivity phenotype" RELATED []
 synonym: "carbapenams" NARROW [CHEBI:64510]
@@ -2816,8 +3809,9 @@ creation_date: 2013-05-23T01:40:40Z
 id: OMP:0000455
 name: alkaloid resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to compounds containing basic nitrogen in a heterocyclic structure." [CHEBI:22315, OMP:WAM]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "alkaloid sensitivity phenotype" RELATED []
-xref: CHEBI:22315
+xref: CHEBI:22315 "alkaloid"
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: mchibucos
 creation_date: 2013-05-23T01:53:57Z
@@ -2827,6 +3821,7 @@ id: OMP:0000456
 name: caffeine resistance phenotype
 def: "An alkaloid resistance phenotype that is related to resistance or sensitivity to a trimethylxanthine in which the three methyl groups are located at positions 1, 3, and 7." [CHEBI:27732, OMP:WAM]
 synonym: "caffeine sensitivity phenotype" RELATED []
+xref: CHEBI:27732 "caffeine"
 is_a: OMP:0000455 ! alkaloid resistance phenotype
 created_by: mchibucos
 creation_date: 2013-05-23T01:54:51Z
@@ -2905,7 +3900,10 @@ creation_date: 2013-08-22T01:53:29Z
 id: OMP:0000500
 name: decreased aerotaxis
 def: "An altered aerotaxis phenotype where aerotaxis is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007076 ! altered aerotaxis phenotype
+is_a: OMP:0007076 ! altered aerotaxis
+intersection_of: OMP:0007076 ! altered aerotaxis
+intersection_of: has_quality PATO:0002302 ! decreased process quality
+relationship: has_quality PATO:0002302 ! decreased process quality
 created_by: mchibucos
 creation_date: 2012-11-02T01:20:31Z
 
@@ -2913,7 +3911,7 @@ creation_date: 2012-11-02T01:20:31Z
 id: OMP:0000502
 name: increased aerotaxis
 def: "An altered aerotaxis phenotype where aerotaxis is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007076 ! altered aerotaxis phenotype
+is_a: OMP:0007076 ! altered aerotaxis
 created_by: mchibucos
 creation_date: 2012-11-02T01:21:21Z
 
@@ -2937,7 +3935,7 @@ creation_date: 2012-11-02T01:23:12Z
 id: OMP:0001001
 name: Increased negative supercoiling
 def: "An altered DNA supercoiling phenotype where negative supercoiling is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006126 ! altered DNA supercoiling phenotype
+is_a: OMP:0006126 ! altered DNA supercoiling
 created_by: wmeza
 creation_date: 2013-08-22T05:57:07Z
 
@@ -2945,7 +3943,7 @@ creation_date: 2013-08-22T05:57:07Z
 id: OMP:0001002
 name: decreased negative supercoiling
 def: "An altered DNA supercoiling phenotype where negative supercoiling is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006126 ! altered DNA supercoiling phenotype
+is_a: OMP:0006126 ! altered DNA supercoiling
 created_by: wmeza
 creation_date: 2013-08-22T05:57:56Z
 
@@ -2954,7 +3952,7 @@ id: OMP:0005001
 name: altered caffeine resistance phenotype
 def: "A caffeine resistance phenotype that is altered relative to a designated control." [OMP:WAM]
 is_a: OMP:0000456 ! caffeine resistance phenotype
-is_a: OMP:0007137 ! altered alkaloid resistance phenotype
+is_a: OMP:0007137 ! altered alkaloid resistance
 created_by: wmeza
 creation_date: 2014-07-23T12:18:08Z
 
@@ -3155,7 +4153,7 @@ creation_date: 2013-09-20T15:00:09Z
 
 [Term]
 id: OMP:0005029
-name: altered tetracycline resistance phenotype
+name: altered tetracycline resistance
 def: "A tetracycline resistance phenotype where resistance to a tetracycline compound is altered relative to a designated control." [OMP:WAM]
 is_a: OMP:0006062 ! tetracycline resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -3166,7 +4164,7 @@ creation_date: 2014-07-23T17:05:20Z
 id: OMP:0005030
 name: increased stress-induced mutagenesis
 def: "An altered stress-induced mutagenesis phenotype where mutagenesis is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006034 ! altered stress-induced mutagenesis phenotype
+is_a: OMP:0006034 ! altered stress-induced mutagenesis
 created_by: wmeza
 creation_date: 2013-09-25T15:57:03Z
 
@@ -3174,7 +4172,7 @@ creation_date: 2013-09-25T15:57:03Z
 id: OMP:0005031
 name: decreased stress-induced mutagenesis
 def: "An altered stress-induced mutagenesis phenotype where the frequency of mutagenesis is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006034 ! altered stress-induced mutagenesis phenotype
+is_a: OMP:0006034 ! altered stress-induced mutagenesis
 created_by: wmeza
 creation_date: 2013-09-25T15:57:46Z
 
@@ -3196,7 +4194,7 @@ creation_date: 2013-09-25T18:20:22Z
 
 [Term]
 id: OMP:0005034
-name: altered quinolone resistance phenotype
+name: altered quinolone resistance
 def: "A quinolone resistance phenotype where resistance to a quinolone compound is altered relative to a designated control." [OMP:WAM]
 is_a: OMP:0006029 ! quinolone resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -3207,7 +4205,7 @@ creation_date: 2014-07-23T17:13:45Z
 id: OMP:0005035
 name: quick-stop DNA replication
 def: "A conditional DNA replication phenotype where incorporation of dNTPs into DNA ceases at the same rate as inactivation or depletion of a required gene product upon shift to a restrictive condition." [OMP:JHU, OMP:WAM]
-is_a: OMP:0007147 ! altered DNA replication phenotype
+is_a: OMP:0007147 ! altered DNA replication
 created_by: wmeza
 creation_date: 2013-10-15T17:51:12Z
 
@@ -3215,7 +4213,7 @@ creation_date: 2013-10-15T17:51:12Z
 id: OMP:0005036
 name: slow-stop DNA replication
 def: "A conditional DNA replication phenotype where incorporation of dNTPs into DNA does not stop at the same rate as inactivation or depletion of a required gene product upon shift to a restrictive condition. Incorporation of dNTPs stops only after completion of any rounds of replication that had initiated prior to the shift." [OMP:JHU, OMP:WAM]
-is_a: OMP:0007147 ! altered DNA replication phenotype
+is_a: OMP:0007147 ! altered DNA replication
 created_by: wmeza
 creation_date: 2013-10-15T17:51:40Z
 
@@ -3223,7 +4221,7 @@ creation_date: 2013-10-15T17:51:40Z
 id: OMP:0005037
 name: origin-independent replication
 def: "A DNA replication phenotype in which replication of the chromosome(s) is independent of the origin of replication." [OMP:WAM]
-is_a: OMP:0007147 ! altered DNA replication phenotype
+is_a: OMP:0007147 ! altered DNA replication
 created_by: wmeza
 creation_date: 2013-10-15T18:53:12Z
 
@@ -3299,7 +4297,11 @@ id: OMP:0005046
 name: gene silencing phenotype
 def: "A genetic material phenotype dealing with the transcriptional or post-transcriptional processes carried out at the cellular level that results in long-term gene inactivation." [GO:0016458, OMP:WAM]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0016458 "gene silencing"
 is_a: OMP:0000290 ! genetic material phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0016458 ! gene silencing
+relationship: inheres_in GO:0016458 ! gene silencing
 created_by: wmeza
 creation_date: 2013-10-18T18:38:43Z
 
@@ -3310,6 +4312,9 @@ def: "A genetic material phenotype concerning the process in which replicated ch
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:\:0007059 "chromosome segregation"
 is_a: OMP:0000290 ! genetic material phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0007059 ! chromosome segregation
+relationship: inheres_in GO:0007059 ! chromosome segregation
 created_by: wmeza
 creation_date: 2013-10-18T18:39:04Z
 
@@ -3326,7 +4331,7 @@ creation_date: 2013-10-18T18:39:27Z
 id: OMP:0005049
 name: increased frequency of homologous recombination
 def: "A homologous recombination phenotype where the prevalence of homologous recombination is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006002 ! altered homologous recombination phenotype
+is_a: OMP:0006002 ! altered homologous recombination
 created_by: wmeza
 creation_date: 2013-10-23T19:46:15Z
 
@@ -3334,7 +4339,7 @@ creation_date: 2013-10-23T19:46:15Z
 id: OMP:0005050
 name: decreased frequency of homologous recombination
 def: "A homologous recombination phenotype where homologous recombination is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006002 ! altered homologous recombination phenotype
+is_a: OMP:0006002 ! altered homologous recombination
 created_by: wmeza
 creation_date: 2013-10-24T12:52:41Z
 
@@ -3372,9 +4377,9 @@ creation_date: 2014-07-30T12:58:59Z
 
 [Term]
 id: OMP:0005055
-name: increased frequency of site specific recombination
+name: increased frequency of site-specific recombination
 def: "A site specific recombination phenotype where the prevalence of site specific recombination is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006005 ! altered site specific recombination phenotype
+is_a: OMP:0006005 ! altered site-specific recombination
 created_by: wmeza
 creation_date: 2013-10-29T13:14:25Z
 
@@ -3382,7 +4387,7 @@ creation_date: 2013-10-29T13:14:25Z
 id: OMP:0005056
 name: decreased frequency of site-specific recombination
 def: "A site specific recombination phenotype where site specific recombination is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006005 ! altered site specific recombination phenotype
+is_a: OMP:0006005 ! altered site-specific recombination
 created_by: wmeza
 creation_date: 2013-10-29T13:15:06Z
 
@@ -3407,7 +4412,11 @@ id: OMP:0005059
 name: transposable element transposition phenotype
 def: "A genetic material phenotype dealing with DNA sequences that change positions within the genome." [ISBN:9780198529170, OMP:WAM]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0032196 "transposition"
 is_a: OMP:0000290 ! genetic material phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0032196 ! transposition
+relationship: inheres_in GO:0032196 ! transposition
 created_by: wmeza
 creation_date: 2013-10-30T18:35:34Z
 
@@ -3415,7 +4424,7 @@ creation_date: 2013-10-30T18:35:34Z
 id: OMP:0005060
 name: increased frequency of chromosome segregation
 def: "A chromosome segregation phenotype where chromosome segregation is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006001 ! altered chromosome segregation phenotype
+is_a: OMP:0006001 ! altered chromosome segregation
 created_by: wmeza
 creation_date: 2013-11-04T18:09:09Z
 
@@ -3423,7 +4432,7 @@ creation_date: 2013-11-04T18:09:09Z
 id: OMP:0005061
 name: decreased frequency of chromosome segregation
 def: "An altered chromosome segregation phenotype where the occurrence of chromosome segregation is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006001 ! altered chromosome segregation phenotype
+is_a: OMP:0006001 ! altered chromosome segregation
 created_by: wmeza
 creation_date: 2013-11-04T18:09:38Z
 
@@ -3431,7 +4440,7 @@ creation_date: 2013-11-04T18:09:38Z
 id: OMP:0005064
 name: increased frequency of gene silencing
 def: "An altered gene silencing phenotype where the incidence of gene silencing is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006003 ! altered gene silencing phenotype
+is_a: OMP:0006003 ! altered gene silencing
 created_by: wmeza
 creation_date: 2013-11-04T18:21:37Z
 
@@ -3439,7 +4448,7 @@ creation_date: 2013-11-04T18:21:37Z
 id: OMP:0005065
 name: decreased frequency of gene silencing
 def: "An gene silencing phenotype where gene silencing is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006003 ! altered gene silencing phenotype
+is_a: OMP:0006003 ! altered gene silencing
 created_by: wmeza
 creation_date: 2013-11-04T18:21:56Z
 
@@ -3463,7 +4472,7 @@ creation_date: 2013-11-04T18:34:20Z
 id: OMP:0005068
 name: increased mutation frequency
 def: "An altered mutation frequency phenotype where the mutation frequency is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006071 ! altered mutation frequency phenotype
+is_a: OMP:0006071 ! altered mutation frequency
 created_by: wmeza
 creation_date: 2013-11-08T17:05:44Z
 
@@ -3471,7 +4480,7 @@ creation_date: 2013-11-08T17:05:44Z
 id: OMP:0005069
 name: decreased mutation frequency
 def: "An altered mutation frequency phenotype where the mutation frequency is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006071 ! altered mutation frequency phenotype
+is_a: OMP:0006071 ! altered mutation frequency
 created_by: wmeza
 creation_date: 2013-11-08T17:11:14Z
 
@@ -4038,7 +5047,7 @@ creation_date: 2014-08-07T14:58:34Z
 
 [Term]
 id: OMP:0006001
-name: altered chromosome segregation phenotype
+name: altered chromosome segregation
 def: "A chromosome segregation phenotype where chromosome segregation is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005047 ! chromosome segregation phenotype
 created_by: jonathanherrera
@@ -4046,7 +5055,7 @@ creation_date: 2014-07-24T14:14:37Z
 
 [Term]
 id: OMP:0006002
-name: altered homologous recombination phenotype
+name: altered homologous recombination
 def: "A homologous recombination phenotype where recombination is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005042 ! homologous recombination phenotype
 created_by: jonathanherrera
@@ -4054,7 +5063,7 @@ creation_date: 2014-07-24T15:04:15Z
 
 [Term]
 id: OMP:0006003
-name: altered gene silencing phenotype
+name: altered gene silencing
 def: "A gene silencing phenotype where gene silencing is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005046 ! gene silencing phenotype
 created_by: jonathanherrera
@@ -4071,7 +5080,7 @@ creation_date: 2014-03-26T21:33:14Z
 
 [Term]
 id: OMP:0006005
-name: altered site specific recombination phenotype
+name: altered site-specific recombination
 def: "A site specific recombination phenotype where recombination is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005043 ! site-specific recombination phenotype
 created_by: jonathanherrera
@@ -4088,7 +5097,7 @@ creation_date: 2014-03-26T21:33:14Z
 
 [Term]
 id: OMP:0006007
-name: altered heterocyst formation phenotype
+name: altered heterocyst formation
 def: "A heterocyst formation phenotype where formation is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000092 ! heterocyst formation phenotype
 created_by: jonathanherrera
@@ -4104,7 +5113,7 @@ creation_date: 2014-04-01T14:18:12Z
 
 [Term]
 id: OMP:0006009
-name: altered myxospore formation phenotype
+name: altered myxospore formation
 def: "A myxospore formation phenotype where myxospore formation is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000096 ! myxospore formation phenotype
 created_by: jonathanherrera
@@ -4171,7 +5180,7 @@ creation_date: 2014-07-24T16:34:28Z
 
 [Term]
 id: OMP:0006017
-name: altered aminoglycoside resistance phenotype
+name: altered aminoglycoside resistance
 def: "An aminoglycoside resistance phenotype where resistance to an aminoglycoside compound is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0006056 ! aminoglycoside resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4180,7 +5189,7 @@ creation_date: 2014-07-24T17:04:53Z
 
 [Term]
 id: OMP:0006018
-name: altered aminopyrimidine resistance phenotype
+name: altered aminopyrimidine resistance
 def: "An aminopyrimidine resistance phenotype where resistance to an aminopyrimidine compound is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000331 ! aminopyrimidine resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4189,7 +5198,7 @@ creation_date: 2014-07-24T17:13:02Z
 
 [Term]
 id: OMP:0006019
-name: altered azole resistance phenotype
+name: altered azole resistance
 def: "An azole resistance phenotype where resistance to an azole compound is altered relative to a designated control." [OMp:JCH]
 is_a: OMP:0006028 ! azole resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4198,7 +5207,7 @@ creation_date: 2014-07-24T17:20:23Z
 
 [Term]
 id: OMP:0006020
-name: altered bacteriocin resistance phenotype
+name: altered bacteriocin resistance
 def: "A bacteriocin resistance phenotype where resistance to a bacteriocin is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0006027 ! bacteriocin resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4207,7 +5216,7 @@ creation_date: 2014-07-24T17:21:28Z
 
 [Term]
 id: OMP:0006021
-name: altered beta-lactam resistance phenotype
+name: altered beta-lactam resistance
 def: "A beta-lactam resistance phenotype where resistance to a beta-lactam compound is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000336 ! beta-lactam resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4242,7 +5251,7 @@ creation_date: 2013-09-10T18:39:02Z
 
 [Term]
 id: OMP:0006025
-name: altered chloramphenicol resistance phenotype
+name: altered chloramphenicol resistance
 def: "A chloramphenicol resistance phenotype where resistance to chloramphenicol is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0006066 ! chloramphenicol resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4262,6 +5271,7 @@ creation_date: 2013-09-10T17:51:21Z
 id: OMP:0006027
 name: bacteriocin resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to bacteriocins, which are polypeptides synthesized by specific strains of bacteria that are active against other cells of the same or different species." [CHEBI:48081]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "bacteriocin sensitivity phenotype" RELATED []
 synonym: "colicins" NARROW [GO:0015468]
 synonym: "lantibiotic " NARROW [CHEBI:71644]
@@ -4270,7 +5280,7 @@ synonym: "Nisin" NARROW [ChEBI:71629]
 synonym: "subtilin" NARROW [Bactibase:BAC045]
 synonym: "type A lantibiotic" NARROW [CHEBI:71645]
 synonym: "type B lantibiotic" NARROW [CHEBI:71647]
-xref: CHEBI:48081
+xref: CHEBI:48081 "bacteriocin"
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-04T16:57:43Z
@@ -4279,10 +5289,10 @@ creation_date: 2013-10-04T16:57:43Z
 id: OMP:0006028
 name: azole resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to heteromonocyclic organic compounds consisting of a five-membered mancude-ring containing nitrogen." [CHEBI:68452, OMP:DAS]
-comment: Azoles can also contain one or more other non-carbon atoms, such as nitrogen, sulfur or oxygen. A mancude ring has the maximum number of noncumulative double bonds, e.g. benzene, indole.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.\n\nAzoles can also contain one or more other non-carbon atoms, such as nitrogen, sulfur or oxygen. A mancude ring has the maximum number of noncumulative double bonds, e.g. benzene, indole.
 synonym: "azole sensitivity phenotype" RELATED []
 synonym: "Triazole" NARROW [CHEBI:38597]
-xref: CHEBI:68452
+xref: CHEBI:68452 "azole"
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-10T19:15:32Z
@@ -4291,6 +5301,7 @@ creation_date: 2013-10-10T19:15:32Z
 id: OMP:0006029
 name: quinolone resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance is to a aromatic heterocyclic compounds each of which contains a benzene ring ortho fused to carbons 2 and 3 of a pyridine ring." [CHEBI:26513, ISBN:9780072992915, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "quinoline sensitivity phenotype" RELATED []
 xref: CHEBI:26513
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
@@ -4310,7 +5321,7 @@ creation_date: 2013-09-10T17:54:07Z
 
 [Term]
 id: OMP:0006031
-name: altered macrolide resistance phenotype
+name: altered macrolide resistance
 def: "A macrolide resistance phenotype where resistance to a macrolide compound is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000321 ! macrolide resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4319,7 +5330,7 @@ creation_date: 2014-07-24T17:40:33Z
 
 [Term]
 id: OMP:0006032
-name: altered pteridine resistance phenotype
+name: altered pteridine resistance
 def: "A pteridine resistance phenotype where resistance to a pteridine compound is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0007065 ! pteridine resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -4336,7 +5347,7 @@ creation_date: 2014-07-24T17:52:43Z
 
 [Term]
 id: OMP:0006034
-name: altered stress-induced mutagenesis phenotype
+name: altered stress-induced mutagenesis
 def: "A stress-induced mutagenesis phenotype that is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005027 ! stress-induced mutagenesis phenotype
 created_by: jonathanherrera
@@ -4356,7 +5367,7 @@ id: OMP:0006036
 name: decreased resistance to macrolide
 def: "A macrolide compound resistance phenotype where resistance to a macrolide compound is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to macrolide" RELATED []
-is_a: OMP:0006031 ! altered macrolide resistance phenotype
+is_a: OMP:0006031 ! altered macrolide resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:35:04Z
 
@@ -4365,7 +5376,7 @@ id: OMP:0006037
 name: increased resistance to macrolide
 def: "A macrolide compound resistance phenotype where resistance to a macrolide compound is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to macrolide" RELATED []
-is_a: OMP:0006031 ! altered macrolide resistance phenotype
+is_a: OMP:0006031 ! altered macrolide resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:35:04Z
 
@@ -4391,7 +5402,7 @@ id: OMP:0006040
 name: decreased resistance to quinolone
 def: "A quinolone compound resistance phenotype where resistance to a quinolone compound is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to quinoline" RELATED []
-is_a: OMP:0005034 ! altered quinolone resistance phenotype
+is_a: OMP:0005034 ! altered quinolone resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:38:00Z
 
@@ -4400,7 +5411,7 @@ id: OMP:0006041
 name: increased resistance to quinolone
 def: "A quinolone compound resistance phenotype where resistance to a quinolone compound is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to quinoline" RELATED []
-is_a: OMP:0005034 ! altered quinolone resistance phenotype
+is_a: OMP:0005034 ! altered quinolone resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:38:00Z
 
@@ -4426,7 +5437,7 @@ id: OMP:0006044
 name: decreased resistance to beta-lactam
 def: "A beta-lactam compound resistance phenotype where resistance to a beta-lactam compound is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to beta-lactam" RELATED []
-is_a: OMP:0006021 ! altered beta-lactam resistance phenotype
+is_a: OMP:0006021 ! altered beta-lactam resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:40:34Z
 
@@ -4435,7 +5446,7 @@ id: OMP:0006045
 name: increased resistance to beta-lactam compound
 def: "A beta-lactam compound resistance phenotype where resistance to a beta-lactam compound is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to beta-lactam" RELATED []
-is_a: OMP:0006021 ! altered beta-lactam resistance phenotype
+is_a: OMP:0006021 ! altered beta-lactam resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:40:34Z
 
@@ -4461,7 +5472,7 @@ id: OMP:0006048
 name: decreased resistance to bacteriocin
 def: "An altered bacteriocin resistance phenotype where resistance is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to bacteriocin" RELATED []
-is_a: OMP:0006020 ! altered bacteriocin resistance phenotype
+is_a: OMP:0006020 ! altered bacteriocin resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:44:39Z
 
@@ -4470,7 +5481,7 @@ id: OMP:0006049
 name: increased resistance to bacteriocin
 def: "A bacteriocin compound resistance phenotype where resistance to a bacteriocin is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to a bacteriocin" RELATED []
-is_a: OMP:0006020 ! altered bacteriocin resistance phenotype
+is_a: OMP:0006020 ! altered bacteriocin resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:44:39Z
 
@@ -4496,7 +5507,7 @@ id: OMP:0006052
 name: decreased resistance to azole
 def: "An azole compound resistance phenotype where resistance to an azole compound is decreased relative to a designated control." [OMP:DAS]
 synonym: "increased sensitivity to azole" RELATED []
-is_a: OMP:0006019 ! altered azole resistance phenotype
+is_a: OMP:0006019 ! altered azole resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:45:44Z
 
@@ -4505,7 +5516,7 @@ id: OMP:0006053
 name: increased resistance to azole compound
 def: "An azole compound resistance phenotype where resistance to an azole compound is increased relative to a designated control." [OMP:DAS]
 synonym: "decreased sensitivity to azole" RELATED []
-is_a: OMP:0006019 ! altered azole resistance phenotype
+is_a: OMP:0006019 ! altered azole resistance
 created_by: jonathanherrera
 creation_date: 2013-10-11T17:45:44Z
 
@@ -4530,6 +5541,7 @@ creation_date: 2013-10-11T17:45:44Z
 id: OMP:0006056
 name: aminoglycoside resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to a compound containing a cyclohexane ring with amino sugars." [CHEBI:22507, ISBN:978-0-07-299291-5, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "aminoglycoside sensitivity phenotype" RELATED []
 synonym: "gentamicin" NARROW []
 synonym: "kanamycin" NARROW []
@@ -4546,7 +5558,7 @@ id: OMP:0006057
 name: decreased resistance to aminoglycoside
 def: "An aminoglycoside resistance phenotype where resistance to an aminoglycoside is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to aminoglycoside" RELATED []
-is_a: OMP:0006017 ! altered aminoglycoside resistance phenotype
+is_a: OMP:0006017 ! altered aminoglycoside resistance
 created_by: jonathanherrera
 creation_date: 2013-10-22T19:24:20Z
 
@@ -4555,7 +5567,7 @@ id: OMP:0006058
 name: increased resistance to aminoglycoside
 def: "An aminoglycoside compound resistance phenotype where resistance is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to aminoglycoside" RELATED []
-is_a: OMP:0006017 ! altered aminoglycoside resistance phenotype
+is_a: OMP:0006017 ! altered aminoglycoside resistance
 created_by: jonathanherrera
 creation_date: 2013-10-22T19:24:20Z
 
@@ -4581,7 +5593,7 @@ id: OMP:0006061
 name: decreased resistance to tetracycline
 def: "A tetracycline compound resistance phenotype where resistance to a tetracycline compound is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to tetracycline" RELATED []
-is_a: OMP:0005029 ! altered tetracycline resistance phenotype
+is_a: OMP:0005029 ! altered tetracycline resistance
 created_by: jonathanherrera
 creation_date: 2013-10-23T19:27:35Z
 
@@ -4589,6 +5601,7 @@ creation_date: 2013-10-23T19:27:35Z
 id: OMP:0006062
 name: tetracycline resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance is to a subclass of polyketides having an octahydrotetracene-2-carboxamide skeleton." [CHEBI:27902, ISBN:978-0-07-299291-5, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "Bacteriostatic" BROAD []
 synonym: "chlortetracycline" RELATED []
 synonym: "oxytetracycline " NARROW [CHEBI:27701]
@@ -4603,7 +5616,7 @@ id: OMP:0006063
 name: increased resistance to tetracycline
 def: "A tetracycline compound resistance phenotype where resistance to a tetracycline compound is increased relative to a designated control." [OMP:JCH]
 synonym: "decreased sensitivity to tetracycline" RELATED []
-is_a: OMP:0005029 ! altered tetracycline resistance phenotype
+is_a: OMP:0005029 ! altered tetracycline resistance
 created_by: jonathanherrera
 creation_date: 2013-10-23T19:27:35Z
 
@@ -4628,6 +5641,7 @@ creation_date: 2013-10-23T19:27:35Z
 id: OMP:0006066
 name: chloramphenicol resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to an organochlorine compound that is dichloro-substituted acetamide containing a nitrobenzene ring, an amide bond and two alcohol functions." [CHEBI:17698, ISBN:9780072992915, OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "chloramphenicol sensitivity phenotype" RELATED []
 xref: CHEBI:17698
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
@@ -4639,7 +5653,7 @@ id: OMP:0006067
 name: decreased resistance to chloramphenicol
 def: "A chloramphenicol compound resistance phenotype where resistance to a chloramphenicol compound is decreased relative to a designated control." [OMP:JCH]
 synonym: "increased sensitivity to chloramphenicol" RELATED []
-is_a: OMP:0006025 ! altered chloramphenicol resistance phenotype
+is_a: OMP:0006025 ! altered chloramphenicol resistance
 created_by: jonathanherrera
 creation_date: 2013-10-24T19:41:11Z
 
@@ -4649,7 +5663,7 @@ name: increased resistance to chloramphenicol
 def: "A chloramphenicol compound resistance phenotype where resistance to a chloramphenicol compound is increased relative to a designated control." [OMP:JCH]
 synonym: "<new synonym>" RELATED []
 synonym: "decreased sensitivity to chloramphenicol" RELATED []
-is_a: OMP:0006025 ! altered chloramphenicol resistance phenotype
+is_a: OMP:0006025 ! altered chloramphenicol resistance
 created_by: jonathanherrera
 creation_date: 2013-10-24T19:41:11Z
 
@@ -4672,7 +5686,7 @@ creation_date: 2013-10-24T19:41:11Z
 
 [Term]
 id: OMP:0006071
-name: altered mutation frequency phenotype
+name: altered mutation frequency
 def: "A mutation frequency phenotype that is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0005048 ! mutation frequency phenotype
 created_by: jonathanherrera
@@ -4700,7 +5714,7 @@ id: OMP:0006074
 name: increased resistance to pteridine
 def: "A pteridine resistance phenotype where resistance to a pteridine compound is increased relative to a designated control." [CHEBI:27601, OMP:DAS]
 synonym: "decreased sensitivity to pteridine" RELATED []
-is_a: OMP:0006032 ! altered pteridine resistance phenotype
+is_a: OMP:0006032 ! altered pteridine resistance
 created_by: jonathanherrera
 creation_date: 2014-05-12T13:04:39Z
 
@@ -4723,9 +5737,10 @@ creation_date: 2014-05-12T13:04:40Z
 
 [Term]
 id: OMP:0006077
-name: altered catalase activity
+name: altered catalase test result
 def: "A catalase test phenotype where catalase activity is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000218 ! catalase test phenotype
+is_a: OMP:0007131 ! altered differential test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T14:55:03Z
 
@@ -4739,9 +5754,10 @@ creation_date: 2014-07-15T19:59:58Z
 
 [Term]
 id: OMP:0006079
-name: altered decarboxylase test phenotype
+name: altered decarboxylase test result
 def: "A decarboxylase test phenotype where the phenotype of an organism on a decarboxylase test medium is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000219 ! decarboxylase test phenotype
+is_a: OMP:0007131 ! altered differential test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T19:59:58Z
 
@@ -4757,7 +5773,7 @@ creation_date: 2014-07-15T19:59:58Z
 id: OMP:0006081
 name: increased decarboxylase activity
 def: "An altered decarboxylase test phenotype where decarboxylase activity is increased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006079 ! altered decarboxylase test phenotype
+is_a: OMP:0006079 ! altered decarboxylase test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:00:41Z
 
@@ -4765,15 +5781,16 @@ creation_date: 2014-07-15T20:00:41Z
 id: OMP:0006082
 name: decreased decarboxylase activity
 def: "An altered decarboxylase test phenotype where decarboxylase activity is decreased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006079 ! altered decarboxylase test phenotype
+is_a: OMP:0006079 ! altered decarboxylase test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:00:41Z
 
 [Term]
 id: OMP:0006083
-name: altered oxidase test phenotype
+name: altered oxidase test result
 def: "An oxidase test phenotype where the phenotype of an organism is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000220 ! oxidase test phenotype
+is_a: OMP:0007131 ! altered differential test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:06:25Z
 
@@ -4798,7 +5815,7 @@ creation_date: 2014-07-15T20:06:25Z
 id: OMP:0006086
 name: increased oxidase activity
 def: "An altered oxidase test phenotype where oxidase activity is increased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006083 ! altered oxidase test phenotype
+is_a: OMP:0006083 ! altered oxidase test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:06:48Z
 
@@ -4806,15 +5823,16 @@ creation_date: 2014-07-15T20:06:48Z
 id: OMP:0006087
 name: decreased oxidase activity
 def: "An altered oxidase test phenotype where oxidase activity is decreased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006083 ! altered oxidase test phenotype
+is_a: OMP:0006083 ! altered oxidase test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:06:48Z
 
 [Term]
 id: OMP:0006088
-name: altered urease test phenotype
+name: altered urease test result
 def: "A urease test phenotype where urease activity is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000222 ! urease test phenotype
+is_a: OMP:0007131 ! altered differential test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:07:31Z
 
@@ -4839,7 +5857,7 @@ creation_date: 2014-07-15T20:07:31Z
 id: OMP:0006091
 name: increased urease activity
 def: "An altered urease activity phenotype where urease activity is increased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006088 ! altered urease test phenotype
+is_a: OMP:0006088 ! altered urease test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:07:54Z
 
@@ -4847,7 +5865,7 @@ creation_date: 2014-07-15T20:07:54Z
 id: OMP:0006092
 name: decreased urease activity
 def: "An altered urease activity phenotype where there urease activity is decreased relative to a designated control." [OMP:JCH]
-is_a: OMP:0006088 ! altered urease test phenotype
+is_a: OMP:0006088 ! altered urease test result
 created_by: jonathanherrera
 creation_date: 2014-07-15T20:07:54Z
 
@@ -4895,6 +5913,7 @@ creation_date: 2014-07-24T20:17:01Z
 id: OMP:0006098
 name: abolished aerotaxis
 def: "A decreased aerotaxis phenotype where a cell or organism the ability to perform aerotaxis is abolished." [OMP:JCH]
+is_a: OMP:0000159 ! absence of aerotaxis
 is_a: OMP:0000500 ! decreased aerotaxis
 created_by: jonathanherrera
 creation_date: 2014-07-24T20:18:01Z
@@ -5096,7 +6115,7 @@ creation_date: 2014-07-25T14:07:02Z
 
 [Term]
 id: OMP:0006126
-name: altered DNA supercoiling phenotype
+name: altered DNA supercoiling
 def: "A DNA supercoiling phenotype where supercoiling is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000294 ! DNA supercoiling phenotype
 created_by: jonathanherrera
@@ -5385,8 +6404,8 @@ def: "A endospore formation phenotype where endospore formation is altered relat
 is_a: OMP:0000094 ! endospore formation phenotype
 is_a: OMP:0007085 ! altered phenotype
 intersection_of: OMP:0000094 ! endospore formation phenotype
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: jonathanherrera
 creation_date: 2014-07-29T15:37:45Z
 
@@ -5520,8 +6539,8 @@ def: "A decreased cell motility phenotype where the ability of a cell or cells t
 is_a: OMP:0000002 ! decreased cell motility
 is_a: OMP:0000133 ! absence of cell motility
 intersection_of: OMP:0000002 ! decreased cell motility
-intersection_of: RO:0000086 PATO:0000462 ! has_quality absent
-relationship: RO:0000086 PATO:0000462 ! has_quality absent
+intersection_of: has_quality PATO:0000462 ! absent
+relationship: has_quality PATO:0000462 ! absent
 created_by: siegele
 creation_date: 2014-06-29T14:10:40Z
 
@@ -5532,8 +6551,8 @@ def: "A cell motility phenotype where cell motility is altered relative to a des
 is_a: OMP:0000001 ! cell motility phenotype
 is_a: OMP:0007085 ! altered phenotype
 intersection_of: OMP:0000001 ! cell motility phenotype
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-04-24T17:38:06Z
 
@@ -5541,7 +6560,7 @@ creation_date: 2014-04-24T17:38:06Z
 id: OMP:0007002
 name: decreased positive supercoiling
 def: "An altered DNA supercoiling phenotype where positive supercoiling is decreased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006126 ! altered DNA supercoiling phenotype
+is_a: OMP:0006126 ! altered DNA supercoiling
 created_by: siegele
 creation_date: 2013-09-05T16:08:29Z
 
@@ -5549,7 +6568,7 @@ creation_date: 2013-09-05T16:08:29Z
 id: OMP:0007003
 name: increased positive supercoiling
 def: "An altered DNA supercoiling phenotype where positive supercoiling is increased relative to a designated control." [OMP:WAM]
-is_a: OMP:0006126 ! altered DNA supercoiling phenotype
+is_a: OMP:0006126 ! altered DNA supercoiling
 created_by: siegele
 creation_date: 2013-09-05T16:09:28Z
 
@@ -5558,7 +6577,7 @@ id: OMP:0007004
 name: decreased resistance to pteridine
 def: "A pteridine resistance phenotype where resistance to a pteridine compound is decreased relative to a designated control." [CHEBI:27601, OMP:DAS]
 synonym: "increased sensitivity to pteridine" RELATED []
-is_a: OMP:0006032 ! altered pteridine resistance phenotype
+is_a: OMP:0006032 ! altered pteridine resistance
 created_by: DeborahSiegele
 creation_date: 2014-01-31T18:03:55Z
 
@@ -5593,7 +6612,7 @@ creation_date: 2014-07-31T16:11:22Z
 id: OMP:0007008
 name: decreased growth at acidic pH
 def: "An altered pH growth range phenotype where the ability to grow at some pH that is lower than pH 7 is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007138 ! altered pH growth range phenotype
+is_a: OMP:0007138 ! altered pH growth range
 created_by: siegele
 creation_date: 2013-09-11T17:11:01Z
 
@@ -5601,7 +6620,7 @@ creation_date: 2013-09-11T17:11:01Z
 id: OMP:0007009
 name: increased growth at acidic pH
 def: "An altered growth range phenotype where the ability to grow at some pH that is lower than pH 7 is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007138 ! altered pH growth range phenotype
+is_a: OMP:0007138 ! altered pH growth range
 created_by: siegele
 creation_date: 2013-09-11T17:11:44Z
 
@@ -5609,7 +6628,7 @@ creation_date: 2013-09-11T17:11:44Z
 id: OMP:0007010
 name: decreased growth at alkaline pH
 def: "An altered pH growth range phenotype where the ability to grow at some pH that is higher than pH 7 is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007138 ! altered pH growth range phenotype
+is_a: OMP:0007138 ! altered pH growth range
 created_by: siegele
 creation_date: 2013-09-11T17:14:28Z
 
@@ -5617,7 +6636,7 @@ creation_date: 2013-09-11T17:14:28Z
 id: OMP:0007011
 name: increased growth at alkaline pH
 def: "An altered pH growth range phenotype where the ability to grow at some pH that is higher than pH 7 is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007138 ! altered pH growth range phenotype
+is_a: OMP:0007138 ! altered pH growth range
 created_by: siegele
 creation_date: 2013-09-11T17:14:56Z
 
@@ -6029,7 +7048,7 @@ creation_date: 2013-10-01T15:46:38Z
 id: OMP:0007062
 name: increased heterocyst formation
 def: "A heterocyst formation phenotype where the ability to form heterocysts is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0006007 ! altered heterocyst formation phenotype
+is_a: OMP:0006007 ! altered heterocyst formation
 created_by: DeborahSiegele
 creation_date: 2014-01-31T18:31:01Z
 
@@ -6037,7 +7056,7 @@ creation_date: 2014-01-31T18:31:01Z
 id: OMP:0007063
 name: increased myxospore formation
 def: "A myxospore formation phenotype where the ability to form myxospores is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0006009 ! altered myxospore formation phenotype
+is_a: OMP:0006009 ! altered myxospore formation
 created_by: DeborahSiegele
 creation_date: 2014-01-31T18:45:09Z
 
@@ -6055,6 +7074,7 @@ creation_date: 2014-01-31T18:49:00Z
 id: OMP:0007065
 name: pteridine resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance is to a organonitrogen heterocyclic compound." [CHEBI:26373, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "antifolate resistance" BROAD [CHEBI:73913]
 synonym: "methotrexate resistance" NARROW [CHEBI:44185]
 synonym: "pteridine sensitivity phenotype" RELATED []
@@ -6150,10 +7170,13 @@ creation_date: 2014-02-21T15:42:44Z
 
 [Term]
 id: OMP:0007076
-name: altered aerotaxis phenotype
+name: altered aerotaxis
 def: "An aerotaxis phenotype where directed movement in response to environmental oxygen is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000047 ! aerotaxis phenotype
 is_a: OMP:0007127 ! altered taxis
+intersection_of: OMP:0000047 ! aerotaxis phenotype
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-04-24T17:41:34Z
 
@@ -6189,6 +7212,9 @@ name: altered gene expression
 def: "A gene expression phenotype where expression of a gene or genes is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000253 ! gene expression phenotype
 is_a: OMP:0007085 ! altered phenotype
+intersection_of: OMP:0000253 ! gene expression phenotype
+intersection_of: has_quality OMP:0007188 ! altered_process_quality
+relationship: has_quality OMP:0007188 ! altered_process_quality
 created_by: dsiegele
 creation_date: 2014-08-11T16:32:07Z
 
@@ -6232,8 +7258,8 @@ def: "A microbial phenotype that is altered in some way relative to a designated
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 intersection_of: OMP:0000000 ! microbial phenotype
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-07-10T12:28:36Z
 
@@ -6273,7 +7299,7 @@ creation_date: 2014-07-10T12:51:30Z
 id: OMP:0007090
 name: more rod-like
 def: "An altered cell shape phenotype where a cell's shape is more rod-like than that of a designated control." [OMP:DAS]
-is_a: OMP:0007099 ! cylindrical cell phenotype
+is_a: OMP:0007099 ! cylindrical cell shape
 is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-10T21:50:33Z
@@ -6344,7 +7370,7 @@ creation_date: 2014-07-10T20:10:11Z
 
 [Term]
 id: OMP:0007099
-name: cylindrical cell phenotype
+name: cylindrical cell shape
 def: "A cell shape phenotype where a cell has a consistently-sized round cross section.  The long axis of the cell is typically longer than the cell diameter." [OMP:DAS]
 xref: PATO:0001873
 is_a: OMP:0000073 ! cell shape phenotype
@@ -6353,7 +7379,7 @@ creation_date: 2014-07-10T20:13:46Z
 
 [Term]
 id: OMP:0007100
-name: spheroid cell phenotype
+name: spheroid cell shape
 def: "A cell shape phenotype where a cell has a sphere-like shape, i.e. quadric surface in three dimensions obtained by rotating an ellipse about one of its principle axes." [OMP:DAS]
 xref: PATO:0001865
 is_a: OMP:0000073 ! cell shape phenotype
@@ -6373,7 +7399,7 @@ creation_date: 2014-07-10T20:24:53Z
 id: OMP:0007102
 name: rounder
 def: "An altered cell shape phenotype where a cell's shape is rounder than that of a designated control." [OMP:DAS]
-is_a: OMP:0007100 ! spheroid cell phenotype
+is_a: OMP:0007100 ! spheroid cell shape
 is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-10T21:51:13Z
@@ -6383,10 +7409,11 @@ id: OMP:0007103
 name: altered cell morphology
 def: "A cell morphology phenotype that is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000071 ! cell morphology phenotype
+is_a: OMP:0007085 ! altered phenotype
 is_a: OMP:0007193 ! altered_physical_object_quality
 intersection_of: OMP:0000071 ! cell morphology phenotype
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-07-10T22:43:40Z
 
@@ -6411,27 +7438,39 @@ creation_date: 2014-07-10T23:00:30Z
 [Term]
 id: OMP:0007106
 name: transcription phenotype
-def: "A gene expression phenotype that affects DNA-dependent transcription." [OMP:DAS]
-xref: FYPO:0000290 "transcription phenotype"
+def: "A gene expression phenotype that affects DNA-dependent transcription." [GO:0006351, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+xref: GO:0006351 "transcription, DNA-templated"
 is_a: OMP:0000253 ! gene expression phenotype
+intersection_of: OMP:0000000 ! microbial phenotype
+intersection_of: inheres_in GO:0006351 ! transcription, DNA-templated
+relationship: inheres_in GO:0006351 ! transcription, DNA-templated
 created_by: dsiegele
 creation_date: 2014-08-11T16:37:39Z
 
 [Term]
 id: OMP:0007107
 name: translation phenotype
-def: "A gene expression phenotype that affects translation of one or more mRNAs." [OMP:DAS]
+def: "A gene expression phenotype that affects translation of one or more mRNAs." [GO:0006412, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000291 "translation phenotype"
+xref: GO:0006412 "translation"
 is_a: OMP:0000253 ! gene expression phenotype
+intersection_of: OMP:0000253 ! gene expression phenotype
+intersection_of: inheres_in GO:0006412 ! translation
+relationship: inheres_in GO:0006412 ! translation
 created_by: dsiegele
 creation_date: 2014-08-11T16:37:39Z
 
 [Term]
 id: OMP:0007108
-name: altered transcription phenotype
+name: altered transcription
 def: "A transcription phenotype where transcription of a gene or genes is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007080 ! altered gene expression
 is_a: OMP:0007106 ! transcription phenotype
+intersection_of: OMP:0007106 ! transcription phenotype
+intersection_of: has_quality OMP:0007188 ! altered_process_quality
+relationship: has_quality OMP:0007188 ! altered_process_quality
 created_by: dsiegele
 creation_date: 2014-08-11T16:37:59Z
 
@@ -6500,7 +7539,7 @@ creation_date: 2014-07-17T16:29:34Z
 id: OMP:0007116
 name: altered cell stalk
 def: "An altered cell shape phenotype where the stalk of a stalk-shaped cell is altered relative to a designated control." [OMP:DAS]
-is_a: OMP:0000128 ! stalked cell phenotype
+is_a: OMP:0000128 ! stalked cell shape
 is_a: OMP:0007101 ! altered cell shape
 created_by: siegele
 creation_date: 2014-07-18T13:53:13Z
@@ -6509,7 +7548,10 @@ creation_date: 2014-07-18T13:53:13Z
 id: OMP:0007117
 name: increased transcription
 def: "An altered transcription phenotype where transcription of a gene or genes is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007108 ! altered transcription phenotype
+is_a: OMP:0007108 ! altered transcription
+intersection_of: OMP:0007108 ! altered transcription
+intersection_of: has_quality OMP:0007009 ! increased growth at acidic pH
+relationship: has_quality OMP:0007009 ! increased growth at acidic pH
 created_by: dsiegele
 creation_date: 2014-08-11T16:41:06Z
 
@@ -6517,7 +7559,10 @@ creation_date: 2014-08-11T16:41:06Z
 id: OMP:0007118
 name: decreased transcription
 def: "An altered transcription phenotype where transcription of a gene or genes is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007108 ! altered transcription phenotype
+is_a: OMP:0007108 ! altered transcription
+intersection_of: OMP:0007108 ! altered transcription
+intersection_of: has_quality PATO:0002302 ! decreased process quality
+relationship: has_quality PATO:0002302 ! decreased process quality
 created_by: dsiegele
 creation_date: 2014-08-11T16:41:06Z
 
@@ -6526,6 +7571,9 @@ id: OMP:0007119
 name: abolished transcription
 def: "A decreased transcription phenotype where transcription of a gene or genes is abolished relative to a designated control." [OMP:DAS]
 is_a: OMP:0007118 ! decreased transcription
+intersection_of: OMP:0007118 ! decreased transcription
+intersection_of: has_quality PATO:0000462 ! absent
+relationship: has_quality PATO:0000462 ! absent
 created_by: dsiegele
 creation_date: 2014-08-11T16:42:21Z
 
@@ -6549,7 +7597,7 @@ creation_date: 2014-08-11T17:02:37Z
 
 [Term]
 id: OMP:0007122
-name: altered translation phenotype
+name: altered translation
 def: "A translation phenotype where translation of one or more mRNAs is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007080 ! altered gene expression
 is_a: OMP:0007107 ! translation phenotype
@@ -6560,7 +7608,7 @@ creation_date: 2014-08-11T17:07:54Z
 id: OMP:0007123
 name: Increased translation
 def: "An altered translation phenotype where translation of one or more mRNAs is increased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007122 ! altered translation phenotype
+is_a: OMP:0007122 ! altered translation
 created_by: dsiegele
 creation_date: 2014-08-11T17:10:06Z
 
@@ -6568,7 +7616,7 @@ creation_date: 2014-08-11T17:10:06Z
 id: OMP:0007124
 name: decreased translation
 def: "An altered translation phenotype where translation of one or more mRNAs is decreased relative to a designated control." [OMP:DAS]
-is_a: OMP:0007122 ! altered translation phenotype
+is_a: OMP:0007122 ! altered translation
 created_by: dsiegele
 creation_date: 2014-08-11T17:10:06Z
 
@@ -6595,6 +7643,9 @@ name: altered taxis
 def: "A taxis phenotype where directed movement of a motile cell or organism in response to an external stimulus is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000004 ! taxis phenotype
 is_a: OMP:0007085 ! altered phenotype
+intersection_of: OMP:0000004 ! taxis phenotype
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: dsiegele
 creation_date: 2014-08-12T13:30:01Z
 
@@ -6626,7 +7677,7 @@ creation_date: 2014-08-16T16:40:58Z
 
 [Term]
 id: OMP:0007131
-name: altered differential test phenotype
+name: altered differential test result
 def: "A differential media phenotype where the results of a differential test are altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0007130 ! differential test phenotype
 created_by: siegele
@@ -6652,6 +7703,7 @@ creation_date: 2014-08-17T12:52:35Z
 id: OMP:0007134
 name: altered antimicrobial compound resistance phenotype
 def: "An antimicrobial compound resistance phenotype where resistance to an antimicrobial compound is altered relative to a designated control." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 is_a: OMP:0007085 ! altered phenotype
 created_by: siegele
@@ -6675,7 +7727,7 @@ creation_date: 2014-08-17T13:19:30Z
 
 [Term]
 id: OMP:0007137
-name: altered alkaloid resistance phenotype
+name: altered alkaloid resistance
 def: "An alkaloid resistance phenotype where resistance to an alkaloid compound is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000455 ! alkaloid resistance phenotype
 is_a: OMP:0007134 ! altered antimicrobial compound resistance phenotype
@@ -6684,7 +7736,7 @@ creation_date: 2014-08-17T13:19:30Z
 
 [Term]
 id: OMP:0007138
-name: altered pH growth range phenotype
+name: altered pH growth range
 def: "A pH growth range phenotype where the range of pH where growth occurs is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0005008 ! pH growth range phenotype
 created_by: siegele
@@ -6696,7 +7748,7 @@ name: altered lantibiotic resistance phenotype
 def: "A lantibiotic resistance phenotype where resistance to one or more lantibiotics is altered relative to a designated control." [OMP:DAS]
 synonym: "lantibiotic sensitivity phenotype" RELATED []
 is_a: OMP:0006011 ! lantibiotic resistance phenotype
-is_a: OMP:0006020 ! altered bacteriocin resistance phenotype
+is_a: OMP:0006020 ! altered bacteriocin resistance
 created_by: siegele
 creation_date: 2014-08-17T18:03:16Z
 
@@ -6764,10 +7816,13 @@ creation_date: 2014-08-18T17:24:18Z
 
 [Term]
 id: OMP:0007147
-name: altered DNA replication phenotype
+name: altered DNA replication
 def: "A DNA replication phenotype in which the process of DNA replication is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000307 ! DNA replication phenotype
 is_a: OMP:0005136 ! altered cell cycle phenotype
+intersection_of: OMP:0000307 ! DNA replication phenotype
+intersection_of: has_quality OMP:0007188 ! altered_process_quality
+relationship: has_quality OMP:0007188 ! altered_process_quality
 created_by: siegele
 creation_date: 2014-08-19T14:26:57Z
 
@@ -6866,7 +7921,8 @@ creation_date: 2014-08-28T16:51:03Z
 
 [Term]
 id: OMP:0007159
-name: altered radiation resistance phenotype
+name: altered radiation resistance
+def: "A radiation stress phenotype that is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0005081 ! radiation stress phenotype
 is_a: OMP:0007158 ! altered stress response
 created_by: siegele
@@ -6958,6 +8014,7 @@ creation_date: 2014-09-25T17:18:11Z
 id: OMP:0007169
 name: antimicrobial peptide resistance phenotype
 def: "An antimicrobial compound resistance phenotype related to resistance or sensitivity to antimicrobial peptides produced by a variety of vertebrate, invertebrate, and plant species." [doi:10.1038/nrmicro1098, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000274 ! antimicrobial compound resistance phenotype
 created_by: siegele
 creation_date: 2014-09-26T15:57:03Z
@@ -7101,9 +8158,7 @@ creation_date: 2014-09-29T14:08:46Z
 [Term]
 id: OMP:0007187
 name: quality (Interim)
-def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities." [PATO:0000001, PATO:0000072]
-xref: PATO:0000001 "quality"
-is_a: OMP:0000000 ! microbial phenotype
+is_obsolete: true
 created_by: siegele
 creation_date: 2014-10-03T17:22:57Z
 
@@ -7111,12 +8166,10 @@ creation_date: 2014-10-03T17:22:57Z
 id: OMP:0007188
 name: altered_process_quality
 def: "A quality which inheres in an process that is altered in same way relative to a designated control." [OMP:DAS, PATO:0001236]
-is_a: OMP:0007085 ! altered phenotype
-is_a: OMP:0007187 ! quality (Interim)
 is_a: PATO:0001236 ! process quality
 intersection_of: PATO:0001236 ! process quality
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-10-03T17:27:01Z
 
@@ -7124,7 +8177,7 @@ creation_date: 2014-10-03T17:27:01Z
 id: OMP:0007189
 name: altered_relative_to
 def: "A quality which inheres in a bearer that is altered relative to the quality that inheres in a designated control entity." [OMP:DAS]
-is_a: OMP:0007187 ! quality (Interim)
+is_a: PATO:0000068 ! qualitative
 created_by: siegele
 creation_date: 2014-10-03T17:45:57Z
 
@@ -7156,13 +8209,10 @@ creation_date: 2014-10-04T18:41:07Z
 id: OMP:0007193
 name: altered_physical_object_quality
 def: "A physical object quality that is altered relative to a designated control." [OMP:DAS]
-xref: PATO:0001241 "physical object quality"
-is_a: OMP:0007085 ! altered phenotype
-is_a: OMP:0007187 ! quality (Interim)
 is_a: PATO:0001241 ! physical object quality
 intersection_of: PATO:0001241 ! physical object quality
-intersection_of: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
-relationship: RO:0000086 OMP:0007189 ! has_quality altered_relative_to
+intersection_of: has_quality OMP:0007189 ! altered_relative_to
+relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-10-04T19:34:54Z
 
@@ -7347,16 +8397,8 @@ created_by: George Gkoutos
 creation_date: 2011-06-16T06:53:08Z
 
 [Typedef]
-id: RO:0000056
-name: participates_in
-created_by: siegele
-creation_date: 2014-08-17T12:05:35Z
-
-[Typedef]
 id: RO:0000086
-name: has_quality
-created_by: siegele
-creation_date: 2014-08-17T12:15:53Z
+name: RO:0000086 (UNDECLARED)
 
 [Typedef]
 id: correlates_with
@@ -7446,6 +8488,13 @@ comment: We use the has_part relation to relate complex qualities to more primit
 xref: BFO:0000051
 
 [Typedef]
+id: has_quality
+name: has_quality
+namespace: external
+created_by: siegele
+creation_date: 2014-10-15T20:39:22Z
+
+[Typedef]
 id: has_ratio_quality
 name: has_ratio_quality
 namespace: quality
@@ -7532,6 +8581,13 @@ namespace: external
 xref: BFO:00000050
 xref: BFO:0000050
 is_transitive: true
+
+[Typedef]
+id: participates_in
+name: participates_in
+namespace: external
+created_by: siegele
+creation_date: 2014-10-15T21:13:30Z
 
 [Typedef]
 id: positively_regulates
