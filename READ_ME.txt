@@ -1,0 +1,1 @@
+The most up-to-date, stable release files of OMP are in this directory: 'LATEST'. The file 'omp.obo' includes both OMP terms and terms from external ontologies as well as the logical relationships between them.The file 'omp-simple.obo' contains only phenotype terms from OMP.
