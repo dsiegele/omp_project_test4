@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: releases/2015-06-12
-date: 12:06:2015 14:16
-saved-by: dsiegele
+data-version: releases/2015-07-27
+date: 09:07:2015 16:50
+saved-by: snadendla
 auto-generated-by: OBO-Edit 2.3.1
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
@@ -55,7 +55,6 @@ name: cell motility phenotype
 def: "A locomotion phenotype where the trait in question is the self-propelled movement of a cell or cells from one location to another." [OMP:MCC]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0048870 "cell motility"
-xref: PATO:0001488
 is_a: OMP:0000312 ! locomotion phenotype
 is_a: OMP:0007197 ! cellular component phenotype
 creation_date: 2011-03-10T06:55:06Z
@@ -83,6 +82,7 @@ name: taxis phenotype
 def: "A locomotion phenotype where the directed movement of a motile cell or organism is in response to an external stimulus." [ISBN:0192800329, OMP:MCC]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000312 ! locomotion phenotype
+is_a: OMP:0007197 ! cellular component phenotype
 created_by: mchibucos
 creation_date: 2011-04-14T03:29:20Z
 
@@ -236,11 +236,12 @@ creation_date: 2011-06-07T11:19:56Z
 
 [Term]
 id: OMP:0000026
-name: virus-host interaction phenotype
-def: "A virulence phenotype, where the trait in question is the ability of a virus to cause disease in another organism (the host)." [OMP:JCH]
-synonym: "bacteriophage-host interaction phenotype" NARROW []
-synonym: "phage-host interaction phenotype" NARROW []
-is_a: OMP:0000068 ! virulence phenotype
+name: host-virus interaction phenotype
+def: "A microbial phenotype related to the ability of a host to be infected by and/or support reproduction of a virus." [OMP:JCH]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+synonym: "host-bacteriophage interaction phenotype" NARROW []
+synonym: "host-phage interaction phenotype" NARROW []
+is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
 creation_date: 2011-06-06T02:39:55Z
 
@@ -705,7 +706,7 @@ creation_date: 2011-02-02T03:47:57Z
 
 [Term]
 id: OMP:0000085
-name: envelope phenotype
+name: cell envelope phenotype
 def: "A cell morphology phenotype relating to the envelope that surrounds a microbial cell and includes the cytoplasmic membrane and everything external to the cytoplasmic membrane, encompassing the periplasmic space, cell wall, and outer membrane.  Additional layers, such as capsules or S-layers, are also part of the envelope." [OMP:MCC]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000071 ! cell morphology phenotype
@@ -1454,7 +1455,7 @@ creation_date: 2011-06-06T04:16:08Z
 id: OMP:0000173
 name: stress response phenotype
 def: "A microbial phenotype related to a cell or organism's response to environmental stress." [OMP:WAM]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: Adrienne
 creation_date: 2011-02-02T03:13:32Z
@@ -1689,7 +1690,7 @@ id: OMP:0000202
 name: outer membrane vesicles phenotype
 def: "A cell envelope phenotype that describes the ability of a cell or cells to produce outer membrane vesicles." [OMP:JCH, PMID:20825345]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
-is_a: OMP:0000085 ! envelope phenotype
+is_a: OMP:0000085 ! cell envelope phenotype
 created_by: Adrienne
 creation_date: 2011-03-02T01:43:12Z
 
@@ -1699,7 +1700,7 @@ name: capsule phenotype
 def: "A cell envelope phenotype where the trait in question is the capsule, a layer of polysaccharide or poly-amino acids surrounding a microbial cell.  When present, the capsule is the outermost layer of the cell envelope." [ISBN:9780073402406, OMP:DAS]
 synonym: "glycocalyx" RELATED []
 synonym: "slime layer" RELATED []
-is_a: OMP:0000085 ! envelope phenotype
+is_a: OMP:0000085 ! cell envelope phenotype
 created_by: mchibucos
 creation_date: 2011-06-07T09:44:51Z
 
@@ -1734,7 +1735,7 @@ creation_date: 2011-06-07T03:17:46Z
 id: OMP:0000207
 name: serotype phenotype
 def: "A microbial phenotype that is distinguished by the presence a specific surface antigen." [OMP:MCC]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "antigenic typing phenotype" RELATED []
 synonym: "serological test phenotype" RELATED []
 synonym: "serovar" EXACT []
@@ -2134,7 +2135,7 @@ creation_date: 2011-07-21T02:02:26Z
 id: OMP:0000269
 name: protein activity phenotype
 def: "A microbial phenotype dealing with enzymatic or other type of protein activity." [OMP:WAM]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
 creation_date: 2011-07-21T02:05:51Z
@@ -2151,7 +2152,7 @@ synonym: "antimetabolite resistance phenotype" NARROW []
 synonym: "antimicrobial compound sensitivity phenotype" RELATED []
 synonym: "antiviral resistance phenotype" NARROW []
 xref: CHEBI:33281 "antimicrobial agent"
-is_a: OMP:0007195 ! resistance to chemical phenotype
+is_a: OMP:0000000 ! microbial phenotype
 created_by: mchibucos
 creation_date: 2011-07-21T02:21:21Z
 
@@ -2313,7 +2314,7 @@ creation_date: 2011-07-21T05:50:25Z
 [Term]
 id: OMP:0000312
 name: locomotion phenotype
-def: "A microbial phenotype, where the trait in question is the self-propelled movement of a cell from one location to another." [GO:0040011, OMP:MCC]
+def: "A microbial phenotype where the trait in question is the self-propelled movement of a cell from one location to another." [GO:0040011, OMP:MCC]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0040011 "locomotion"
 is_a: OMP:0007194 ! biological process phenotype
@@ -2537,7 +2538,7 @@ id: OMP:0000461
 name: outer membrane phenotype
 def: "A cell envelope phenotype where the trait in question is the presence or absence of  a lipid bilayer membrane located outside the peptidoglycan cell wall." [ISBN:9780073402406, OMP:DAS]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
-is_a: OMP:0000085 ! envelope phenotype
+is_a: OMP:0000085 ! cell envelope phenotype
 created_by: siegele
 creation_date: 2013-08-22T01:43:06Z
 
@@ -2847,7 +2848,7 @@ creation_date: 2013-09-25T15:57:46Z
 
 [Term]
 id: OMP:0005032
-name: presence of stress induced mutagenesis
+name: presence of stress-induced mutagenesis
 def: "A stress-induced mutagenesis phenotype where a cell or cells exhibit stress-induced mutagenesis." [OMP:WAM]
 is_a: OMP:0005027 ! stress-induced mutagenesis phenotype
 created_by: wmeza
@@ -3531,7 +3532,7 @@ creation_date: 2014-08-07T14:54:52Z
 id: OMP:0005116
 name: multicellular phenotype
 def: "A microbial phenotype involving two or more cells of the same or different species." [OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: wmeza
 creation_date: 2014-07-08T17:10:17Z
@@ -3761,7 +3762,7 @@ id: OMP:0006004
 name: increased budding
 def: "An altered budding phenotype where the fraction of budded cells (budding index) in a proliferating cell population is increased relative to a designated control." [OMP:WAM]
 synonym: "increased budding index" EXACT []
-is_a: OMP:0006035 ! altered budding phenotype
+is_a: OMP:0006035 ! altered budding
 created_by: jonathanherrera
 creation_date: 2014-03-26T21:33:14Z
 
@@ -3778,7 +3779,7 @@ id: OMP:0006006
 name: decreased budding
 def: "An altered budding phenotype where the fraction of budded cells (budding index) in a proliferating cell population is decreased relative to a designated control." [OMP:WAM]
 synonym: "decreased budding index" EXACT []
-is_a: OMP:0006035 ! altered budding phenotype
+is_a: OMP:0006035 ! altered budding
 created_by: jonathanherrera
 creation_date: 2014-03-26T21:33:14Z
 
@@ -3916,7 +3917,7 @@ creation_date: 2014-07-24T17:26:03Z
 id: OMP:0006022
 name: nutrient utilization phenotype
 def: "A microbial phenotype involving the utilization of a nutrient, which is a substance used for biosynthesis or energy release." [ISBN:9780073402406]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 is_a: OMP:0000000 ! microbial phenotype
 created_by: jonathanherrera
 creation_date: 2013-09-10T14:40:06Z
@@ -4044,7 +4045,7 @@ creation_date: 2014-07-24T17:57:37Z
 
 [Term]
 id: OMP:0006035
-name: altered budding phenotype
+name: altered budding
 def: "A budding phenotype where the process of budding is altered relative to a designated control." [OMP:JCH]
 is_a: OMP:0000089 ! budding phenotype
 is_a: OMP:0007144 ! altered asexual reproduction
@@ -4237,7 +4238,7 @@ synonym: "kanamycin" NARROW []
 synonym: "neomycin" NARROW []
 synonym: "streptomycin" NARROW []
 synonym: "tobramycin" NARROW []
-xref: CHEBI:22507 "aminoglycoside antibiotic"
+xref: CHEBI:47779 "aminoglycoside"
 is_a: OMP:0000274 ! antimicrobial agent resistance phenotype
 created_by: jonathanherrera
 creation_date: 2013-10-22T13:29:22Z
@@ -5012,6 +5013,7 @@ id: OMP:0006148
 name: abolished stress-induced mutagenesis
 def: "A decreased stress-induced mutagenesis phenotype where stress-induced mutagenesis is abolished." [OMP:JCH]
 is_a: OMP:0005031 ! decreased stress-induced mutagenesis
+is_a: OMP:0005033 ! absence of stress-induced mutagenesis
 created_by: jonathanherrera
 creation_date: 2014-07-25T15:19:48Z
 
@@ -5830,7 +5832,7 @@ creation_date: 2014-02-03T15:39:56Z
 id: OMP:0007066
 name: asexual reproduction phenotype
 def: "A microbial phenotype related to asexual reproduction, the biological process in which new individuals are produced by either a single cell or by a group of cells in the absence of any sexual process." [ISBN:0673521435, OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0019954 "asexual reproduction"
 is_a: OMP:0007167 ! reproduction phenotype
 created_by: siegele
@@ -6150,7 +6152,6 @@ name: altered cell morphology
 def: "A cell morphology phenotype that is altered relative to a designated control." [OMP:DAS]
 is_a: OMP:0000071 ! cell morphology phenotype
 is_a: OMP:0007085 ! altered phenotype
-is_a: OMP:0007193 ! altered_physical_object_quality
 relationship: has_quality OMP:0007189 ! altered_relative_to
 created_by: siegele
 creation_date: 2014-07-10T22:43:40Z
@@ -6279,7 +6280,6 @@ id: OMP:0007117
 name: increased transcription
 def: "An altered transcription phenotype where transcription of a gene or genes is increased relative to a designated control." [OMP:DAS]
 is_a: OMP:0007108 ! altered transcription
-relationship: has_quality OMP:0007009 ! increased growth at acidic pH
 created_by: dsiegele
 creation_date: 2014-08-11T16:41:06Z
 
@@ -6661,7 +6661,7 @@ creation_date: 2014-08-29T12:27:50Z
 id: OMP:0007161
 name: regulation phenotype
 def: "A microbial phenotype that affects the regulation of a molecular function, biological process, or biological quality." [OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000145 "regulation phenotype"
 is_a: OMP:0000000 ! microbial phenotype
 created_by: siegele
@@ -6671,7 +6671,7 @@ creation_date: 2014-09-14T14:45:03Z
 id: OMP:0007162
 name: gene expression regulation phenotype
 def: "A regulation phenotype that affects the regulation of gene expression. Regulation can occur at the level transcription, translation, or turnover." [OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000288 "gene expression regulation phenotype"
 is_a: OMP:0007161 ! regulation phenotype
 created_by: siegele
@@ -6681,7 +6681,7 @@ creation_date: 2014-09-14T14:47:50Z
 id: OMP:0007163
 name: transcription regulation phenotype
 def: "A gene expression phenotype that affects the regulation of DNA-dependent or RNA-dependent transcription." [OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000143 "transcription regulation phenotype"
 is_a: OMP:0007162 ! gene expression regulation phenotype
 created_by: siegele
@@ -6691,7 +6691,7 @@ creation_date: 2014-09-14T14:52:31Z
 id: OMP:0007164
 name: translation regulation phenotype
 def: "A gene expression regulation phenotype that affects the regulation of translation." [OMP:DAS]
-comment: This is a high-level term whose primary purpose is to organize terms beneath it in the ontology, and we expect that it will not be used for direct annotations. Please consider using a more specific term to annotate each phenotype.
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 synonym: "protein synthesis regulation" EXACT []
 xref: FYPO:0000289 "translation regulation phenotype"
 is_a: OMP:0007162 ! gene expression regulation phenotype
@@ -6734,7 +6734,7 @@ creation_date: 2014-09-25T17:18:11Z
 [Term]
 id: OMP:0007169
 name: antimicrobial peptide resistance phenotype
-def: "An antimicrobial agent resistance phenotype related to resistance or sensitivity to an antimicrobial peptide." [OMP:DAS]
+def: "An antimicrobial agent resistance phenotype related to resistance or sensitivity to an antimicrobial peptide." [CHEBI:25903, OMP:DAS]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: CHEBI:25903 "peptide antibiotic"
 is_a: OMP:0000274 ! antimicrobial agent resistance phenotype
@@ -6939,6 +6939,7 @@ creation_date: 2014-10-04T19:34:54Z
 id: OMP:0007194
 name: biological process phenotype
 def: "A microbial phenotype that affects a biological process." [FYPO:0000300, OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: FYPO:0000300 "biological process phenotype"
 xref: GO:0008150 "biological_process"
 is_a: OMP:0000000 ! microbial phenotype
@@ -6947,7 +6948,7 @@ creation_date: 2014-10-18T21:38:46Z
 
 [Term]
 id: OMP:0007195
-name: resistance to chemical phenotype
+name: chemical sensitivity phenotype
 def: "A biological process phenotype related to the resistance or sensitivity of a cell, cells, or microbe to a chemical entity." [OMP:DAS]
 is_a: OMP:0007194 ! biological process phenotype
 created_by: siegele
@@ -6966,6 +6967,7 @@ creation_date: 2014-10-20T15:08:04Z
 id: OMP:0007197
 name: cellular component phenotype
 def: "A microbial phenotype that affects a cellular component." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
 xref: GO:0005575 "cellular_component"
 is_a: OMP:0000000 ! microbial phenotype
 created_by: siegele
@@ -7267,11 +7269,168 @@ created_by: dsiegele
 creation_date: 2015-06-04T16:29:52Z
 
 [Term]
+id: OMP:0007233
+name: absence of binary fission
+def: "A binary fission phenotype where an organism lacks the ability to multiply by the process of binary fission." [OMP:JCH]
+is_a: OMP:0007067 ! binary fission phenotype
+created_by: siegele
+creation_date: 2015-06-20T18:21:53Z
+
+[Term]
+id: OMP:0007234
+name: absence of budding
+def: "A budding phenotype where an organism lacks to the ability to multiply by the process of budding." [OMP:JCH]
+is_a: OMP:0000089 ! budding phenotype
+created_by: siegele
+creation_date: 2015-06-20T18:24:03Z
+
+[Term]
+id: OMP:0007235
+name: absence of multiple fission
+def: "A multiple fission phenotype where an organism lacks the ability to multiply by the process of multiple fission." [OMP:JCH]
+is_a: OMP:0007068 ! multiple fission phenotype
+created_by: siegele
+creation_date: 2015-06-20T18:25:24Z
+
+[Term]
+id: OMP:0007236
+name: absence of asexual sporulation
+def: "An asexual sporulation phenotype where an organism lacks the ability to multiple by the formation of mitotic spores." [OMP:JCH]
+is_a: OMP:0007142 ! asexual sporulation phenotype
+created_by: siegele
+creation_date: 2015-06-20T18:26:28Z
+
+[Term]
+id: OMP:0007237
+name: bacteriophage sensitivity phenotype
+def: "A host-virus interaction phenotype related to whether a bacterium can be infected by and/or support growth of a bacteriophage." [OMP:DAS]
+comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
+is_a: OMP:0000026 ! host-virus interaction phenotype
+created_by: siegele
+creation_date: 2015-06-29T17:35:29Z
+
+[Term]
+id: OMP:0007238
+name: presence of bacteriophage sensitivity
+def: "A bacteriophage sensitivity phenotype where a bacterium exhibits sensitivity to infection by a bacteriophage." [OMP:DAS]
+is_a: OMP:0007237 ! bacteriophage sensitivity phenotype
+created_by: siegele
+creation_date: 2015-06-29T17:56:42Z
+
+[Term]
+id: OMP:0007239
+name: absence of bacteriophage sensitivity
+def: "A bacteriophage sensitivity phenotype where a bacterium cannot be infected by and/or support reproduction of a bacteriophage." [OMP:DAS]
+synonym: "bacteriophage resistance" EXACT []
+is_a: OMP:0007237 ! bacteriophage sensitivity phenotype
+created_by: siegele
+creation_date: 2015-06-29T18:02:50Z
+
+[Term]
+id: OMP:0007240
+name: injection defect
+def: "An absence of bacteriophage sensitivity phenotype where a bacterium is resistant to a bacteriophage because the cell or cells are defective for adsorption or injection of the bacteriophage." [OMP:DAS]
+is_a: OMP:0007239 ! absence of bacteriophage sensitivity
+created_by: siegele
+creation_date: 2015-06-29T18:05:20Z
+
+[Term]
+id: OMP:0007241
+name: post-injection defect
+def: "An absence of bacteriophage sensitivity phenotype where a bacterium is resistant to a bacteriophage because it cannot support reproduction of the bacteriophage after absorption and injection.” [OMP:DAS]" []
+is_a: OMP:0007239 ! absence of bacteriophage sensitivity
+created_by: siegele
+creation_date: 2015-06-29T18:09:11Z
+
+[Term]
+id: OMP:0007242
+name: altered host-virus interaction
+def: "A host-virus interaction phenotype that is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0000026 ! host-virus interaction phenotype
+is_a: OMP:0007085 ! altered phenotype
+created_by: siegele
+creation_date: 2015-07-04T00:13:56Z
+
+[Term]
+id: OMP:0007243
+name: altered bacteriophage sensitivity
+def: "A bacteriophage sensitivity phenotype where sensitivity of a bacterial cell or cells to a bacteriophage is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007237 ! bacteriophage sensitivity phenotype
+is_a: OMP:0007242 ! altered host-virus interaction
+created_by: siegele
+creation_date: 2015-07-04T00:16:40Z
+
+[Term]
+id: OMP:0007244
+name: decreased sensitivity to bacteriophage
+def: "An altered bacteriophage sensitivity phenotype where the sensitivity of a cell or cells to a bacteriophage is decreased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007243 ! altered bacteriophage sensitivity
+created_by: siegele
+creation_date: 2015-07-04T00:18:12Z
+
+[Term]
+id: OMP:0007245
+name: abolished sensitivity to bacteriophage
+def: "A decreased bacteriophage sensitivity phenotype where the sensitivity of a bacterial cell or cells to a bacteriophage is abolished." [OMP:DAS]
+is_a: OMP:0007239 ! absence of bacteriophage sensitivity
+is_a: OMP:0007244 ! decreased sensitivity to bacteriophage
+created_by: siegele
+creation_date: 2015-07-04T00:20:54Z
+
+[Term]
+id: OMP:0007246
+name: sensitive to a chemical
+def: "A chemical sensitivity phenotype where a cell, cells, or microbe are sensitive to a chemical." [OMP:DAS]
+is_a: OMP:0007195 ! chemical sensitivity phenotype
+created_by: siegele
+creation_date: 2015-07-16T00:36:34Z
+
+[Term]
+id: OMP:0007247
+name: not sensitive to a chemical
+def: "A chemical sensitivity phenotype where a cell, cells, or microbe are not sensitive to a chemical." [OMP:DAS]
+is_a: OMP:0007195 ! chemical sensitivity phenotype
+created_by: siegele
+creation_date: 2015-07-16T00:36:34Z
+
+[Term]
+id: OMP:0007248
+name: altered chemical sensitivity
+def: "A chemical sensitivity phenotype where sensitivity of a cell, cells, or microbe to a chemical is altered relative to a designated control." [OMP:DAS]
+is_a: OMP:0007195 ! chemical sensitivity phenotype
+created_by: siegele
+creation_date: 2015-07-16T00:36:34Z
+
+[Term]
+id: OMP:0007249
+name: Increased sensitivity to a chemical
+def: "An altered chemical sensitivity phenotype where the sensitivity of a cell, cells, or microbe to a chemical is increased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007248 ! altered chemical sensitivity
+created_by: siegele
+creation_date: 2015-07-16T00:42:17Z
+
+[Term]
+id: OMP:0007250
+name: decreased sensitivity to a chemical
+def: "An altered chemical sensitivity phenotype where the sensitivity of a cell, cells, or microbe to a chemical is decreased relative to a designated control." [OMP:DAS]
+is_a: OMP:0007248 ! altered chemical sensitivity
+created_by: siegele
+creation_date: 2015-07-16T00:42:17Z
+
+[Term]
+id: OMP:0007251
+name: abolished chemical sensitivity
+def: "An altered chemical sensitivity phenotype where the sensitivity of a cell, cells, or microbe to a chemical is abolished." [OMP:DAS]
+is_a: OMP:0007250 ! decreased sensitivity to a chemical
+created_by: siegele
+creation_date: 2015-07-16T00:42:17Z
+
+[Term]
 id: OMP:0008000
 name: spore morphology phenotype
 def: "A microbial phenotype that is related to the form and structure of a spore or spores." [OMP:KDA]
 comment: This term was created to organize terms beneath it in the ontology. We recommend that it not be used for annotation unless an appropriate child term cannot be found or requested.
-is_a: OMP:0000000 ! microbial phenotype
+is_a: OMP:0000071 ! cell morphology phenotype
 created_by: kanderson
 creation_date: 2015-06-03T13:12:00Z
 
@@ -7576,7 +7735,7 @@ id: directly_associated_with
 name: directly_associated_with
 namespace: quality
 def: "q1 directly_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 increases if the magnitude of q2 is increased, or the magnitude of q1 decreases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
-comment: Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites.\nAssociation is weaker than correlation or proportionality. These relations may be later added to PATO.
+comment: Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in 'http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404'). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites. Association is weaker than correlation or proportionality. These relations may be later added to PATO.
 created_by: cjm
 creation_date: 2009-08-26T02:50:08Z
 
