@@ -1,7 +1,7 @@
 format-version: 1.2
 data-version: releases/2015-02-19
-date: 09:06:2017 13:54
-saved-by: dsiegele
+date: 13:06:2017 12:19
+saved-by: Tianyizhou
 auto-generated-by: OBO-Edit 2.3.1
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
@@ -14039,6 +14039,16 @@ def: "An endospore coat phenotype where the endospore coat is altered relative t
 is_a: OMP:0008007 ! endospore coat phenotype
 created_by: kanderson
 creation_date: 2015-06-08T13:24:49Z
+
+[Term]
+id: OMP:0008028
+name: Amikacin
+def: "An antimicrobial that belongs to the aminoglycoside antimicrobial group." []
+synonym: "Amikin" RELATED []
+xref: ChEBI:2673
+is_a: OMP:0006137 ! abolished resistance to aminoglycoside
+created_by: Tianyizhou
+creation_date: 2017-06-13T12:16:56Z
 
 [Term]
 id: OMP:0008029
